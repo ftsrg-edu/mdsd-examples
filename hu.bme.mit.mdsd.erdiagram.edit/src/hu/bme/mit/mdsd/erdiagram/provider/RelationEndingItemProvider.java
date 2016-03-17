@@ -48,7 +48,6 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 			addNullablePropertyDescriptor(object);
 			addMultiplicityPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addOtherPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,28 +113,6 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 				 true,
 				 false,
 				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Other feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOtherPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RelationEnding_other_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RelationEnding_other_feature", "_UI_RelationEnding_type"),
-				 ErdiagramPackage.Literals.RELATION_ENDING__OTHER,
-				 false,
-				 false,
-				 false,
 				 null,
 				 null,
 				 null));

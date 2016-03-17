@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see hu.bme.mit.mdsd.erdiagram.ErdiagramFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='org.eclipse.incquery.querybasedfeature'"
  * @generated
  */
 public interface ErdiagramPackage extends EPackage {
@@ -380,22 +379,13 @@ public interface ErdiagramPackage extends EPackage {
 	int RELATION_ENDING__TARGET = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Other</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATION_ENDING__OTHER = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Relation Ending</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_ENDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int RELATION_ENDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Relation Ending</em>' class.
@@ -621,17 +611,6 @@ public interface ErdiagramPackage extends EPackage {
 	EReference getRelationEnding_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getOther <em>Other</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Other</em>'.
-	 * @see hu.bme.mit.mdsd.erdiagram.RelationEnding#getOther()
-	 * @see #getRelationEnding()
-	 * @generated
-	 */
-	EReference getRelationEnding_Other();
-
-	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.mdsd.erdiagram.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -848,14 +827,6 @@ public interface ErdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATION_ENDING__TARGET = eINSTANCE.getRelationEnding_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Other</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATION_ENDING__OTHER = eINSTANCE.getRelationEnding_Other();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.mdsd.erdiagram.impl.NamedElementImpl <em>Named Element</em>}' class.

@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -27,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getOther <em>Other</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,16 +80,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * @ordered
 	 */
 	protected Entity target;
-
-	/**
-	 * The cached setting delegate for the '{@link #getOther() <em>Other</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOther()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate OTHER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ErdiagramPackage.Literals.RELATION_ENDING__OTHER).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,24 +207,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RelationEnding getOther() {
-		return (RelationEnding)OTHER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RelationEnding basicGetOther() {
-		return (RelationEnding)OTHER__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -277,9 +247,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case ErdiagramPackage.RELATION_ENDING__OTHER:
-				if (resolve) return getOther();
-				return basicGetOther();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,8 +307,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 				return multiplicity != MULTIPLICITY_EDEFAULT;
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				return target != null;
-			case ErdiagramPackage.RELATION_ENDING__OTHER:
-				return OTHER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

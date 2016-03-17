@@ -15,7 +15,6 @@ package hu.bme.mit.mdsd.erdiagram;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getTarget <em>Target</em>}</li>
- *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getOther <em>Other</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding()
@@ -106,21 +105,5 @@ public interface RelationEnding extends NamedElement {
 	 * @generated
 	 */
 	void setTarget(Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Other</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Other</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Other</em>' reference.
-	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding_Other()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='hu.bme.mit.mdsd.erdiagram.patterns.other'"
-	 * @generated
-	 */
-	RelationEnding getOther();
 
 } // RelationEnding
