@@ -1,0 +1,102 @@
+package hu.bme.mit.mdsd.erdiagram.queries
+
+import "hu.bme.mit.mdsd.erdiagram"
+
+pattern entity(e) {
+	Entity(e);
+}
+
+pattern entityName(entity, name) {
+	Entity.name(entity, name);
+}
+
+pattern emptyNamedElement(namedElement) {
+	NamedElement.name(namedElement, name);
+	check(name.isEmpty());
+}
+
+pattern entityStartsWithSmallCase(entity) {
+	Entity.name(entity, name);
+	check(! name.matches("^[A-Z].+"));
+}
+
+@Constraint(
+	key = {"entity1", "entity2"},
+	severity = "error",
+	message = "Two entities has the same name $commonName$",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID",
+	symmetric = {"entity1", "entity2"}
+)
+pattern sameNamedEntities(entity1, entity2, commonName) {
+	Entity.name(entity1, commonName);
+	Entity.name(entity2, commonName);
+	entity1 != entity2;
+}
+
+pattern badEntity(entity) {
+	find emptyNamedElement(entity);
+} or {
+	find entityStartsWithSmallCase(entity);
+} or {
+	find sameNamedEntities(entity, _, _);
+}
+
+pattern wellFormedEntites() {
+	neg find badEntity(_);
+}
+
+pattern relationWithLeftEnding(r, rle) {
+	Relation.leftEnding(r, rle);
+}
+
+pattern relationWithRightEnding(r, rre) {
+	Relation.rightEnding(r, rre);
+}
+
+pattern relationWithoutEnding(r : Relation) {
+	neg find relationWithLeftEnding(r, _);
+} or {
+	neg find relationWithRightEnding(r, _);
+}
+
+pattern wellFormedRelation() {
+	N == count find relationWithoutEnding(_);
+	N == 0;
+}
+
+pattern entityAttribute(e, attr) {
+	Entity.attributes(e, attr);
+}
+
+pattern attributeCount(e, N) {
+	Entity(e);
+	N == count find entityAttribute(e, _);
+}
+
+pattern hasBiggerName(e1, e2) {
+	Entity.name(e1, name1);
+	Entity.name(e2, name2);
+	check(name1 > name2);
+}
+
+pattern firtEntity(e : Entity) {
+	neg find hasBiggerName(e, _);
+}
+
+pattern superEntity(e, superEntity) {
+	Entity.isA(e, superEntity);
+}
+
+pattern allSuperEntity(e, superEntity) {
+	find superEntity +(e, superEntity);
+}
+
+@QueryBasedFeature
+pattern otherEnding(ending : RelationEnding, other : RelationEnding) {
+	Relation.leftEnding(relation, ending);
+	Relation.rightEnding(relation, other);
+} or {
+	Relation.rightEnding(relation, ending);
+	Relation.leftEnding(relation, other);
+}
+

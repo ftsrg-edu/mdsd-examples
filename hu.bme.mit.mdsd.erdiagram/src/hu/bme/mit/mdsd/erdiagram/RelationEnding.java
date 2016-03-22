@@ -15,6 +15,7 @@ package hu.bme.mit.mdsd.erdiagram;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getTarget <em>Target</em>}</li>
+ *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getOtherEnding <em>Other Ending</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding()
@@ -105,5 +106,20 @@ public interface RelationEnding extends NamedElement {
 	 * @generated
 	 */
 	void setTarget(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Other Ending</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Other Ending</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Other Ending</em>' reference.
+	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding_OtherEnding()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	RelationEnding getOtherEnding();
 
 } // RelationEnding

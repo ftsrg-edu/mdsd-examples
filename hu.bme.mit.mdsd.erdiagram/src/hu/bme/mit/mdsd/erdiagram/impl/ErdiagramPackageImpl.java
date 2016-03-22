@@ -312,6 +312,15 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRelationEnding_OtherEnding() {
+		return (EReference)relationEndingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -393,6 +402,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		createEAttribute(relationEndingEClass, RELATION_ENDING__NULLABLE);
 		createEAttribute(relationEndingEClass, RELATION_ENDING__MULTIPLICITY);
 		createEReference(relationEndingEClass, RELATION_ENDING__TARGET);
+		createEReference(relationEndingEClass, RELATION_ENDING__OTHER_ENDING);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -459,6 +469,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		initEAttribute(getRelationEnding_Nullable(), ecorePackage.getEBoolean(), "nullable", "false", 0, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationEnding_Multiplicity(), this.getMultiplicityType(), "multiplicity", null, 0, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationEnding_Target(), this.getEntity(), this.getEntity_ReferredBy(), "target", null, 1, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRelationEnding_OtherEnding(), this.getRelationEnding(), null, "otherEnding", null, 0, 1, RelationEnding.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
