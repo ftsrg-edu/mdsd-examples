@@ -2,7 +2,10 @@ package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.queries.AllSuperEntityMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.AttributeCountMatcher;
+import hu.bme.mit.mdsd.erdiagram.queries.AttributeWithInheirtanceMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.BadEntityMatcher;
+import hu.bme.mit.mdsd.erdiagram.queries.CircleInTypeHierarchyMatcher;
+import hu.bme.mit.mdsd.erdiagram.queries.DiamondInTypeHierarchyMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.EmptyNamedElementMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.EntityAttributeMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.EntityMatcher;
@@ -11,6 +14,7 @@ import hu.bme.mit.mdsd.erdiagram.queries.EntityStartsWithSmallCaseMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.FirtEntityMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.HasBiggerNameMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.OtherEndingMatcher;
+import hu.bme.mit.mdsd.erdiagram.queries.RelationWithInheirtanceMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithLeftEndingMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithRightEndingMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithoutEndingMatcher;
@@ -20,7 +24,10 @@ import hu.bme.mit.mdsd.erdiagram.queries.WellFormedEntitesMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.WellFormedRelationMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.util.AllSuperEntityQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.AttributeCountQuerySpecification;
+import hu.bme.mit.mdsd.erdiagram.queries.util.AttributeWithInheirtanceQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.BadEntityQuerySpecification;
+import hu.bme.mit.mdsd.erdiagram.queries.util.CircleInTypeHierarchyQuerySpecification;
+import hu.bme.mit.mdsd.erdiagram.queries.util.DiamondInTypeHierarchyQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.EmptyNamedElementQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.EntityAttributeQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.EntityNameQuerySpecification;
@@ -29,6 +36,7 @@ import hu.bme.mit.mdsd.erdiagram.queries.util.EntityStartsWithSmallCaseQuerySpec
 import hu.bme.mit.mdsd.erdiagram.queries.util.FirtEntityQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.HasBiggerNameQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.OtherEndingQuerySpecification;
+import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithInheirtanceQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithLeftEndingQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithRightEndingQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithoutEndingQuerySpecification;
@@ -66,6 +74,10 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>superEntity</li>
  * <li>allSuperEntity</li>
  * <li>otherEnding</li>
+ * <li>circleInTypeHierarchy</li>
+ * <li>diamondInTypeHierarchy</li>
+ * <li>attributeWithInheirtance</li>
+ * <li>relationWithInheirtance</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -108,6 +120,10 @@ public final class Queries extends BaseGeneratedPatternGroup {
     querySpecifications.add(SuperEntityQuerySpecification.instance());
     querySpecifications.add(AllSuperEntityQuerySpecification.instance());
     querySpecifications.add(OtherEndingQuerySpecification.instance());
+    querySpecifications.add(CircleInTypeHierarchyQuerySpecification.instance());
+    querySpecifications.add(DiamondInTypeHierarchyQuerySpecification.instance());
+    querySpecifications.add(AttributeWithInheirtanceQuerySpecification.instance());
+    querySpecifications.add(RelationWithInheirtanceQuerySpecification.instance());
   }
   
   public EntityQuerySpecification getEntity() throws IncQueryException {
@@ -252,5 +268,37 @@ public final class Queries extends BaseGeneratedPatternGroup {
   
   public OtherEndingMatcher getOtherEnding(final IncQueryEngine engine) throws IncQueryException {
     return OtherEndingMatcher.on(engine);
+  }
+  
+  public CircleInTypeHierarchyQuerySpecification getCircleInTypeHierarchy() throws IncQueryException {
+    return CircleInTypeHierarchyQuerySpecification.instance();
+  }
+  
+  public CircleInTypeHierarchyMatcher getCircleInTypeHierarchy(final IncQueryEngine engine) throws IncQueryException {
+    return CircleInTypeHierarchyMatcher.on(engine);
+  }
+  
+  public DiamondInTypeHierarchyQuerySpecification getDiamondInTypeHierarchy() throws IncQueryException {
+    return DiamondInTypeHierarchyQuerySpecification.instance();
+  }
+  
+  public DiamondInTypeHierarchyMatcher getDiamondInTypeHierarchy(final IncQueryEngine engine) throws IncQueryException {
+    return DiamondInTypeHierarchyMatcher.on(engine);
+  }
+  
+  public AttributeWithInheirtanceQuerySpecification getAttributeWithInheirtance() throws IncQueryException {
+    return AttributeWithInheirtanceQuerySpecification.instance();
+  }
+  
+  public AttributeWithInheirtanceMatcher getAttributeWithInheirtance(final IncQueryEngine engine) throws IncQueryException {
+    return AttributeWithInheirtanceMatcher.on(engine);
+  }
+  
+  public RelationWithInheirtanceQuerySpecification getRelationWithInheirtance() throws IncQueryException {
+    return RelationWithInheirtanceQuerySpecification.instance();
+  }
+  
+  public RelationWithInheirtanceMatcher getRelationWithInheirtance(final IncQueryEngine engine) throws IncQueryException {
+    return RelationWithInheirtanceMatcher.on(engine);
   }
 }

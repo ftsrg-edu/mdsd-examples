@@ -100,3 +100,32 @@ pattern otherEnding(ending : RelationEnding, other : RelationEnding) {
 	Relation.leftEnding(relation, other);
 }
 
+// A Few More Queries
+// ----------------
+
+pattern circleInTypeHierarchy(entity) {
+		find allSuperEntity(entity, entity);
+	}
+
+pattern diamondInTypeHierarchy(entity1 : Entity, entity2 : Entity, entity3 : Entity, entity4 : Entity) {
+    find allSuperEntity(entity1,entity2);
+    find allSuperEntity(entity1,entity3);
+    find hasBiggerName(entity2, entity3); //entity2 != entity3;
+    find allSuperEntity(entity2,entity4);
+    find allSuperEntity(entity3,entity4);
+}
+
+pattern attributeWithInheirtance(entity : Entity, attribute : Attribute) {
+    Entity.attributes(entity,attribute);
+} or {
+    find allSuperEntity(entity, superEntity);
+    find entityAttribute(superEntity, attribute);
+}
+
+pattern relationWithInheirtance(entity1 : Entity, entity2 : Entity) {
+    Relation.leftEnding.target(relation, entity1);
+    Relation.rightEnding.target(relation, entity2);
+} or {
+    find allSuperEntity(entity1, superEntity);
+    find relationWithInheirtance(superEntity, entity2);
+}
