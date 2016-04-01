@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eRDiagramDsl" nsURI="http://www.bme.hu/mit/mdsd/erdiagram/text/ERDiagramDsl"
+    nsPrefix="eRDiagramDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="ERDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isA" unique="false" upperBound="-1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AttributeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AttributeType">
+    <eLiterals name="INT" literal="int"/>
+    <eLiterals name="DOUBLE" value="1" literal="double"/>
+    <eLiterals name="STRING" value="2" literal="string"/>
+    <eLiterals name="BOOLEAN" value="3" literal="boolean"/>
+    <eLiterals name="DATETIME" value="4" literal="datetime"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftEnding" eType="#//RelationEnding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightEnding" eType="#//RelationEnding"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationEnding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="#//MultiplicityType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiplicityType">
+    <eLiterals name="One" literal="one"/>
+    <eLiterals name="Many" value="1" literal="many"/>
+  </eClassifiers>
+</ecore:EPackage>

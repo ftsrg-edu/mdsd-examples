@@ -1,0 +1,38 @@
+grammar hu.bme.mit.mdsd.erdiagram.text.ERDiagramDsl with org.eclipse.xtext.common.Terminals
+
+generate eRDiagramDsl "http://www.bme.hu/mit/mdsd/erdiagram/text/ERDiagramDsl"
+
+ERDiagram:
+	entities+=Entity*
+	relation+=Relation*
+;
+
+Entity:
+	'entity' name=ID ('isA' isA+=[Entity])*
+	('{'
+	attributes+=Attribute
+	(',' attributes+=Attribute)*
+	'}')?
+;
+
+Attribute:
+	name=ID ':' type=AttributeType (isKey?='key')?
+;
+
+enum AttributeType:
+	INT = 'int' | DOUBLE = 'double' | STRING = 'string' | BOOLEAN = 'boolean' | DATETIME = 'datetime'
+;
+
+Relation:
+	leftEnding=RelationEnding
+	'is related with'
+	rightEnding=RelationEnding
+;
+
+RelationEnding:
+	(multiplicity=MultiplicityType & (nullable?='nullable')?) target=[Entity]
+;
+
+enum MultiplicityType:
+	One = 'one' | Many = 'many'
+;
