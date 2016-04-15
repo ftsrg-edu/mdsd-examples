@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="erdiagram" version="10.1.3.201511131800">
+  <ownedViewpoints name="erdiagram" modelFileExtension="erdiagram">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="EntityRelationDiagram" domainClass="EntityRelationDiagram" enablePopupBars="true">
+      <validationSet>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="validation" message="Unnamed attribute!" targetClass="Attribute">
+          <audits auditExpression="[name &lt;> 'newAttribute'/]"/>
+          <fixes name="attributeNameFix">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="address"/>
+            </initialOperation>
+          </fixes>
+        </ownedRules>
+      </validationSet>
+      <defaultLayer name="Default">
+        <nodeMappings name="EntityNode" semanticCandidatesExpression="feature:entities" domainClass="Entity">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="AttributeNode" semanticCandidatesExpression="[entities.attributes->addAll(temporalAttributes)/]" domainClass="Attribute">
+          <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[isKey/]">
+            <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelFormat>underline</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="EntityAttributeEdge" sourceMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']" targetMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='AttributeNode']" targetFinderExpression="[attributes/]">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" foldingStyle="SOURCE">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InheritanceEdge" sourceMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']" targetMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']" targetFinderExpression="[isA/]">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2" foldingStyle="TARGET">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RelationEdge" sourceMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']" targetMapping="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']" targetFinderExpression="[rightEnding.target/]" sourceFinderExpression="[leftEnding.target/]" domainClass="Relation" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[name/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[leftEnding.multiplicity.toString() = 'One' and rightEnding.multiplicity.toString() = 'Many'/]">
+            <style targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="[name/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[leftEnding.multiplicity.toString() = 'Many' and rightEnding.multiplicity.toString() = 'One'/]">
+            <style sourceArrow="OutputClosedArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="[name/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[leftEnding.multiplicity.toString() = 'Many' and rightEnding.multiplicity.toString() = 'Many'/]">
+            <style sourceArrow="OutputClosedArrow" targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="[name/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <toolSections name="section">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createEntity" label="Entity" nodeMappings="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='EntityNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="erdiagram.Entity" referenceName="entities">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="newEntity"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createAttribure" label="Attribute" nodeMappings="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@nodeMappings[name='AttributeNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="erdiagram.Attribute" referenceName="temporalAttributes">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="newAttribute"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="createEntityAttributeEdge" label="Entity Attribute Edge" precondition="[preTarget.oclIsTypeOf(Attribute)/]" edgeMappings="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@edgeMappings[name='EntityAttributeEdge']" connectionStartPrecondition="[preSource.oclIsTypeOf(Entity)/]">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="attributes" valueExpression="var:target"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="createRelationEdge" label="Relation Edge" precondition="[preTarget.oclIsTypeOf(Entity)/]" edgeMappings="//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']/@defaultLayer/@edgeMappings[name='RelationEdge']" connectionStartPrecondition="[preSource.oclIsTypeOf(Entity)/]">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="relationJavaAction" id="hu.bme.mit.mdsd.erdiagram.design.CreateRelationOperation">
+                <parameters name="source" value="var:source"/>
+                <parameters name="target" value="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
