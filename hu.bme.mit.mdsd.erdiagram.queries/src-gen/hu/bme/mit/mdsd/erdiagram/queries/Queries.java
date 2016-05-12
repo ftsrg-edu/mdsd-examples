@@ -14,6 +14,7 @@ import hu.bme.mit.mdsd.erdiagram.queries.EntityStartsWithSmallCaseMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.FirtEntityMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.HasBiggerNameMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.OtherEndingMatcher;
+import hu.bme.mit.mdsd.erdiagram.queries.RelationMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithInheirtanceMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithLeftEndingMatcher;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithRightEndingMatcher;
@@ -36,6 +37,7 @@ import hu.bme.mit.mdsd.erdiagram.queries.util.EntityStartsWithSmallCaseQuerySpec
 import hu.bme.mit.mdsd.erdiagram.queries.util.FirtEntityQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.HasBiggerNameQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.OtherEndingQuerySpecification;
+import hu.bme.mit.mdsd.erdiagram.queries.util.RelationQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithInheirtanceQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithLeftEndingQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.RelationWithRightEndingQuerySpecification;
@@ -57,6 +59,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  * <p> From package hu.bme.mit.mdsd.erdiagram.queries, the group contains the definition of the following patterns: <ul>
  * <li>entity</li>
+ * <li>relation</li>
  * <li>entityName</li>
  * <li>emptyNamedElement</li>
  * <li>entityStartsWithSmallCase</li>
@@ -103,6 +106,7 @@ public final class Queries extends BaseGeneratedPatternGroup {
   
   private Queries() throws IncQueryException {
     querySpecifications.add(EntityQuerySpecification.instance());
+    querySpecifications.add(RelationQuerySpecification.instance());
     querySpecifications.add(EntityNameQuerySpecification.instance());
     querySpecifications.add(EmptyNamedElementQuerySpecification.instance());
     querySpecifications.add(EntityStartsWithSmallCaseQuerySpecification.instance());
@@ -132,6 +136,14 @@ public final class Queries extends BaseGeneratedPatternGroup {
   
   public EntityMatcher getEntity(final IncQueryEngine engine) throws IncQueryException {
     return EntityMatcher.on(engine);
+  }
+  
+  public RelationQuerySpecification getRelation() throws IncQueryException {
+    return RelationQuerySpecification.instance();
+  }
+  
+  public RelationMatcher getRelation(final IncQueryEngine engine) throws IncQueryException {
+    return RelationMatcher.on(engine);
   }
   
   public EntityNameQuerySpecification getEntityName() throws IncQueryException {

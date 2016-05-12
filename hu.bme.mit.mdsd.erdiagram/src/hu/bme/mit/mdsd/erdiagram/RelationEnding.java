@@ -118,6 +118,7 @@ public interface RelationEnding extends NamedElement {
 	 * @return the value of the '<em>Other Ending</em>' reference.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding_OtherEnding()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='hu.bme.mit.mdsd.erdiagram.queries.otherEnding'"
 	 * @generated
 	 */
 	RelationEnding getOtherEnding();

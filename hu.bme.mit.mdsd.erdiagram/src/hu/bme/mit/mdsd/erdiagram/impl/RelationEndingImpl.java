@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -81,6 +82,16 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * @ordered
 	 */
 	protected Entity target;
+
+	/**
+	 * The cached setting delegate for the '{@link #getOtherEnding() <em>Other Ending</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOtherEnding()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate OTHER_ENDING__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ErdiagramPackage.Literals.RELATION_ENDING__OTHER_ENDING).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,8 +220,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * @generated
 	 */
 	public RelationEnding getOtherEnding() {
-		RelationEnding otherEnding = basicGetOtherEnding();
-		return otherEnding != null && otherEnding.eIsProxy() ? (RelationEnding)eResolveProxy((InternalEObject)otherEnding) : otherEnding;
+		return (RelationEnding)OTHER_ENDING__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -219,10 +229,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * @generated
 	 */
 	public RelationEnding basicGetOtherEnding() {
-		// TODO: implement this method to return the 'Other Ending' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (RelationEnding)OTHER_ENDING__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -334,7 +341,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				return target != null;
 			case ErdiagramPackage.RELATION_ENDING__OTHER_ENDING:
-				return basicGetOtherEnding() != null;
+				return OTHER_ENDING__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

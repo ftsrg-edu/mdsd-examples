@@ -488,6 +488,44 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// org.eclipse.incquery.querybasedfeature
+		createOrgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "settingDelegates", "org.eclipse.incquery.querybasedfeature"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.eclipse.incquery.querybasedfeature</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.eclipse.incquery.querybasedfeature";	
+		addAnnotation
+		  (getRelationEnding_OtherEnding(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "hu.bme.mit.mdsd.erdiagram.queries.otherEnding"
+		   });
 	}
 
 } //ErdiagramPackageImpl

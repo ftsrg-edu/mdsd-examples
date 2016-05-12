@@ -6,6 +6,10 @@ pattern entity(e) {
 	Entity(e);
 }
 
+pattern relation(r) {
+	Relation(r);
+}
+
 pattern entityName(entity, name) {
 	Entity.name(entity, name);
 }
