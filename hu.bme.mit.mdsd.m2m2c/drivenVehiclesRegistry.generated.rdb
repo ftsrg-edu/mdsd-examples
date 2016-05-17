@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rdb:RelationalDataBase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdb="rdb">
+  <tables name="Car">
+    <columns xsi:type="rdb:Key" name="plateNumber" type="STRING"/>
+    <columns name="numberOfDoors"/>
+  </tables>
+  <tables name="Pilot">
+    <columns name="Licence" type="STRING"/>
+    <columns xsi:type="rdb:Key" name="IDN"/>
+    <columns name="name" type="STRING"/>
+  </tables>
+  <tables name="CarType">
+    <columns xsi:type="rdb:Key" name="name" type="STRING"/>
+  </tables>
+  <tables name="Plane">
+    <columns xsi:type="rdb:Key" name="serialNumber" type="STRING"/>
+    <columns name="nick" type="STRING"/>
+  </tables>
+  <tables name="PlaneType">
+    <columns xsi:type="rdb:Key" name="name" type="STRING"/>
+  </tables>
+  <tables name="Person">
+    <columns xsi:type="rdb:Key" name="IDN"/>
+    <columns name="name" type="STRING"/>
+  </tables>
+  <tables name="CarTypeRelation">
+    <columns xsi:type="rdb:Key" name="id"/>
+    <columns xsi:type="rdb:ForeignKey" name="name" type="STRING" referencedKey="//@tables.2/@columns.0"/>
+    <columns xsi:type="rdb:ForeignKey" name="plateNumber" type="STRING" referencedKey="//@tables.0/@columns.0"/>
+  </tables>
+  <tables name="PlanesDrivenByPilotsRelation">
+    <columns xsi:type="rdb:Key" name="id"/>
+    <columns xsi:type="rdb:ForeignKey" name="serialNumber" type="STRING" referencedKey="//@tables.3/@columns.0"/>
+    <columns xsi:type="rdb:ForeignKey" name="IDN" referencedKey="//@tables.1/@columns.1"/>
+  </tables>
+  <tables name="CarsDrivenByPeopleRelation">
+    <columns xsi:type="rdb:Key" name="id"/>
+    <columns xsi:type="rdb:ForeignKey" name="IDN" referencedKey="//@tables.5/@columns.0"/>
+    <columns xsi:type="rdb:ForeignKey" name="plateNumber" type="STRING" referencedKey="//@tables.0/@columns.0"/>
+  </tables>
+  <tables name="PlaneTypeRelation">
+    <columns xsi:type="rdb:Key" name="id"/>
+    <columns xsi:type="rdb:ForeignKey" name="name" type="STRING" referencedKey="//@tables.4/@columns.0"/>
+    <columns xsi:type="rdb:ForeignKey" name="serialNumber" type="STRING" referencedKey="//@tables.3/@columns.0"/>
+  </tables>
+</rdb:RelationalDataBase>

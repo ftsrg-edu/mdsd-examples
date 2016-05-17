@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="hu.bme.mit.mdsd.m2m2c.contribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="hu.bme.mit.mdsd.m2m2c.menu1"
+               label="Erdiagram Tools"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="hu.bme.mit.mdsd.m2m2c.ui.GenerateSqlCode"
+               enablesFor="1"
+               id="hu.bme.mit.mdsd.m2m2c.newAction"
+               label="Generate sql code"
+               menubarPath="hu.bme.mit.mdsd.m2m2c.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

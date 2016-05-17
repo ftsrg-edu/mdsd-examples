@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<erdiagram:EntityRelationDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:erdiagram="hu.bme.mit.mdsd.erdiagram" name="DrivenVehiclesRegistry">
+  <entities name="Person" referredBy="//@relations.0/@leftEnding">
+    <attributes name="IDN" isKey="true"/>
+    <attributes name="name" type="STRING"/>
+  </entities>
+  <entities name="Car" referredBy="//@relations.0/@rightEnding //@relations.1/@rightEnding">
+    <attributes name="plateNumber" isKey="true" type="STRING"/>
+    <attributes name="numberOfDoors"/>
+  </entities>
+  <entities name="CarType" referredBy="//@relations.1/@leftEnding">
+    <attributes name="name" isKey="true" type="STRING"/>
+  </entities>
+  <entities name="Pilot" isA="//@entities.0" referredBy="//@relations.2/@rightEnding">
+    <attributes name="Licence" type="STRING"/>
+  </entities>
+  <entities name="Plane" referredBy="//@relations.3/@rightEnding //@relations.2/@leftEnding">
+    <attributes name="serialNumber" isKey="true" type="STRING"/>
+    <attributes name="nick" type="STRING"/>
+  </entities>
+  <entities name="PlaneType" referredBy="//@relations.3/@leftEnding">
+    <attributes name="name" isKey="true" type="STRING"/>
+  </entities>
+  <relations name="carsDrivenByPeople">
+    <leftEnding name="persons" nullable="true" multiplicity="Many" target="//@entities.0"/>
+    <rightEnding name="carsDriven" nullable="true" multiplicity="Many" target="//@entities.1"/>
+  </relations>
+  <relations name="carType">
+    <leftEnding name="type" target="//@entities.2"/>
+    <rightEnding name="cars" nullable="true" multiplicity="Many" target="//@entities.1"/>
+  </relations>
+  <relations name="planesDrivenByPilots">
+    <leftEnding name="planesDriven" nullable="true" multiplicity="Many" target="//@entities.4"/>
+    <rightEnding name="pilots" nullable="true" multiplicity="Many" target="//@entities.3"/>
+  </relations>
+  <relations name="planeType">
+    <leftEnding name="type" target="//@entities.5"/>
+    <rightEnding name="planes" nullable="true" multiplicity="Many" target="//@entities.4"/>
+  </relations>
+</erdiagram:EntityRelationDiagram>
