@@ -1,0 +1,100 @@
+package hu.bme.mit.mdsd.erdiagram.queries
+
+import "hu.bme.mit.mdsd.erdiagram"
+
+pattern entities(e : Entity) {
+	Entity(e);
+}
+
+pattern entityNames(e : Entity, name : java ^java.lang.String) {
+	Entity.name(e, name);
+}
+
+// well-formedness constraint
+// ill-formedness constraint
+
+pattern entityWithEmptyName(e : Entity) {
+	Entity.name(e, "");
+}
+
+@Constraint(
+	key = {e1, e2},
+	message = "Entities have common name: $e1.name$",
+	severity = "error",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID",
+	symmetric = {e1, e2}
+)
+pattern entitiesWithCommonName(e1,e2) {
+	Entity.name(e1, name1);
+	Entity.name(e2, name2);
+	e1 != e2;
+	check(name1.equals(name2));
+}
+
+pattern badEntity(e) {
+	find entityWithEmptyName(e);
+} or {
+	find entitiesWithCommonName(e, _);
+}
+
+pattern wellFormedEntites() {
+	neg find badEntity(_);
+}
+
+pattern relationWithRightEnding(r,re) {
+	Relation.rightEnding(r, re);
+}
+
+pattern relationWithLeftEnding(r,re) {
+	Relation.leftEnding(r, re);
+}
+
+pattern relationWithoutEnding(r : Relation) {
+	neg find relationWithRightEnding(r, _);
+} or {
+	neg find relationWithLeftEnding(r, _);
+}
+
+pattern entityWithAttribute(e, a) {
+	Entity.attributes(e, a);
+}
+
+pattern entityNumberOfAttributes(e : Entity, n : java ^java.lang.Integer) {
+	n == count find entityWithAttribute(e, _);
+}
+
+pattern entityCompare(e1, e2) {
+	Entity.name(e1, name1);
+	Entity.name(e2, name2);
+	e1 != e2;
+	check(name1.compareTo(name2) > 0);
+}
+
+pattern firstEntity(e : Entity) {
+	neg find entityCompare(e, _);
+}
+
+pattern ancestor(e1, e2) {
+	Entity.isA(e1, e2);
+}
+
+pattern allAncestor(e1, e2) {
+	find ancestor+(e1, e2);
+}
+
+@QueryBasedFeature
+pattern otherEnding(re1 : RelationEnding, re2 : RelationEnding) {
+	Relation.leftEnding(r, re1);
+	Relation.rightEnding(r, re2);
+} or {
+	Relation.leftEnding(r, re2);
+	Relation.rightEnding(r, re1);
+}
+
+
+
+
+
+
+
+

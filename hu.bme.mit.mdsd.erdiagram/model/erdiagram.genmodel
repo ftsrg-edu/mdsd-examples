@@ -40,6 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute erdiagram.ecore#//RelationEnding/nullable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute erdiagram.ecore#//RelationEnding/multiplicity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference erdiagram.ecore#//RelationEnding/target"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference erdiagram.ecore#//RelationEnding/otherEnding"/>
     </genClasses>
     <genClasses image="false" ecoreClass="erdiagram.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute erdiagram.ecore#//NamedElement/name"/>

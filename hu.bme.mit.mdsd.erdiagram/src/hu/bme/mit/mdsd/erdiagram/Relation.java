@@ -22,55 +22,55 @@ package hu.bme.mit.mdsd.erdiagram;
  */
 public interface Relation extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Left Ending</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Left Ending</b></em>' containment reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Left Ending</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Left Ending</em>' containment reference.
-	 * @see #setLeftEnding(RelationEnding)
-	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelation_LeftEnding()
-	 * @model containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Left Ending</em>' containment reference.
+     * @see #setLeftEnding(RelationEnding)
+     * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelation_LeftEnding()
+     * @model containment="true"
+     * @generated
+     */
 	RelationEnding getLeftEnding();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.Relation#getLeftEnding <em>Left Ending</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.Relation#getLeftEnding <em>Left Ending</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Left Ending</em>' containment reference.
-	 * @see #getLeftEnding()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Left Ending</em>' containment reference.
+     * @see #getLeftEnding()
+     * @generated
+     */
 	void setLeftEnding(RelationEnding value);
 
 	/**
-	 * Returns the value of the '<em><b>Right Ending</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Right Ending</b></em>' containment reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Right Ending</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Right Ending</em>' containment reference.
-	 * @see #setRightEnding(RelationEnding)
-	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelation_RightEnding()
-	 * @model containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Right Ending</em>' containment reference.
+     * @see #setRightEnding(RelationEnding)
+     * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelation_RightEnding()
+     * @model containment="true"
+     * @generated
+     */
 	RelationEnding getRightEnding();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.Relation#getRightEnding <em>Right Ending</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.Relation#getRightEnding <em>Right Ending</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Right Ending</em>' containment reference.
-	 * @see #getRightEnding()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Right Ending</em>' containment reference.
+     * @see #getRightEnding()
+     * @generated
+     */
 	void setRightEnding(RelationEnding value);
 
 } // Relation

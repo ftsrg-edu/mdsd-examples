@@ -21,6 +21,8 @@
   <entities name="PlaneType" referredBy="//@relations.3/@leftEnding">
     <attributes name="name" isKey="true" type="STRING"/>
   </entities>
+  <entities name="A" isA="//@entities.3"/>
+  <entities name="A" isA="//@entities.6"/>
   <relations name="carsDrivenByPeople">
     <leftEnding name="persons" nullable="true" multiplicity="Many" target="//@entities.0"/>
     <rightEnding name="carsDriven" nullable="true" multiplicity="Many" target="//@entities.1"/>

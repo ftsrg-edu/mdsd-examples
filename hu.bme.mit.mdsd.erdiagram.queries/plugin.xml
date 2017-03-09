@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="extension.derived.hu.bme.mit.mdsd.erdiagram.queries.otherEnding" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="RelationEnding" feature-name="otherEnding" package-nsUri="hu.bme.mit.mdsd.erdiagram"/>
+  </extension>
+  <extension id="hu.bme.mit.mdsd.erdiagram.queries.Queries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.Queries" id="hu.bme.mit.mdsd.erdiagram.queries.Queries">
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entities"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityNames"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityWithEmptyName"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entitiesWithCommonName"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.badEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.wellFormedEntites"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithRightEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithLeftEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithoutEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityWithAttribute"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityNumberOfAttributes"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityCompare"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.firstEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.ancestor"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.allAncestor"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.otherEnding"/>
+    </group>
+  </extension>
+</plugin>

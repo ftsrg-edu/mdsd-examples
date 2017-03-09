@@ -38,201 +38,201 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EntityImpl extends NamedElementImpl implements Entity {
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAttributes()
+     * @generated
+     * @ordered
+     */
 	protected EList<Attribute> attributes;
 
 	/**
-	 * The cached value of the '{@link #getIsA() <em>Is A</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getIsA() <em>Is A</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIsA()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getIsA()
+     * @generated
+     * @ordered
+     */
 	protected EList<Entity> isA;
 
 	/**
-	 * The cached value of the '{@link #getReferredBy() <em>Referred By</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getReferredBy() <em>Referred By</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReferredBy()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getReferredBy()
+     * @generated
+     * @ordered
+     */
 	protected EList<RelationEnding> referredBy;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected EntityImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ErdiagramPackage.Literals.ENTITY;
-	}
+        return ErdiagramPackage.Literals.ENTITY;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, ErdiagramPackage.ENTITY__ATTRIBUTES);
-		}
-		return attributes;
-	}
+        if (attributes == null) {
+            attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, ErdiagramPackage.ENTITY__ATTRIBUTES);
+        }
+        return attributes;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Entity> getIsA() {
-		if (isA == null) {
-			isA = new EObjectResolvingEList<Entity>(Entity.class, this, ErdiagramPackage.ENTITY__IS_A);
-		}
-		return isA;
-	}
+        if (isA == null) {
+            isA = new EObjectResolvingEList<Entity>(Entity.class, this, ErdiagramPackage.ENTITY__IS_A);
+        }
+        return isA;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<RelationEnding> getReferredBy() {
-		if (referredBy == null) {
-			referredBy = new EObjectWithInverseResolvingEList<RelationEnding>(RelationEnding.class, this, ErdiagramPackage.ENTITY__REFERRED_BY, ErdiagramPackage.RELATION_ENDING__TARGET);
-		}
-		return referredBy;
-	}
+        if (referredBy == null) {
+            referredBy = new EObjectWithInverseResolvingEList<RelationEnding>(RelationEnding.class, this, ErdiagramPackage.ENTITY__REFERRED_BY, ErdiagramPackage.RELATION_ENDING__TARGET);
+        }
+        return referredBy;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBy()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBy()).basicAdd(otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				return ((InternalEList<?>)getReferredBy()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__ATTRIBUTES:
+                return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                return ((InternalEList<?>)getReferredBy()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__ATTRIBUTES:
-				return getAttributes();
-			case ErdiagramPackage.ENTITY__IS_A:
-				return getIsA();
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				return getReferredBy();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__ATTRIBUTES:
+                return getAttributes();
+            case ErdiagramPackage.ENTITY__IS_A:
+                return getIsA();
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                return getReferredBy();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
-				return;
-			case ErdiagramPackage.ENTITY__IS_A:
-				getIsA().clear();
-				getIsA().addAll((Collection<? extends Entity>)newValue);
-				return;
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				getReferredBy().clear();
-				getReferredBy().addAll((Collection<? extends RelationEnding>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__ATTRIBUTES:
+                getAttributes().clear();
+                getAttributes().addAll((Collection<? extends Attribute>)newValue);
+                return;
+            case ErdiagramPackage.ENTITY__IS_A:
+                getIsA().clear();
+                getIsA().addAll((Collection<? extends Entity>)newValue);
+                return;
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                getReferredBy().clear();
+                getReferredBy().addAll((Collection<? extends RelationEnding>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__ATTRIBUTES:
-				getAttributes().clear();
-				return;
-			case ErdiagramPackage.ENTITY__IS_A:
-				getIsA().clear();
-				return;
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				getReferredBy().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__ATTRIBUTES:
+                getAttributes().clear();
+                return;
+            case ErdiagramPackage.ENTITY__IS_A:
+                getIsA().clear();
+                return;
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                getReferredBy().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ErdiagramPackage.ENTITY__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
-			case ErdiagramPackage.ENTITY__IS_A:
-				return isA != null && !isA.isEmpty();
-			case ErdiagramPackage.ENTITY__REFERRED_BY:
-				return referredBy != null && !referredBy.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ErdiagramPackage.ENTITY__ATTRIBUTES:
+                return attributes != null && !attributes.isEmpty();
+            case ErdiagramPackage.ENTITY__IS_A:
+                return isA != null && !isA.isEmpty();
+            case ErdiagramPackage.ENTITY__REFERRED_BY:
+                return referredBy != null && !referredBy.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //EntityImpl
