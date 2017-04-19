@@ -1,3 +1,6 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.Entity;
@@ -7,21 +10,20 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.mdsd.erdiagram.queries.attributeCount pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link AttributeCountMatch}.
  * 
@@ -41,58 +43,48 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class AttributeCountMatcher extends BaseMatcher<AttributeCountMatch> {
   /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static AttributeCountMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static AttributeCountMatcher on(final ViatraQueryEngine engine) throws ViatraQueryException {
     // check if matcher already exists
     AttributeCountMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new AttributeCountMatcher(engine);
-    	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
+    	matcher = (AttributeCountMatcher)engine.getMatcher(querySpecification());
     }
     return matcher;
+  }
+  
+  /**
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
+   * @return an initialized matcher
+   * @noreference This method is for internal matcher initialization by the framework, do not call it manually.
+   * 
+   */
+  public static AttributeCountMatcher create() throws ViatraQueryException {
+    return new AttributeCountMatcher();
   }
   
   private final static int POSITION_E = 0;
   
   private final static int POSITION_N = 1;
   
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(AttributeCountMatcher.class);
+  private final static Logger LOGGER = ViatraQueryLoggingUtil.getLogger(AttributeCountMatcher.class);
   
   /**
-   * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
-   * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
-   * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
-   * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
-   * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
-   * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
-   * 
-   */
-  @Deprecated
-  public AttributeCountMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
-  }
-  
-  /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  @Deprecated
-  public AttributeCountMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, querySpecification());
+  private AttributeCountMatcher() throws ViatraQueryException {
+    super(querySpecification());
   }
   
   /**
@@ -263,7 +255,7 @@ public class AttributeCountMatcher extends BaseMatcher<AttributeCountMatch> {
   @Override
   protected AttributeCountMatch tupleToMatch(final Tuple t) {
     try {
-    	return AttributeCountMatch.newMatch((hu.bme.mit.mdsd.erdiagram.Entity) t.get(POSITION_E), (java.lang.Integer) t.get(POSITION_N));
+    	return AttributeCountMatch.newMatch((Entity) t.get(POSITION_E), (Integer) t.get(POSITION_N));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -273,7 +265,7 @@ public class AttributeCountMatcher extends BaseMatcher<AttributeCountMatch> {
   @Override
   protected AttributeCountMatch arrayToMatch(final Object[] match) {
     try {
-    	return AttributeCountMatch.newMatch((hu.bme.mit.mdsd.erdiagram.Entity) match[POSITION_E], (java.lang.Integer) match[POSITION_N]);
+    	return AttributeCountMatch.newMatch((Entity) match[POSITION_E], (Integer) match[POSITION_N]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -283,7 +275,7 @@ public class AttributeCountMatcher extends BaseMatcher<AttributeCountMatch> {
   @Override
   protected AttributeCountMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return AttributeCountMatch.newMutableMatch((hu.bme.mit.mdsd.erdiagram.Entity) match[POSITION_E], (java.lang.Integer) match[POSITION_N]);
+    	return AttributeCountMatch.newMutableMatch((Entity) match[POSITION_E], (Integer) match[POSITION_N]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -292,10 +284,10 @@ public class AttributeCountMatcher extends BaseMatcher<AttributeCountMatch> {
   
   /**
    * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
+   * @throws ViatraQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<AttributeCountMatcher> querySpecification() throws IncQueryException {
+  public static IQuerySpecification<AttributeCountMatcher> querySpecification() throws ViatraQueryException {
     return AttributeCountQuerySpecification.instance();
   }
 }

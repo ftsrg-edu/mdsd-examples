@@ -1,12 +1,15 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.Entity;
 import hu.bme.mit.mdsd.erdiagram.queries.util.DiamondInTypeHierarchyQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.mdsd.erdiagram.queries.diamondInTypeHierarchy pattern,
@@ -69,19 +72,19 @@ public abstract class DiamondInTypeHierarchyMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("entity1".equals(parameterName) ) {
-    	this.fEntity1 = (hu.bme.mit.mdsd.erdiagram.Entity) newValue;
+    	this.fEntity1 = (Entity) newValue;
     	return true;
     }
     if ("entity2".equals(parameterName) ) {
-    	this.fEntity2 = (hu.bme.mit.mdsd.erdiagram.Entity) newValue;
+    	this.fEntity2 = (Entity) newValue;
     	return true;
     }
     if ("entity3".equals(parameterName) ) {
-    	this.fEntity3 = (hu.bme.mit.mdsd.erdiagram.Entity) newValue;
+    	this.fEntity3 = (Entity) newValue;
     	return true;
     }
     if ("entity4".equals(parameterName) ) {
-    	this.fEntity4 = (hu.bme.mit.mdsd.erdiagram.Entity) newValue;
+    	this.fEntity4 = (Entity) newValue;
     	return true;
     }
     return false;
@@ -184,7 +187,7 @@ public abstract class DiamondInTypeHierarchyMatch extends BasePatternMatch {
   public DiamondInTypeHierarchyQuerySpecification specification() {
     try {
     	return DiamondInTypeHierarchyQuerySpecification.instance();
-    } catch (IncQueryException ex) {
+    } catch (ViatraQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
     }

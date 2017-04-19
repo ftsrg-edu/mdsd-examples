@@ -1,12 +1,15 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
-import hu.bme.mit.mdsd.erdiagram.NamedElement;
+import hu.bme.mit.mdsd.erdiagram.Entity;
 import hu.bme.mit.mdsd.erdiagram.queries.util.BadEntityQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.mdsd.erdiagram.queries.badEntity pattern,
@@ -23,11 +26,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  */
 @SuppressWarnings("all")
 public abstract class BadEntityMatch extends BasePatternMatch {
-  private NamedElement fEntity;
+  private Entity fEntity;
   
   private static List<String> parameterNames = makeImmutableList("entity");
   
-  private BadEntityMatch(final NamedElement pEntity) {
+  private BadEntityMatch(final Entity pEntity) {
     this.fEntity = pEntity;
   }
   
@@ -37,7 +40,7 @@ public abstract class BadEntityMatch extends BasePatternMatch {
     return null;
   }
   
-  public NamedElement getEntity() {
+  public Entity getEntity() {
     return this.fEntity;
   }
   
@@ -45,13 +48,13 @@ public abstract class BadEntityMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("entity".equals(parameterName) ) {
-    	this.fEntity = (hu.bme.mit.mdsd.erdiagram.NamedElement) newValue;
+    	this.fEntity = (Entity) newValue;
     	return true;
     }
     return false;
   }
   
-  public void setEntity(final NamedElement pEntity) {
+  public void setEntity(final Entity pEntity) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fEntity = pEntity;
   }
@@ -118,7 +121,7 @@ public abstract class BadEntityMatch extends BasePatternMatch {
   public BadEntityQuerySpecification specification() {
     try {
     	return BadEntityQuerySpecification.instance();
-    } catch (IncQueryException ex) {
+    } catch (ViatraQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
     }
@@ -143,7 +146,7 @@ public abstract class BadEntityMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static BadEntityMatch newMutableMatch(final NamedElement pEntity) {
+  public static BadEntityMatch newMutableMatch(final Entity pEntity) {
     return new Mutable(pEntity);
   }
   
@@ -155,12 +158,12 @@ public abstract class BadEntityMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static BadEntityMatch newMatch(final NamedElement pEntity) {
+  public static BadEntityMatch newMatch(final Entity pEntity) {
     return new Immutable(pEntity);
   }
   
   private static final class Mutable extends BadEntityMatch {
-    Mutable(final NamedElement pEntity) {
+    Mutable(final Entity pEntity) {
       super(pEntity);
     }
     
@@ -171,7 +174,7 @@ public abstract class BadEntityMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends BadEntityMatch {
-    Immutable(final NamedElement pEntity) {
+    Immutable(final Entity pEntity) {
       super(pEntity);
     }
     

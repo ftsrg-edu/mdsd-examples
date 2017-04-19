@@ -1,27 +1,29 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
-import hu.bme.mit.mdsd.erdiagram.NamedElement;
+import hu.bme.mit.mdsd.erdiagram.Entity;
 import hu.bme.mit.mdsd.erdiagram.queries.BadEntityMatch;
 import hu.bme.mit.mdsd.erdiagram.queries.util.BadEntityQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.mdsd.erdiagram.queries.badEntity pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link BadEntityMatch}.
  * 
@@ -44,56 +46,46 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
   /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static BadEntityMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static BadEntityMatcher on(final ViatraQueryEngine engine) throws ViatraQueryException {
     // check if matcher already exists
     BadEntityMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new BadEntityMatcher(engine);
-    	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
+    	matcher = (BadEntityMatcher)engine.getMatcher(querySpecification());
     }
     return matcher;
   }
   
-  private final static int POSITION_ENTITY = 0;
-  
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(BadEntityMatcher.class);
-  
   /**
-   * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
-   * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
-   * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
-   * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
-   * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
-   * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
+   * @return an initialized matcher
+   * @noreference This method is for internal matcher initialization by the framework, do not call it manually.
    * 
    */
-  @Deprecated
-  public BadEntityMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
+  public static BadEntityMatcher create() throws ViatraQueryException {
+    return new BadEntityMatcher();
   }
   
+  private final static int POSITION_ENTITY = 0;
+  
+  private final static Logger LOGGER = ViatraQueryLoggingUtil.getLogger(BadEntityMatcher.class);
+  
   /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  @Deprecated
-  public BadEntityMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, querySpecification());
+  private BadEntityMatcher() throws ViatraQueryException {
+    super(querySpecification());
   }
   
   /**
@@ -102,7 +94,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return matches represented as a BadEntityMatch object.
    * 
    */
-  public Collection<BadEntityMatch> getAllMatches(final NamedElement pEntity) {
+  public Collection<BadEntityMatch> getAllMatches(final Entity pEntity) {
     return rawGetAllMatches(new Object[]{pEntity});
   }
   
@@ -113,7 +105,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return a match represented as a BadEntityMatch object, or null if no match is found.
    * 
    */
-  public BadEntityMatch getOneArbitraryMatch(final NamedElement pEntity) {
+  public BadEntityMatch getOneArbitraryMatch(final Entity pEntity) {
     return rawGetOneArbitraryMatch(new Object[]{pEntity});
   }
   
@@ -124,7 +116,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final NamedElement pEntity) {
+  public boolean hasMatch(final Entity pEntity) {
     return rawHasMatch(new Object[]{pEntity});
   }
   
@@ -134,7 +126,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final NamedElement pEntity) {
+  public int countMatches(final Entity pEntity) {
     return rawCountMatches(new Object[]{pEntity});
   }
   
@@ -144,7 +136,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final NamedElement pEntity, final IMatchProcessor<? super BadEntityMatch> processor) {
+  public void forEachMatch(final Entity pEntity, final IMatchProcessor<? super BadEntityMatch> processor) {
     rawForEachMatch(new Object[]{pEntity}, processor);
   }
   
@@ -156,7 +148,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final NamedElement pEntity, final IMatchProcessor<? super BadEntityMatch> processor) {
+  public boolean forOneArbitraryMatch(final Entity pEntity, final IMatchProcessor<? super BadEntityMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pEntity}, processor);
   }
   
@@ -168,7 +160,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return the (partial) match object.
    * 
    */
-  public BadEntityMatch newMatch(final NamedElement pEntity) {
+  public BadEntityMatch newMatch(final Entity pEntity) {
     return BadEntityMatch.newMatch(pEntity);
   }
   
@@ -177,8 +169,8 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<NamedElement> rawAccumulateAllValuesOfentity(final Object[] parameters) {
-    Set<NamedElement> results = new HashSet<NamedElement>();
+  protected Set<Entity> rawAccumulateAllValuesOfentity(final Object[] parameters) {
+    Set<Entity> results = new HashSet<Entity>();
     rawAccumulateAllValues(POSITION_ENTITY, parameters, results);
     return results;
   }
@@ -188,14 +180,14 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<NamedElement> getAllValuesOfentity() {
+  public Set<Entity> getAllValuesOfentity() {
     return rawAccumulateAllValuesOfentity(emptyArray());
   }
   
   @Override
   protected BadEntityMatch tupleToMatch(final Tuple t) {
     try {
-    	return BadEntityMatch.newMatch((hu.bme.mit.mdsd.erdiagram.NamedElement) t.get(POSITION_ENTITY));
+    	return BadEntityMatch.newMatch((Entity) t.get(POSITION_ENTITY));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -205,7 +197,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
   @Override
   protected BadEntityMatch arrayToMatch(final Object[] match) {
     try {
-    	return BadEntityMatch.newMatch((hu.bme.mit.mdsd.erdiagram.NamedElement) match[POSITION_ENTITY]);
+    	return BadEntityMatch.newMatch((Entity) match[POSITION_ENTITY]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -215,7 +207,7 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
   @Override
   protected BadEntityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return BadEntityMatch.newMutableMatch((hu.bme.mit.mdsd.erdiagram.NamedElement) match[POSITION_ENTITY]);
+    	return BadEntityMatch.newMutableMatch((Entity) match[POSITION_ENTITY]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -224,10 +216,10 @@ public class BadEntityMatcher extends BaseMatcher<BadEntityMatch> {
   
   /**
    * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
+   * @throws ViatraQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<BadEntityMatcher> querySpecification() throws IncQueryException {
+  public static IQuerySpecification<BadEntityMatcher> querySpecification() throws ViatraQueryException {
     return BadEntityQuerySpecification.instance();
   }
 }

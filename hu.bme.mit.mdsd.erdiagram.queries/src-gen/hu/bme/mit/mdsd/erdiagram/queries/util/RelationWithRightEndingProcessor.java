@@ -1,9 +1,12 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries.util;
 
 import hu.bme.mit.mdsd.erdiagram.Relation;
 import hu.bme.mit.mdsd.erdiagram.RelationEnding;
 import hu.bme.mit.mdsd.erdiagram.queries.RelationWithRightEndingMatch;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the hu.bme.mit.mdsd.erdiagram.queries.relationWithRightEnding pattern.

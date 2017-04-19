@@ -1,3 +1,6 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.Attribute;
@@ -5,9 +8,9 @@ import hu.bme.mit.mdsd.erdiagram.Entity;
 import hu.bme.mit.mdsd.erdiagram.queries.util.AttributeWithInheirtanceQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.mdsd.erdiagram.queries.attributeWithInheirtance pattern,
@@ -54,11 +57,11 @@ public abstract class AttributeWithInheirtanceMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("entity".equals(parameterName) ) {
-    	this.fEntity = (hu.bme.mit.mdsd.erdiagram.Entity) newValue;
+    	this.fEntity = (Entity) newValue;
     	return true;
     }
     if ("attribute".equals(parameterName) ) {
-    	this.fAttribute = (hu.bme.mit.mdsd.erdiagram.Attribute) newValue;
+    	this.fAttribute = (Attribute) newValue;
     	return true;
     }
     return false;
@@ -141,7 +144,7 @@ public abstract class AttributeWithInheirtanceMatch extends BasePatternMatch {
   public AttributeWithInheirtanceQuerySpecification specification() {
     try {
     	return AttributeWithInheirtanceQuerySpecification.instance();
-    } catch (IncQueryException ex) {
+    } catch (ViatraQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
     }

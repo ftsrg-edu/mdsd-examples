@@ -1,3 +1,6 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries.util;
 
 import com.google.common.collect.Sets;
@@ -7,23 +10,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
-import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
-import org.eclipse.incquery.runtime.emf.types.EStructuralFeatureInstancesKey;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
-import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.viatra.query.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.viatra.query.runtime.emf.types.EStructuralFeatureInstancesKey;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.backend.IQueryBackendFactory;
+import org.eclipse.viatra.query.runtime.matchers.backend.QueryEvaluationHint;
+import org.eclipse.viatra.query.runtime.matchers.context.IInputKey;
+import org.eclipse.viatra.query.runtime.matchers.psystem.IExpressionEvaluator;
+import org.eclipse.viatra.query.runtime.matchers.psystem.IValueProvider;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.Equality;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameterDirection;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 
 /**
  * A pattern-specific query specification that can instantiate EmptyNamedElementMatcher in a type-safe way.
@@ -40,10 +47,10 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
   
   /**
    * @return the singleton instance of the query specification
-   * @throws IncQueryException if the pattern definition could not be loaded
+   * @throws ViatraQueryException if the pattern definition could not be loaded
    * 
    */
-  public static EmptyNamedElementQuerySpecification instance() throws IncQueryException {
+  public static EmptyNamedElementQuerySpecification instance() throws ViatraQueryException {
     try{
     	return LazyHolder.INSTANCE;
     } catch (ExceptionInInitializerError err) {
@@ -52,8 +59,13 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
   }
   
   @Override
-  protected EmptyNamedElementMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+  protected EmptyNamedElementMatcher instantiate(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EmptyNamedElementMatcher.on(engine);
+  }
+  
+  @Override
+  public EmptyNamedElementMatcher instantiate() throws ViatraQueryException {
+    return EmptyNamedElementMatcher.create();
   }
   
   @Override
@@ -66,16 +78,38 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
     return EmptyNamedElementMatch.newMatch((hu.bme.mit.mdsd.erdiagram.NamedElement) parameters[0]);
   }
   
+  /**
+   * Inner class allowing the singleton instance of {@link EmptyNamedElementQuerySpecification} to be created 
+   * 	<b>not</b> at the class load time of the outer class, 
+   * 	but rather at the first call to {@link EmptyNamedElementQuerySpecification#instance()}.
+   * 
+   * <p> This workaround is required e.g. to support recursion.
+   * 
+   */
   private static class LazyHolder {
-    private final static EmptyNamedElementQuerySpecification INSTANCE = make();
+    private final static EmptyNamedElementQuerySpecification INSTANCE = new EmptyNamedElementQuerySpecification();
     
-    public static EmptyNamedElementQuerySpecification make() {
-      return new EmptyNamedElementQuerySpecification();					
+    /**
+     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
+     * This initialization order is required to support indirect recursion.
+     * 
+     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
+     * 
+     */
+    private final static Object STATIC_INITIALIZER = ensureInitialized();
+    
+    public static Object ensureInitialized() {
+      INSTANCE.ensureInitializedInternalSneaky();
+      return null;
     }
   }
   
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
     private final static EmptyNamedElementQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
+    
+    private final PParameter parameter_pNamedElement = new PParameter("namedElement", "hu.bme.mit.mdsd.erdiagram.NamedElement", (IInputKey)null, PParameterDirection.INOUT);
+    
+    private final List<PParameter> parameters = Arrays.asList(parameter_pNamedElement);
     
     @Override
     public String getFullyQualifiedName() {
@@ -89,11 +123,12 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("namedElement", "hu.bme.mit.mdsd.erdiagram.NamedElement"));
+      return parameters;
     }
     
     @Override
     public Set<PBody> doGetContainedBodies() throws QueryInitializationException {
+      setEvaluationHints(new QueryEvaluationHint(null, (IQueryBackendFactory)null));
       Set<PBody> bodies = Sets.newLinkedHashSet();
       try {
       	{
@@ -101,7 +136,7 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
       		PVariable var_namedElement = body.getOrCreateVariableByName("namedElement");
       		PVariable var_name = body.getOrCreateVariableByName("name");
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-      		   new ExportedParameter(body, var_namedElement, "namedElement")
+      		   new ExportedParameter(body, var_namedElement, parameter_pNamedElement)
       		));
       		// 	NamedElement.name(namedElement, name)
       		new TypeConstraint(body, new FlatTuple(var_namedElement), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("hu.bme.mit.mdsd.erdiagram", "NamedElement")));
@@ -110,29 +145,27 @@ public final class EmptyNamedElementQuerySpecification extends BaseGeneratedEMFQ
       		new Equality(body, var__virtual_0_, var_name);
       		// 	check(name.isEmpty())
       		new ExpressionEvaluation(body, new IExpressionEvaluator() {
-      		                            
-      		                            @Override
-      		                            public String getShortDescription() {
-      		                                return "Expression evaluation from pattern emptyNamedElement";
-      		                            }
       		
-      		                            @Override
-      		                            public Iterable<String> getInputParameterNames() {
-      		                                return Arrays.asList("name");
-      		                            }
+      		    @Override
+      		    public String getShortDescription() {
+      		        return "Expression evaluation from pattern emptyNamedElement";
+      		    }
+      		    
+      		    @Override
+      		    public Iterable<String> getInputParameterNames() {
+      		        return Arrays.asList("name");}
       		
-      		                            @Override
-      		                            public Object evaluateExpression(IValueProvider provider) throws Exception {
-      		                                    java.lang.String name = (java.lang.String) provider.getValue("name");
-      		                                    return evaluateExpression_1_1(name);
-      		                                }
-      		
-      		                        },  null); 
+      		    @Override
+      		    public Object evaluateExpression(IValueProvider provider) throws Exception {
+      		        String name = (String) provider.getValue("name");
+      		        return evaluateExpression_1_1(name);
+      		    }
+      		},  null); 
       		bodies.add(body);
       	}
       	// to silence compiler error
-      	if (false) throw new IncQueryException("Never", "happens");
-      } catch (IncQueryException ex) {
+      	if (false) throw new ViatraQueryException("Never", "happens");
+      } catch (ViatraQueryException ex) {
       	throw processDependencyException(ex);
       }
       return bodies;

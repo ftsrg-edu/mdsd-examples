@@ -1,3 +1,6 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.queries.AllSuperEntityMatcher;
@@ -46,15 +49,15 @@ import hu.bme.mit.mdsd.erdiagram.queries.util.SameNamedEntitiesQuerySpecificatio
 import hu.bme.mit.mdsd.erdiagram.queries.util.SuperEntityQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.WellFormedEntitesQuerySpecification;
 import hu.bme.mit.mdsd.erdiagram.queries.util.WellFormedRelationQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedPatternGroup;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
 
 /**
- * A pattern group formed of all patterns defined in queries.eiq.
+ * A pattern group formed of all patterns defined in queries.vql.
  * 
- * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare
- * an EMF-IncQuery engine for matching all patterns originally defined in file queries.eiq,
+ * <p>Use the static instance as any {@link org.eclipse.viatra.query.runtime.api.IPatternGroup}, to conveniently prepare
+ * a VIATRA Query engine for matching all patterns originally defined in file queries.vql,
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
  * <p> From package hu.bme.mit.mdsd.erdiagram.queries, the group contains the definition of the following patterns: <ul>
@@ -92,10 +95,10 @@ public final class Queries extends BaseGeneratedPatternGroup {
    * Access the pattern group.
    * 
    * @return the singleton instance of the group
-   * @throws IncQueryException if there was an error loading the generated code of pattern specifications
+   * @throws ViatraQueryException if there was an error loading the generated code of pattern specifications
    * 
    */
-  public static Queries instance() throws IncQueryException {
+  public static Queries instance() throws ViatraQueryException {
     if (INSTANCE == null) {
     	INSTANCE = new Queries();
     }
@@ -104,7 +107,7 @@ public final class Queries extends BaseGeneratedPatternGroup {
   
   private static Queries INSTANCE;
   
-  private Queries() throws IncQueryException {
+  private Queries() throws ViatraQueryException {
     querySpecifications.add(EntityQuerySpecification.instance());
     querySpecifications.add(RelationQuerySpecification.instance());
     querySpecifications.add(EntityNameQuerySpecification.instance());
@@ -130,187 +133,187 @@ public final class Queries extends BaseGeneratedPatternGroup {
     querySpecifications.add(RelationWithInheirtanceQuerySpecification.instance());
   }
   
-  public EntityQuerySpecification getEntity() throws IncQueryException {
+  public EntityQuerySpecification getEntity() throws ViatraQueryException {
     return EntityQuerySpecification.instance();
   }
   
-  public EntityMatcher getEntity(final IncQueryEngine engine) throws IncQueryException {
+  public EntityMatcher getEntity(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EntityMatcher.on(engine);
   }
   
-  public RelationQuerySpecification getRelation() throws IncQueryException {
+  public RelationQuerySpecification getRelation() throws ViatraQueryException {
     return RelationQuerySpecification.instance();
   }
   
-  public RelationMatcher getRelation(final IncQueryEngine engine) throws IncQueryException {
+  public RelationMatcher getRelation(final ViatraQueryEngine engine) throws ViatraQueryException {
     return RelationMatcher.on(engine);
   }
   
-  public EntityNameQuerySpecification getEntityName() throws IncQueryException {
+  public EntityNameQuerySpecification getEntityName() throws ViatraQueryException {
     return EntityNameQuerySpecification.instance();
   }
   
-  public EntityNameMatcher getEntityName(final IncQueryEngine engine) throws IncQueryException {
+  public EntityNameMatcher getEntityName(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EntityNameMatcher.on(engine);
   }
   
-  public EmptyNamedElementQuerySpecification getEmptyNamedElement() throws IncQueryException {
+  public EmptyNamedElementQuerySpecification getEmptyNamedElement() throws ViatraQueryException {
     return EmptyNamedElementQuerySpecification.instance();
   }
   
-  public EmptyNamedElementMatcher getEmptyNamedElement(final IncQueryEngine engine) throws IncQueryException {
+  public EmptyNamedElementMatcher getEmptyNamedElement(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EmptyNamedElementMatcher.on(engine);
   }
   
-  public EntityStartsWithSmallCaseQuerySpecification getEntityStartsWithSmallCase() throws IncQueryException {
+  public EntityStartsWithSmallCaseQuerySpecification getEntityStartsWithSmallCase() throws ViatraQueryException {
     return EntityStartsWithSmallCaseQuerySpecification.instance();
   }
   
-  public EntityStartsWithSmallCaseMatcher getEntityStartsWithSmallCase(final IncQueryEngine engine) throws IncQueryException {
+  public EntityStartsWithSmallCaseMatcher getEntityStartsWithSmallCase(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EntityStartsWithSmallCaseMatcher.on(engine);
   }
   
-  public SameNamedEntitiesQuerySpecification getSameNamedEntities() throws IncQueryException {
+  public SameNamedEntitiesQuerySpecification getSameNamedEntities() throws ViatraQueryException {
     return SameNamedEntitiesQuerySpecification.instance();
   }
   
-  public SameNamedEntitiesMatcher getSameNamedEntities(final IncQueryEngine engine) throws IncQueryException {
+  public SameNamedEntitiesMatcher getSameNamedEntities(final ViatraQueryEngine engine) throws ViatraQueryException {
     return SameNamedEntitiesMatcher.on(engine);
   }
   
-  public BadEntityQuerySpecification getBadEntity() throws IncQueryException {
+  public BadEntityQuerySpecification getBadEntity() throws ViatraQueryException {
     return BadEntityQuerySpecification.instance();
   }
   
-  public BadEntityMatcher getBadEntity(final IncQueryEngine engine) throws IncQueryException {
+  public BadEntityMatcher getBadEntity(final ViatraQueryEngine engine) throws ViatraQueryException {
     return BadEntityMatcher.on(engine);
   }
   
-  public WellFormedEntitesQuerySpecification getWellFormedEntites() throws IncQueryException {
+  public WellFormedEntitesQuerySpecification getWellFormedEntites() throws ViatraQueryException {
     return WellFormedEntitesQuerySpecification.instance();
   }
   
-  public WellFormedEntitesMatcher getWellFormedEntites(final IncQueryEngine engine) throws IncQueryException {
+  public WellFormedEntitesMatcher getWellFormedEntites(final ViatraQueryEngine engine) throws ViatraQueryException {
     return WellFormedEntitesMatcher.on(engine);
   }
   
-  public RelationWithLeftEndingQuerySpecification getRelationWithLeftEnding() throws IncQueryException {
+  public RelationWithLeftEndingQuerySpecification getRelationWithLeftEnding() throws ViatraQueryException {
     return RelationWithLeftEndingQuerySpecification.instance();
   }
   
-  public RelationWithLeftEndingMatcher getRelationWithLeftEnding(final IncQueryEngine engine) throws IncQueryException {
+  public RelationWithLeftEndingMatcher getRelationWithLeftEnding(final ViatraQueryEngine engine) throws ViatraQueryException {
     return RelationWithLeftEndingMatcher.on(engine);
   }
   
-  public RelationWithRightEndingQuerySpecification getRelationWithRightEnding() throws IncQueryException {
+  public RelationWithRightEndingQuerySpecification getRelationWithRightEnding() throws ViatraQueryException {
     return RelationWithRightEndingQuerySpecification.instance();
   }
   
-  public RelationWithRightEndingMatcher getRelationWithRightEnding(final IncQueryEngine engine) throws IncQueryException {
+  public RelationWithRightEndingMatcher getRelationWithRightEnding(final ViatraQueryEngine engine) throws ViatraQueryException {
     return RelationWithRightEndingMatcher.on(engine);
   }
   
-  public RelationWithoutEndingQuerySpecification getRelationWithoutEnding() throws IncQueryException {
+  public RelationWithoutEndingQuerySpecification getRelationWithoutEnding() throws ViatraQueryException {
     return RelationWithoutEndingQuerySpecification.instance();
   }
   
-  public RelationWithoutEndingMatcher getRelationWithoutEnding(final IncQueryEngine engine) throws IncQueryException {
+  public RelationWithoutEndingMatcher getRelationWithoutEnding(final ViatraQueryEngine engine) throws ViatraQueryException {
     return RelationWithoutEndingMatcher.on(engine);
   }
   
-  public WellFormedRelationQuerySpecification getWellFormedRelation() throws IncQueryException {
+  public WellFormedRelationQuerySpecification getWellFormedRelation() throws ViatraQueryException {
     return WellFormedRelationQuerySpecification.instance();
   }
   
-  public WellFormedRelationMatcher getWellFormedRelation(final IncQueryEngine engine) throws IncQueryException {
+  public WellFormedRelationMatcher getWellFormedRelation(final ViatraQueryEngine engine) throws ViatraQueryException {
     return WellFormedRelationMatcher.on(engine);
   }
   
-  public EntityAttributeQuerySpecification getEntityAttribute() throws IncQueryException {
+  public EntityAttributeQuerySpecification getEntityAttribute() throws ViatraQueryException {
     return EntityAttributeQuerySpecification.instance();
   }
   
-  public EntityAttributeMatcher getEntityAttribute(final IncQueryEngine engine) throws IncQueryException {
+  public EntityAttributeMatcher getEntityAttribute(final ViatraQueryEngine engine) throws ViatraQueryException {
     return EntityAttributeMatcher.on(engine);
   }
   
-  public AttributeCountQuerySpecification getAttributeCount() throws IncQueryException {
+  public AttributeCountQuerySpecification getAttributeCount() throws ViatraQueryException {
     return AttributeCountQuerySpecification.instance();
   }
   
-  public AttributeCountMatcher getAttributeCount(final IncQueryEngine engine) throws IncQueryException {
+  public AttributeCountMatcher getAttributeCount(final ViatraQueryEngine engine) throws ViatraQueryException {
     return AttributeCountMatcher.on(engine);
   }
   
-  public HasBiggerNameQuerySpecification getHasBiggerName() throws IncQueryException {
+  public HasBiggerNameQuerySpecification getHasBiggerName() throws ViatraQueryException {
     return HasBiggerNameQuerySpecification.instance();
   }
   
-  public HasBiggerNameMatcher getHasBiggerName(final IncQueryEngine engine) throws IncQueryException {
+  public HasBiggerNameMatcher getHasBiggerName(final ViatraQueryEngine engine) throws ViatraQueryException {
     return HasBiggerNameMatcher.on(engine);
   }
   
-  public FirtEntityQuerySpecification getFirtEntity() throws IncQueryException {
+  public FirtEntityQuerySpecification getFirtEntity() throws ViatraQueryException {
     return FirtEntityQuerySpecification.instance();
   }
   
-  public FirtEntityMatcher getFirtEntity(final IncQueryEngine engine) throws IncQueryException {
+  public FirtEntityMatcher getFirtEntity(final ViatraQueryEngine engine) throws ViatraQueryException {
     return FirtEntityMatcher.on(engine);
   }
   
-  public SuperEntityQuerySpecification getSuperEntity() throws IncQueryException {
+  public SuperEntityQuerySpecification getSuperEntity() throws ViatraQueryException {
     return SuperEntityQuerySpecification.instance();
   }
   
-  public SuperEntityMatcher getSuperEntity(final IncQueryEngine engine) throws IncQueryException {
+  public SuperEntityMatcher getSuperEntity(final ViatraQueryEngine engine) throws ViatraQueryException {
     return SuperEntityMatcher.on(engine);
   }
   
-  public AllSuperEntityQuerySpecification getAllSuperEntity() throws IncQueryException {
+  public AllSuperEntityQuerySpecification getAllSuperEntity() throws ViatraQueryException {
     return AllSuperEntityQuerySpecification.instance();
   }
   
-  public AllSuperEntityMatcher getAllSuperEntity(final IncQueryEngine engine) throws IncQueryException {
+  public AllSuperEntityMatcher getAllSuperEntity(final ViatraQueryEngine engine) throws ViatraQueryException {
     return AllSuperEntityMatcher.on(engine);
   }
   
-  public OtherEndingQuerySpecification getOtherEnding() throws IncQueryException {
+  public OtherEndingQuerySpecification getOtherEnding() throws ViatraQueryException {
     return OtherEndingQuerySpecification.instance();
   }
   
-  public OtherEndingMatcher getOtherEnding(final IncQueryEngine engine) throws IncQueryException {
+  public OtherEndingMatcher getOtherEnding(final ViatraQueryEngine engine) throws ViatraQueryException {
     return OtherEndingMatcher.on(engine);
   }
   
-  public CircleInTypeHierarchyQuerySpecification getCircleInTypeHierarchy() throws IncQueryException {
+  public CircleInTypeHierarchyQuerySpecification getCircleInTypeHierarchy() throws ViatraQueryException {
     return CircleInTypeHierarchyQuerySpecification.instance();
   }
   
-  public CircleInTypeHierarchyMatcher getCircleInTypeHierarchy(final IncQueryEngine engine) throws IncQueryException {
+  public CircleInTypeHierarchyMatcher getCircleInTypeHierarchy(final ViatraQueryEngine engine) throws ViatraQueryException {
     return CircleInTypeHierarchyMatcher.on(engine);
   }
   
-  public DiamondInTypeHierarchyQuerySpecification getDiamondInTypeHierarchy() throws IncQueryException {
+  public DiamondInTypeHierarchyQuerySpecification getDiamondInTypeHierarchy() throws ViatraQueryException {
     return DiamondInTypeHierarchyQuerySpecification.instance();
   }
   
-  public DiamondInTypeHierarchyMatcher getDiamondInTypeHierarchy(final IncQueryEngine engine) throws IncQueryException {
+  public DiamondInTypeHierarchyMatcher getDiamondInTypeHierarchy(final ViatraQueryEngine engine) throws ViatraQueryException {
     return DiamondInTypeHierarchyMatcher.on(engine);
   }
   
-  public AttributeWithInheirtanceQuerySpecification getAttributeWithInheirtance() throws IncQueryException {
+  public AttributeWithInheirtanceQuerySpecification getAttributeWithInheirtance() throws ViatraQueryException {
     return AttributeWithInheirtanceQuerySpecification.instance();
   }
   
-  public AttributeWithInheirtanceMatcher getAttributeWithInheirtance(final IncQueryEngine engine) throws IncQueryException {
+  public AttributeWithInheirtanceMatcher getAttributeWithInheirtance(final ViatraQueryEngine engine) throws ViatraQueryException {
     return AttributeWithInheirtanceMatcher.on(engine);
   }
   
-  public RelationWithInheirtanceQuerySpecification getRelationWithInheirtance() throws IncQueryException {
+  public RelationWithInheirtanceQuerySpecification getRelationWithInheirtance() throws ViatraQueryException {
     return RelationWithInheirtanceQuerySpecification.instance();
   }
   
-  public RelationWithInheirtanceMatcher getRelationWithInheirtance(final IncQueryEngine engine) throws IncQueryException {
+  public RelationWithInheirtanceMatcher getRelationWithInheirtance(final ViatraQueryEngine engine) throws ViatraQueryException {
     return RelationWithInheirtanceMatcher.on(engine);
   }
 }

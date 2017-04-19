@@ -1,3 +1,6 @@
+/**
+ * Generated from platform:/resource/hu.bme.mit.mdsd.erdiagram.queries/src/hu/bme/mit/mdsd/erdiagram/queries/queries.vql
+ */
 package hu.bme.mit.mdsd.erdiagram.queries;
 
 import hu.bme.mit.mdsd.erdiagram.Relation;
@@ -7,21 +10,20 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.ViatraQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.mdsd.erdiagram.queries.relation pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link RelationMatch}.
  * 
@@ -40,56 +42,46 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class RelationMatcher extends BaseMatcher<RelationMatch> {
   /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static RelationMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static RelationMatcher on(final ViatraQueryEngine engine) throws ViatraQueryException {
     // check if matcher already exists
     RelationMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new RelationMatcher(engine);
-    	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
+    	matcher = (RelationMatcher)engine.getMatcher(querySpecification());
     }
     return matcher;
   }
   
-  private final static int POSITION_R = 0;
-  
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(RelationMatcher.class);
-  
   /**
-   * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
-   * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
-   * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
-   * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
-   * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
-   * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
+   * @return an initialized matcher
+   * @noreference This method is for internal matcher initialization by the framework, do not call it manually.
    * 
    */
-  @Deprecated
-  public RelationMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
+  public static RelationMatcher create() throws ViatraQueryException {
+    return new RelationMatcher();
   }
   
+  private final static int POSITION_R = 0;
+  
+  private final static Logger LOGGER = ViatraQueryLoggingUtil.getLogger(RelationMatcher.class);
+  
   /**
-   * Initializes the pattern matcher within an existing EMF-IncQuery engine.
+   * Initializes the pattern matcher within an existing VIATRA Query engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
-   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
-   * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @param engine the existing VIATRA Query engine in which this matcher will be created.
+   * @throws ViatraQueryException if an error occurs during pattern matcher creation
    * 
    */
-  @Deprecated
-  public RelationMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, querySpecification());
+  private RelationMatcher() throws ViatraQueryException {
+    super(querySpecification());
   }
   
   /**
@@ -191,7 +183,7 @@ public class RelationMatcher extends BaseMatcher<RelationMatch> {
   @Override
   protected RelationMatch tupleToMatch(final Tuple t) {
     try {
-    	return RelationMatch.newMatch((hu.bme.mit.mdsd.erdiagram.Relation) t.get(POSITION_R));
+    	return RelationMatch.newMatch((Relation) t.get(POSITION_R));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -201,7 +193,7 @@ public class RelationMatcher extends BaseMatcher<RelationMatch> {
   @Override
   protected RelationMatch arrayToMatch(final Object[] match) {
     try {
-    	return RelationMatch.newMatch((hu.bme.mit.mdsd.erdiagram.Relation) match[POSITION_R]);
+    	return RelationMatch.newMatch((Relation) match[POSITION_R]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -211,7 +203,7 @@ public class RelationMatcher extends BaseMatcher<RelationMatch> {
   @Override
   protected RelationMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return RelationMatch.newMutableMatch((hu.bme.mit.mdsd.erdiagram.Relation) match[POSITION_R]);
+    	return RelationMatch.newMutableMatch((Relation) match[POSITION_R]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -220,10 +212,10 @@ public class RelationMatcher extends BaseMatcher<RelationMatch> {
   
   /**
    * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
+   * @throws ViatraQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<RelationMatcher> querySpecification() throws IncQueryException {
+  public static IQuerySpecification<RelationMatcher> querySpecification() throws ViatraQueryException {
     return RelationQuerySpecification.instance();
   }
 }

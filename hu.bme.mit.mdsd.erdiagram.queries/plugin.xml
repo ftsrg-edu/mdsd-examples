@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
-  <extension id="hu.bme.mit.mdsd.erdiagram.queries.Queries" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.Queries" id="hu.bme.mit.mdsd.erdiagram.queries.Queries"/>
-  </extension>
-  <extension id="extension.derived.hu.bme.mit.mdsd.erdiagram.queries.otherEnding" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+  <extension id="extension.derived.hu.bme.mit.mdsd.erdiagram.queries.otherEnding" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="RelationEnding" feature-name="otherEnding" package-nsUri="hu.bme.mit.mdsd.erdiagram"/>
+  </extension>
+  <extension id="hu.bme.mit.mdsd.erdiagram.queries.Queries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.Queries" id="hu.bme.mit.mdsd.erdiagram.queries.Queries">
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relation"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityName"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.emptyNamedElement"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityStartsWithSmallCase"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.sameNamedEntities"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.badEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.wellFormedEntites"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithLeftEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithRightEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithoutEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.wellFormedRelation"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityAttribute"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.attributeCount"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.hasBiggerName"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.firtEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.superEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.allSuperEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.otherEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.circleInTypeHierarchy"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.diamondInTypeHierarchy"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.attributeWithInheirtance"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.relationWithInheirtance"/>
+    </group>
   </extension>
 </plugin>
