@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmi:id="_ewHnICloEeiApYP2k_KC7w" version="12.0.0.201704271200">
+  <semanticResources>model/example.er</semanticResources>
+</viewpoint:DAnalysis>
