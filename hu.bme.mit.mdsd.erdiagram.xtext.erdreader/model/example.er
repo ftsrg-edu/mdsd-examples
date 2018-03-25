@@ -1,0 +1,15 @@
+entity Person{
+	name : string key
+	age : int 
+	birthdate : datetime
+} 
+entity Bela isA Person
+entity Dog {
+	color : string  
+}
+entity A
+entity B isA A
+entity C isA B 
+entity Bodri isA Dog
+one Person <-> many nullable Dog
+one Bela <-> one Bodri
