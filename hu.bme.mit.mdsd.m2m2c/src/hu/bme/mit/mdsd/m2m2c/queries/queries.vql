@@ -1,0 +1,87 @@
+package hu.bme.mit.mdsd.m2m2c.queries
+
+import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
+import "hu.bme.mit.mdsd.rdb" as rdb
+
+@Constraint(
+	key = {entity1, entity2},
+	severity = "error",
+	message = "Two entities has the same name $commonName$",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID",
+	symmetric = {entity1, entity2}
+)
+pattern sameNamedEntities(entity1: Entity, entity2: Entity, commonName : java ^java.lang.String) {
+	Entity.name(entity1, commonName);
+	Entity.name(entity2, commonName);
+	entity1 != entity2;
+}
+
+@QueryBasedFeature
+pattern otherEnding(ending : RelationEnding, other : RelationEnding) {
+	Relation.leftEnding(relation, ending);
+	Relation.rightEnding(relation, other);
+} or {
+	Relation.rightEnding(relation, ending);
+	Relation.leftEnding(relation, other);
+}
+
+pattern entityAttribute(e : Entity, attr : Attribute) {
+	Entity.attributes(e, attr);
+}
+
+pattern superEntity(e : Entity, superEntity : Entity) {
+	Entity.isA(e, superEntity);
+}
+
+pattern allSuperEntity(e : Entity, superEntity : Entity) {
+	find superEntity +(e, superEntity);
+}
+
+pattern relationWithLeftEnding(r : Relation, rle : RelationEnding) {
+	Relation.leftEnding(r, rle);
+}
+
+pattern relationWithRightEnding(r : Relation, rre : RelationEnding) {
+	Relation.rightEnding(r, rre);
+}
+
+pattern multiplicity(relationEnding: RelationEnding, multiplicity: MultiplicityType){
+	RelationEnding.multiplicity(relationEnding, multiplicity);
+}
+
+pattern relationTarget(relationEnding: RelationEnding, entity : Entity){
+	RelationEnding.target(relationEnding, entity);
+}
+
+pattern relationLeftWithMany(relation: Relation, 
+	relationEnding: RelationEnding,
+	entity: Entity
+){	
+	find relationWithLeftEnding(relation, relationEnding);
+	find multiplicity(relationEnding, MultiplicityType::Many);
+	find relationTarget(relationEnding, entity);
+}
+
+pattern relationRightWithMany(relation: Relation, 
+	relationEnding: RelationEnding,
+	entity: Entity
+){	
+	find relationWithRightEnding(relation, relationEnding);
+	find multiplicity(relationEnding, MultiplicityType::Many);
+	find relationTarget(relationEnding, entity);
+}
+
+pattern relation(relation: Relation, 
+	relationEndingLeft: RelationEnding, 
+	relationEndingRight: RelationEnding,
+	entityLeft: Entity,
+	entityRight: Entity,
+	tableLeft: Table,
+	tableRight: Table
+){
+	find relationLeftWithMany(relation, relationEndingLeft, entityLeft);
+	find relationRightWithMany(relation, relationEndingRight, entityRight);
+	find treaceOfElement(_, _, entityLeft, tableLeft);
+	find treaceOfElement(_, _, entityRight, tableRight);
+}
+

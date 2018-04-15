@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.mdsd.rdb/emf-gen" modelPluginID="hu.bme.mit.mdsd.rdb"
+    modelName="Rdb" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>rdb.ecore</foreignModel>
+  <genPackages prefix="Rdb" basePackage="hu.bme.mit.mdsd" disposableProviderFactory="true"
+      ecorePackage="rdb.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rdb.ecore#//ColumnType">
+      <genEnumLiterals ecoreEnumLiteral="rdb.ecore#//ColumnType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="rdb.ecore#//ColumnType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="rdb.ecore#//ColumnType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="rdb.ecore#//ColumnType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="rdb.ecore#//ColumnType/DATETIME"/>
+    </genEnums>
+    <genClasses ecoreClass="rdb.ecore#//RelationalDataBase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//RelationalDataBase/tables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//RelationalDataBase/temporalColumn"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/columns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rdb.ecore#//Table/rdb"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Column">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rdb.ecore#//Column/table"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//Column/type"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rdb.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="rdb.ecore#//Key"/>
+    <genClasses ecoreClass="rdb.ecore#//ForeignKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rdb.ecore#//ForeignKey/referencedKey"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

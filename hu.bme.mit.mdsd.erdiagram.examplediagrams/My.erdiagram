@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<erdiagram:EntityRelationDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:erdiagram="hu.bme.mit.mdsd.erdiagram" name="DrivenVehiclesRegistry">
+<erdiagram:EntityRelationDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:erdiagram="http://mit.bme.hu/mdsd/erdiagram" name="DrivenVehiclesRegistry">
   <entities name="Person" referredBy="//@relations.0/@leftEnding">
     <attributes name="IDN" isKey="true"/>
     <attributes name="name" type="STRING"/>
@@ -18,7 +18,7 @@
     <attributes name="serialNumber" isKey="true" type="STRING"/>
     <attributes name="nick" type="STRING"/>
   </entities>
-  <entities name="PlaneType" referredBy="//@relations.3/@leftEnding">
+  <entities name="PlaneType" isA="//@entities.2" referredBy="//@relations.3/@leftEnding">
     <attributes name="name" isKey="true" type="STRING"/>
   </entities>
   <relations name="carsDrivenByPeople">

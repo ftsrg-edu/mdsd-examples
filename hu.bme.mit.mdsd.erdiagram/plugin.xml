@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated erdiagram -->
       <package
-            uri="hu.bme.mit.mdsd.erdiagram"
+            uri="http://mit.bme.hu/mdsd/erdiagram"
             class="hu.bme.mit.mdsd.erdiagram.ErdiagramPackage"
             genModel="model/erdiagram.genmodel"/>
    </extension>
