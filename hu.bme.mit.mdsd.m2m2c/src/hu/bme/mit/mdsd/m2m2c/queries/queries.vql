@@ -4,6 +4,76 @@ import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
 import "hu.bme.mit.mdsd.trace"
 import "hu.bme.mit.mdsd.rdb" as rdb
 
+pattern entityAttribute(e : Entity, attr : Attribute) {
+	Entity.attributes(e, attr);
+}
+
+pattern superEntity(e : Entity, superEntity : Entity) {
+	Entity.isA(e, superEntity);
+}
+
+pattern allSuperEntity(e : Entity, superEntity : Entity) {
+	find superEntity+(e, superEntity);
+} or {
+	e == superEntity;
+}
+
+pattern relationWithLeftEnding(r : Relation, rle : RelationEnding) {
+	Relation.leftEnding(r, rle);
+}
+
+pattern relationWithRightEnding(r : Relation, rre : RelationEnding) {
+	Relation.rightEnding(r, rre);
+}
+
+pattern multiplicity(relationEnding: RelationEnding, multiplicity: MultiplicityType){
+	RelationEnding.multiplicity(relationEnding, multiplicity);
+}
+
+pattern relationTarget(relationEnding: RelationEnding, entity : Entity){
+	RelationEnding.target(relationEnding, entity);
+}
+
+pattern relationLeftWithMany(relation: Relation, 
+	relationEnding: RelationEnding,
+	entity: Entity
+){	
+	find relationWithLeftEnding(relation, relationEnding);
+	find relationTarget(relationEnding, entity);
+}
+
+pattern relationRightWithMany(relation: Relation, 
+	relationEnding: RelationEnding,
+	entity: Entity
+){	
+	find relationWithRightEnding(relation, relationEnding);
+	find relationTarget(relationEnding, entity);
+}
+
+pattern relation(relation: Relation, 
+	relationEndingLeft: RelationEnding, 
+	relationEndingRight: RelationEnding,
+	entityLeft: Entity,
+	entityRight: Entity,
+	tableLeft: Table,
+	tableRight: Table
+){
+	find relationLeftWithMany(relation, relationEndingLeft, entityLeft);
+	find relationRightWithMany(relation, relationEndingRight, entityRight);
+	find traceOfElement(_, _, entityLeft, tableLeft);
+	find traceOfElement(_, _, entityRight, tableRight);
+}
+
+pattern tracedAttributeOfTable(attribute : Attribute, table: Table){
+	find traceOfElement(_, _, attribute, column);
+	Table.columns(table, column);
+}
+
+pattern traceOfRootElement(traceRoot: TraceRoot, er: EntityRelationDiagram, rdb: RelationalDataBase){
+	TraceRoot.erdiagramRoot(traceRoot, er);
+	TraceRoot.rdbRoot(traceRoot, rdb);
+}
+
 pattern traceOfElement(traceRoot: TraceRoot, trace: Trace, erElement: erdiagram::NamedElement, rdbElement: rdb::NamedElement){
 	TraceRoot.traces(traceRoot, trace);
 	Trace.erdiagramElement(trace, erElement);
