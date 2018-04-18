@@ -1,13 +1,12 @@
 package hu.bme.mit.mdsd.m2m2c.rules
 
 import hu.bme.mit.mdsd.m2m2c.queries.Entity_CMatcher
-import hu.bme.mit.mdsd.m2m2c.util.TracingHelperUtility
+import hu.bme.mit.mdsd.rdb.Key
 import hu.bme.mit.mdsd.rdb.Table
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
 import org.eclipse.viatra.transformation.evm.specific.crud.CRUDActivationStateEnum
 import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.IModelManipulations
 import trace.TraceRoot
-import hu.bme.mit.mdsd.rdb.Key
 
 class EntityRule_C extends AbstractRule{
 
