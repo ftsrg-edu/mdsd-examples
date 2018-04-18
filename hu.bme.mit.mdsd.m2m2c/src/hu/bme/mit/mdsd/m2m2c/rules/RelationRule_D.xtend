@@ -18,12 +18,12 @@ class RelationRule_D extends AbstractRule{
 			// left hand side - queries a single relation
 			.precondition(Relation_DMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-			println('''RelationRule CREATED [empty RHS] («relation.name»)''')
+			println('''RelationRule CREATED [empty RHS] (Â«relation.nameÂ»)''')
 			
 		].action(CRUDActivationStateEnum.DELETED)[
-			println('''RelationRule DELETED («relation.name»)''')
+			println('''RelationRule DELETED (Â«relation.nameÂ»)''')
 			
-			TracingHelperUtility.deleteTrace(trace, manipulation)
+			deleteTrace(trace)
 		].build
 	}
 	

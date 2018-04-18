@@ -20,7 +20,7 @@ class RelationRule_C extends AbstractRule{
 			// left hand side - queries a single relation
 			.precondition(Relation_CMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-				println('''RelationRule CREATED («relation.name»)''')
+				println('''RelationRule CREATED (Â«relation.nameÂ»)''')
 								
 				val joinTable = traceRoot.rdbRoot.createChild(rdbPackage.relationalDataBase_Tables, rdbPackage.table) as Table
 				joinTable.set(rdbPackage.namedElement_Name, relation.name.toFirstUpper + "_Relation")
@@ -38,7 +38,7 @@ class RelationRule_C extends AbstractRule{
 				columnRight.set(rdbPackage.namedElement_Name, columnRight.referencedKey?.name)
 				columnRight.set(rdbPackage.column_Type, columnRight.referencedKey?.type)
 				
-				TracingHelperUtility.createTrace(traceRoot, relation, joinTable, manipulation)
+				createTrace(traceRoot, relation, joinTable)
 			]
 			.build
 	}

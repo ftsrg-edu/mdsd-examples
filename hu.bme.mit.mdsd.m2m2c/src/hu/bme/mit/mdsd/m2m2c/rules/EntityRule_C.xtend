@@ -18,7 +18,7 @@ class EntityRule_C extends AbstractRule{
 			// left hand side - queries a single entity
 			.precondition(Entity_CMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-			println('''EntityRule CREATED («entity.name»)''')
+			println('''EntityRule CREATED (Â«entity.nameÂ»)''')
 			
 			// create table
 			val table = traceRoot.rdbRoot.createChild(rdbPackage.relationalDataBase_Tables, rdbPackage.table) as Table
@@ -26,7 +26,7 @@ class EntityRule_C extends AbstractRule{
 			val key = table.createChild(rdbPackage.table_Columns, rdbPackage.key) as Key
 			key.set(rdbPackage.namedElement_Name, entity.name + "_ID")
 			
-			TracingHelperUtility.createTrace(traceRoot, entity, table, manipulation)
+			createTrace(traceRoot, entity, table)
 			
 		].build
 	}

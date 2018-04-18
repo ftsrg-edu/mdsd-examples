@@ -7,6 +7,7 @@ import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.IModelMan
 import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDrivenTransformationRule
 import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDrivenTransformationRuleFactory
 import trace.TraceRoot
+import hu.bme.mit.mdsd.m2m2c.util.TracingHelperUtility
 
 class AbstractRule {
 	
@@ -17,7 +18,8 @@ class AbstractRule {
 	protected EventDrivenTransformationRule<?, ?> rule
 	
 	protected extension EventDrivenTransformationRuleFactory ruleFactory = new EventDrivenTransformationRuleFactory	
-	protected extension CommonHelperMethods commonHelperMethods = new CommonHelperMethods
+	protected extension CommonHelperMethods commonHelperMethods
+	protected extension TracingHelperUtility tracingHelper
 	
 	protected RdbPackage rdbPackage = RdbPackage.eINSTANCE
 
@@ -29,5 +31,8 @@ class AbstractRule {
 		this.engine = engine;
 		this.manipulation = manipulation
 		this.traceRoot = traceRoot
+		
+		this.commonHelperMethods = new CommonHelperMethods(manipulation)
+		this.tracingHelper = new TracingHelperUtility(manipulation)
 	}
 }

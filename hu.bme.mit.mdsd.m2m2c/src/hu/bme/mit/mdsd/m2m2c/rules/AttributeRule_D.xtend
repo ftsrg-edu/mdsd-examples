@@ -16,12 +16,12 @@ class AttributeRule_D extends AbstractRule{
 			// left hand side - queries a single entity
 			.precondition(Attribute_DMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [				
-			println('''AttributeRule CREATED [empty RHS] («attribute.name»)''')
+			println('''AttributeRule CREATED [empty RHS] (Â«attribute.nameÂ»)''')
 			
 		].action(CRUDActivationStateEnum.DELETED) [			
-			println('''AttributeRule DELETED («attribute.name»)''')
+			println('''AttributeRule DELETED (Â«attribute.nameÂ»)''')
 			
-			TracingHelperUtility.deleteTrace(trace, manipulation)
+			deleteTrace(trace)
 		].build
 
 	}

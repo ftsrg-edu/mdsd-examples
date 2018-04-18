@@ -60,21 +60,21 @@ pattern relation(relation: Relation,
 ){
 	find relationLeftWithMany(relation, relationEndingLeft, entityLeft);
 	find relationRightWithMany(relation, relationEndingRight, entityRight);
-	find treaceOfElement(_, _, entityLeft, tableLeft);
-	find treaceOfElement(_, _, entityRight, tableRight);
+	find traceOfElement(_, _, entityLeft, tableLeft);
+	find traceOfElement(_, _, entityRight, tableRight);
 }
 
 pattern tracedAttributeOfTable(attribute : Attribute, table: Table){
-	find treaceOfElement(_, _, attribute, column);
+	find traceOfElement(_, _, attribute, column);
 	Table.columns(table, column);
 }
 
-pattern treaceOfRootElement(traceRoot: TraceRoot, er: EntityRelationDiagram, rdb: RelationalDataBase){
+pattern traceOfRootElement(traceRoot: TraceRoot, er: EntityRelationDiagram, rdb: RelationalDataBase){
 	TraceRoot.erdiagramRoot(traceRoot, er);
 	TraceRoot.rdbRoot(traceRoot, rdb);
 }
 
-pattern treaceOfElement(traceRoot: TraceRoot, trace: Trace, erElement: erdiagram::NamedElement, rdbElement: rdb::NamedElement){
+pattern traceOfElement(traceRoot: TraceRoot, trace: Trace, erElement: erdiagram::NamedElement, rdbElement: rdb::NamedElement){
 	TraceRoot.traces(traceRoot, trace);
 	Trace.erdiagramElement(trace, erElement);
 	Trace.rdbElement(trace, rdbElement);

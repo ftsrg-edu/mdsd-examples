@@ -15,10 +15,10 @@ class AttributeRule_U extends AbstractRule{
 			// left hand side - queries a single entity
 			.precondition(Attribute_UMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [				
-			println('''AttributeRule CREATED [empty RHS] («attribute.name»)''')
+			println('''AttributeRule CREATED [empty RHS] (Â«attribute.nameÂ»)''')
 			
 		].action(CRUDActivationStateEnum.UPDATED) [			
-			println('''AttributeRule UPDATED («attribute.name»)''')
+			println('''AttributeRule UPDATED (Â«attribute.nameÂ»)''')
 			
 			if(!attribute.name.equals(column.name)){		
 				column.set(rdbPackage.namedElement_Name, attribute.name)

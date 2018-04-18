@@ -13,8 +13,15 @@ public class TracingHelperUtility {
 
 	static TracePackage tracePackage = TracePackage.eINSTANCE;
 
-	public static void createTrace(TraceRoot rootTrace, NamedElement erdElement,
-			hu.bme.mit.mdsd.rdb.NamedElement rdbElement, IModelManipulations manipulation)
+	
+	private IModelManipulations manipulation;
+	
+	public TracingHelperUtility(IModelManipulations manipulation) {
+		this.manipulation = manipulation;
+	}
+
+	public void createTrace(TraceRoot rootTrace, NamedElement erdElement,
+			hu.bme.mit.mdsd.rdb.NamedElement rdbElement)
 			throws ModelManipulationException {
 		
 		EObject trace = manipulation.createChild(rootTrace, tracePackage.getTraceRoot_Traces(), tracePackage.getTrace());
@@ -22,7 +29,7 @@ public class TracingHelperUtility {
 		manipulation.set(trace, tracePackage.getTrace_RdbElement(), rdbElement);
 	}
 
-	public static void deleteTrace(Trace trace, IModelManipulations manipulation) throws ModelManipulationException {
+	public void deleteTrace(Trace trace) throws ModelManipulationException {
 		if (trace != null) {
 			hu.bme.mit.mdsd.rdb.NamedElement rdbElement = trace.getRdbElement();
 			if (rdbElement != null) {

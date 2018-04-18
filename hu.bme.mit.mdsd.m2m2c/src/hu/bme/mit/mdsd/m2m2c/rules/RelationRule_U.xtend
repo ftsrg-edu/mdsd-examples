@@ -17,10 +17,10 @@ class RelationRule_U extends AbstractRule{
 			// left hand side - queries a single relation
 			.precondition(Relation_UMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-			println('''RelationRule CREATED [empty RHS] («relation.name»)''')
+			println('''RelationRule CREATED [empty RHS] (Â«relation.nameÂ»)''')
 			
 		].action(CRUDActivationStateEnum.UPDATED) [
-			println('''RelationRule UPDATED («relation.name»)''')
+			println('''RelationRule UPDATED (Â«relation.nameÂ»)''')
 			
 			if(!relation.name.equals(switchTable.name)){
 				switchTable.set(rdbPackage.namedElement_Name, relation.name)
@@ -29,10 +29,4 @@ class RelationRule_U extends AbstractRule{
 		].build
 	}
 	
-	def updateColumnIfNecessary(Column column, Table table){
-//		if()
-//		column?.set(rdbPackage.foreignKey_ReferencedKey, table.columns.filter(Key).head)
-//		column?.set(rdbPackage.namedElement_Name, columnRight.referencedKey.name)
-//		column?.set(rdbPackage.column_Type, columnRight.referencedKey.type)
-	}    
 }

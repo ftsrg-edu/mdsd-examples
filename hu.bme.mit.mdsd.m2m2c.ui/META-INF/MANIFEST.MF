@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.workbench,
  hu.bme.mit.mdsd.m2m2c;bundle-version="1.0.0",
  hu.bme.mit.mdsd.erdiagram,
- org.eclipse.xtext.xbase.lib;bundle-version="2.13.0",
+ org.eclipse.xtext.xbase.lib,
  org.eclipse.emf.transaction
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

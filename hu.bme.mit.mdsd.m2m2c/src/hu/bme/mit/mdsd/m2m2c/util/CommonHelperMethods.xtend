@@ -14,14 +14,17 @@ class CommonHelperMethods {
 	private extension RdbPackage rdbPackage = RdbPackage.eINSTANCE
 	private extension IModelManipulations manipulation
 
+	new(IModelManipulations manipulation) {
+		this.manipulation = manipulation;
+	}
+
     // Helper method to transform an AttrbiuteType to a ColumnType
 	public def getColumnType(AttributeType type) {
 		ColumnType.get(type.getName)
 	}
 	
 	// Helper method for creating a column from an attribute
-	public def createColumnFromAttribute(Attribute attr, Table table, IModelManipulations manipulation) {
-		this.manipulation = manipulation
+	public def createColumnFromAttribute(Attribute attr, Table table) {
 		val column = if (attr.isIsKey) {
 				table.createChild(rdbPackage.table_Columns, rdbPackage.key) as Key
 			} else {

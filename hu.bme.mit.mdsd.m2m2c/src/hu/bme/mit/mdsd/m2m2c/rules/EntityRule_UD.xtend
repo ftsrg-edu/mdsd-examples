@@ -17,10 +17,10 @@ class EntityRule_UD extends AbstractRule{
 			// left hand side - queries a single entity
 			.precondition(Entity_UDMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-			println('''EntityRule CREATED [empty RHS] («entity.name»)''')
+			println('''EntityRule CREATED [empty RHS] (Â«entity.nameÂ»)''')
 			
 		].action(CRUDActivationStateEnum.UPDATED) [
-			println('''EntityRule UPDATED («entity.name»)''')
+			println('''EntityRule UPDATED (Â«entity.nameÂ»)''')
 			
 			if(!entity.name.equals(table.name)){
 				table.set(rdbPackage.namedElement_Name, entity.name)
@@ -32,9 +32,9 @@ class EntityRule_UD extends AbstractRule{
 			}	
 
 		].action(CRUDActivationStateEnum.DELETED)[
-			println('''EntityRule DELETED («entity.name»)''')
+			println('''EntityRule DELETED (Â«entity.nameÂ»)''')
 			
-			TracingHelperUtility.deleteTrace(trace, manipulation)
+			deleteTrace(trace)
 		].build
 	}		
 }

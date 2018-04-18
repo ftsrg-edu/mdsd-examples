@@ -12,8 +12,8 @@
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationRightWithMany"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relation"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.tracedAttributeOfTable"/>
-      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.treaceOfRootElement"/>
-      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.treaceOfElement"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.traceOfRootElement"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.traceOfElement"/>
     </group>
   </extension>
   <extension id="hu.bme.mit.mdsd.m2m2c.queries.TraceQueries" point="org.eclipse.viatra.query.runtime.queryspecification">

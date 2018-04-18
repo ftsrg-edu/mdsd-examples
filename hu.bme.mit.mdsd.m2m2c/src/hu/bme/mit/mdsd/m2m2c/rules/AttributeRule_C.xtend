@@ -16,12 +16,12 @@ class AttributeRule_C extends AbstractRule{
 			// left hand side - queries a single entity
 			.precondition(Attribute_CMatcher.querySpecification)
 			.action(CRUDActivationStateEnum.CREATED) [
-			println('''AttributeRule CREATED («attribute.name»)''')
+			println('''AttributeRule CREATED (Â«attribute.nameÂ»)''')
 			
-			var column = attribute.createColumnFromAttribute(table, manipulation) as Column
+			var column = attribute.createColumnFromAttribute(table) as Column
 			column.set(rdbPackage.namedElement_Name, attribute.name)
 			
-			TracingHelperUtility.createTrace(traceRoot, attribute, column, manipulation)
+			createTrace(traceRoot, attribute, column)
 		].build
 	}
 }
