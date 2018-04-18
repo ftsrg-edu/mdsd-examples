@@ -2,7 +2,14 @@ package hu.bme.mit.mdsd.m2m2c
 
 import hu.bme.mit.mdsd.erdiagram.EntityRelationDiagram
 import hu.bme.mit.mdsd.m2m2c.queries.Queries
+import hu.bme.mit.mdsd.m2m2c.rules.AttributeRule_C
+import hu.bme.mit.mdsd.m2m2c.rules.AttributeRule_D
+import hu.bme.mit.mdsd.m2m2c.rules.AttributeRule_U
 import hu.bme.mit.mdsd.m2m2c.rules.EntityRule_C
+import hu.bme.mit.mdsd.m2m2c.rules.EntityRule_UD
+import hu.bme.mit.mdsd.m2m2c.rules.RelationRule_C
+import hu.bme.mit.mdsd.m2m2c.rules.RelationRule_D
+import hu.bme.mit.mdsd.m2m2c.rules.RelationRule_U
 import hu.bme.mit.mdsd.rdb.RdbPackage
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
@@ -33,7 +40,16 @@ class ErdToRdbLiveTransformation {
 	private ViatraQueryEngine engine
 	private ResourceSet resSet
 
+	private EntityRule_UD entityRule_UD
 	private EntityRule_C entityRule_C
+
+	private AttributeRule_U attributeRule_U
+	private AttributeRule_D attributeRule_D
+	private AttributeRule_C attributeRule_C
+
+	private RelationRule_U relationRule_U
+	private RelationRule_D relationRule_D
+	private RelationRule_C relationRule_C
 
 	private TraceRoot traceRoot
 	private EntityRelationDiagram erdiagram
@@ -78,7 +94,18 @@ class ErdToRdbLiveTransformation {
 		} else {
 			traceResource.contents.head as TraceRoot
 		}
+		traceRoot = traceResource.contents.head as TraceRoot
+
+		entityRule_UD = new EntityRule_UD(engine, manipulation, traceRoot)
 		entityRule_C = new EntityRule_C(engine, manipulation, traceRoot)
+
+		attributeRule_U = new AttributeRule_U(engine, manipulation, traceRoot)
+		attributeRule_D = new AttributeRule_D(engine, manipulation, traceRoot)
+		attributeRule_C = new AttributeRule_C(engine, manipulation, traceRoot)
+
+		relationRule_U = new RelationRule_U(engine, manipulation, traceRoot)
+		relationRule_D = new RelationRule_D(engine, manipulation, traceRoot)
+		relationRule_C = new RelationRule_C(engine, manipulation, traceRoot)
 
 		createTransformation
 	}
@@ -92,10 +119,24 @@ class ErdToRdbLiveTransformation {
 
 		// Initialize event-driven transformation
 		val fixedPriorityResolver = new InvertedDisappearancePriorityConflictResolver
+		fixedPriorityResolver.setPriority(entityRule_UD.rule.ruleSpecification, 1)
 		fixedPriorityResolver.setPriority(entityRule_C.rule.ruleSpecification, 1)
+		fixedPriorityResolver.setPriority(attributeRule_U.rule.ruleSpecification, 2)
+		fixedPriorityResolver.setPriority(attributeRule_D.rule.ruleSpecification, 2)
+		fixedPriorityResolver.setPriority(attributeRule_C.rule.ruleSpecification, 2)
+		fixedPriorityResolver.setPriority(relationRule_U.rule.ruleSpecification, 3)
+		fixedPriorityResolver.setPriority(relationRule_D.rule.ruleSpecification, 3)
+		fixedPriorityResolver.setPriority(relationRule_C.rule.ruleSpecification, 3)
 
 		transformation = EventDrivenTransformation.forEngine(engine).setConflictResolver(fixedPriorityResolver)
+		.addRule(entityRule_UD.rule)
 		.addRule(entityRule_C.rule)
+		.addRule(attributeRule_U.rule)
+		.addRule(attributeRule_D.rule)
+		.addRule(attributeRule_C.rule)
+        .addRule(relationRule_U.rule)        
+        .addRule(relationRule_D.rule)
+        .addRule(relationRule_C.rule)	
 		.setSchedulerFactory(Schedulers.getQueryEngineSchedulerFactory(engine)
 		).build
 

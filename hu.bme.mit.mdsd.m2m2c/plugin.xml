@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
   <extension id="hu.bme.mit.mdsd.m2m2c.queries.Queries" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.m2m2c.queries.Queries" id="hu.bme.mit.mdsd.m2m2c.queries.Queries">
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.entityAttribute"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.superEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.allSuperEntity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationWithLeftEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationWithRightEnding"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.multiplicity"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationTarget"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationLeftWithMany"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationRightWithMany"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relation"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.tracedAttributeOfTable"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.traceOfRootElement"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.traceOfElement"/>
     </group>
   </extension>
   <extension id="hu.bme.mit.mdsd.m2m2c.queries.TraceQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.m2m2c.queries.TraceQueries" id="hu.bme.mit.mdsd.m2m2c.queries.TraceQueries">
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.entity_C"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.entity_UD"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.attribute_C"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.attribute_U"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.attribute_D"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relation_C"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relation_D"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relation_U"/>
     </group>
   </extension>
 </plugin>
