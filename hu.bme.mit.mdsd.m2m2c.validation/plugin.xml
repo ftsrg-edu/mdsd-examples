@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><plugin>
-  <extension id="validation.constraint.hu.bme.mit.mdsd.m2m2c.queries.sameNamedEntities" point="org.eclipse.viatra.addon.validation.runtime.constraint">
-    <constraint class="hu.bme.mit.mdsd.m2m2c.queries.SameNamedEntitiesConstraint0" name="hu.bme.mit.mdsd.m2m2c.queries.sameNamedEntities">
-      <enabledForEditor editorId="hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"/>
-    </constraint>
-  </extension>
-</plugin>

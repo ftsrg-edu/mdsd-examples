@@ -1,29 +1,8 @@
 package hu.bme.mit.mdsd.m2m2c.queries
 
 import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
+import "hu.bme.mit.mdsd.trace"
 import "hu.bme.mit.mdsd.rdb" as rdb
-
-@Constraint(
-	key = {entity1, entity2},
-	severity = "error",
-	message = "Two entities has the same name $commonName$",
-	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID",
-	symmetric = {entity1, entity2}
-)
-pattern sameNamedEntities(entity1: Entity, entity2: Entity, commonName : java ^java.lang.String) {
-	Entity.name(entity1, commonName);
-	Entity.name(entity2, commonName);
-	entity1 != entity2;
-}
-
-@QueryBasedFeature
-pattern otherEnding(ending : RelationEnding, other : RelationEnding) {
-	Relation.leftEnding(relation, ending);
-	Relation.rightEnding(relation, other);
-} or {
-	Relation.rightEnding(relation, ending);
-	Relation.leftEnding(relation, other);
-}
 
 pattern entityAttribute(e : Entity, attr : Attribute) {
 	Entity.attributes(e, attr);
@@ -34,7 +13,9 @@ pattern superEntity(e : Entity, superEntity : Entity) {
 }
 
 pattern allSuperEntity(e : Entity, superEntity : Entity) {
-	find superEntity +(e, superEntity);
+	find superEntity+(e, superEntity);
+} or {
+	e == superEntity;
 }
 
 pattern relationWithLeftEnding(r : Relation, rle : RelationEnding) {
@@ -58,7 +39,6 @@ pattern relationLeftWithMany(relation: Relation,
 	entity: Entity
 ){	
 	find relationWithLeftEnding(relation, relationEnding);
-	find multiplicity(relationEnding, MultiplicityType::Many);
 	find relationTarget(relationEnding, entity);
 }
 
@@ -67,7 +47,6 @@ pattern relationRightWithMany(relation: Relation,
 	entity: Entity
 ){	
 	find relationWithRightEnding(relation, relationEnding);
-	find multiplicity(relationEnding, MultiplicityType::Many);
 	find relationTarget(relationEnding, entity);
 }
 
@@ -83,5 +62,21 @@ pattern relation(relation: Relation,
 	find relationRightWithMany(relation, relationEndingRight, entityRight);
 	find treaceOfElement(_, _, entityLeft, tableLeft);
 	find treaceOfElement(_, _, entityRight, tableRight);
+}
+
+pattern tracedAttributeOfTable(attribute : Attribute, table: Table){
+	find treaceOfElement(_, _, attribute, column);
+	Table.columns(table, column);
+}
+
+pattern treaceOfRootElement(traceRoot: TraceRoot, er: EntityRelationDiagram, rdb: RelationalDataBase){
+	TraceRoot.erdiagramRoot(traceRoot, er);
+	TraceRoot.rdbRoot(traceRoot, rdb);
+}
+
+pattern treaceOfElement(traceRoot: TraceRoot, trace: Trace, erElement: erdiagram::NamedElement, rdbElement: rdb::NamedElement){
+	TraceRoot.traces(traceRoot, trace);
+	Trace.erdiagramElement(trace, erElement);
+	Trace.rdbElement(trace, rdbElement);
 }
 

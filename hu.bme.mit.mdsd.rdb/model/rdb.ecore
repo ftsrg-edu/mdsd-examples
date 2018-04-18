@@ -9,12 +9,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
-        eType="#//Column" containment="true"/>
+        eType="#//Column" containment="true" eOpposite="#//Column/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rdb" lowerBound="1" eType="#//RelationalDataBase"
         eOpposite="#//RelationalDataBase/tables"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//Table"
+        eOpposite="#//Table/columns"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColumnType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">

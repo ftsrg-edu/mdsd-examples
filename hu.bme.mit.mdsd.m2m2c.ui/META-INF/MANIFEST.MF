@@ -29,4 +29,5 @@ Bundle-ActivationPolicy: lazy
 Import-Package: hu.bme.mit.mdsd.rdb,
  org.eclipse.emf.edit.domain,
  org.eclipse.emf.transaction,
+ org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven,
  trace

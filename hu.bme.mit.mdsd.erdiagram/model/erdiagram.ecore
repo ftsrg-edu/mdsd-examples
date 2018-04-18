@@ -36,12 +36,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="#//MultiplicityType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/referredBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="otherEnding" eType="#//RelationEnding"
-        changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
-        <details key="patternFQN" value="hu.bme.mit.mdsd.m2m2c.queries.otherEnding"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MultiplicityType">
     <eLiterals name="One"/>

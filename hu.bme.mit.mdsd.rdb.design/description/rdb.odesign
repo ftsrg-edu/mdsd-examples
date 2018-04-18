@@ -3,20 +3,37 @@
   <ownedViewpoints name="rdb" modelFileExtension="rdb">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RelationalDataBase" domainClass="RelationalDataBase">
       <defaultLayer name="Default">
-        <edgeMappings name="RreferenceEdge" sourceMapping="//@ownedViewpoints[name='rdb']/@ownedRepresentations[name='RelationalDataBase']/@defaultLayer/@containerMappings[name='TableNode']" targetMapping="//@ownedViewpoints[name='rdb']/@ownedRepresentations[name='RelationalDataBase']/@defaultLayer/@containerMappings[name='TableNode']" targetFinderExpression="aql: self.columns->filter(Forrdb::ForeignKey).referencedKey.eContainer">
+        <edgeMappings sourceMapping="//@ownedViewpoints[name='rdb']/@ownedRepresentations[name='RelationalDataBase']/@defaultLayer/@containerMappings[name='TableNode']" targetMapping="//@ownedViewpoints[name='rdb']/@ownedRepresentations[name='RelationalDataBase']/@defaultLayer/@containerMappings[name='TableNode']" targetFinderExpression="[referencedKey.table/]" sourceFinderExpression="[table/]" domainClass="ForeignKey" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <containerMappings name="TableNode" semanticCandidatesExpression="feature:tables" domainClass="Table" childrenPresentation="List">
-          <subNodeMappings name="Column" semanticCandidatesExpression="feature:eAllContents" domainClass="Column">
-            <style xsi:type="style:CustomStyleDescription" labelPosition="node" resizeKind="NSEW">
+          <subNodeMappings name="Column" semanticCandidatesExpression="feature:columns" domainClass="Column">
+            <style xsi:type="style:CustomStyleDescription" labelPosition="node" resizeKind="NSEW" id="Column">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
+            <conditionnalStyles predicateExpression="[self.oclIsKindOf(rdb::Key)/]">
+              <style xsi:type="style:CustomStyleDescription" labelSize="10" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelFormat>underline</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[self.oclIsKindOf(rdb::ForeignKey)/]">
+              <style xsi:type="style:CustomStyleDescription" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>italic</labelFormat>
+                <labelFormat>underline</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

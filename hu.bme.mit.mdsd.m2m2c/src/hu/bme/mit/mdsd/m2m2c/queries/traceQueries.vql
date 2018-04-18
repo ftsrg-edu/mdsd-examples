@@ -4,57 +4,40 @@ import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
 import "hu.bme.mit.mdsd.trace"
 import "hu.bme.mit.mdsd.rdb" as rdb
 
-pattern treaceOfRootElement(traceRoot: TraceRoot, er: EntityRelationDiagram, rdb: RelationalDataBase){
-	TraceRoot.erdiagramRoot(traceRoot, er);
-	TraceRoot.rdbRoot(traceRoot, rdb);
-}
-
-pattern treaceOfElement(traceRoot: TraceRoot, trace: Trace, erElement: erdiagram::NamedElement, rdbElement: rdb::NamedElement){
-	TraceRoot.traces(traceRoot, trace);
-	Trace.erdiagramElement(trace, erElement);
-	Trace.rdbElement(trace, rdbElement);
-}
-
-
 // U = Update, D = Delete, C = Create
+
+/////////////////////////////////////// Entity //////////////////////////////////////////
+
+pattern entity_C(entity: Entity){
+	neg find treaceOfElement(_, _, entity, _);
+}
 
 pattern entity_UD(entity : Entity, trace: Trace, table: Table){
 	find treaceOfElement(_, trace, entity, table);
 }
 
-pattern entity_C_FirstCase_WithoutParent(entity: Entity){
-	neg find superEntity(entity, _);	
-	neg find treaceOfElement(_, _, entity, _);
+/////////////////////////////////////// Attribute ///////////////////////////////////////
+
+pattern attribute_C(entity: Entity, superEntity: Entity, attribute : Attribute, trace: Trace, table: Table){
+	find treaceOfElement(_, trace, entity, table);
+	find entityAttribute(superEntity, attribute);
+	find allSuperEntity(entity, superEntity);
+	neg find tracedAttributeOfTable(attribute, table);
 }
 
-pattern entity_C_FirstCase_WithParent(entity1: Entity, entity2: Entity, table: Table, key : Key){
-	find superEntity(entity1, entity2);
-	find treaceOfElement(_, _, entity2, table);	
-	neg find treaceOfElement(_, _, entity1, _);
-	Table.columns(table, key);	
-}
-
-pattern entity_C_SecondCase(entity: Entity){
-	Entity(entity);
-	neg find treaceOfElement(_, _, entity, _);
-}
-
-pattern attribute_UD(attribute : Attribute, trace: Trace, column: Column){
+pattern attribute_U(attribute : Attribute, trace: Trace, column: Column){
 	find treaceOfElement(_, trace, attribute, column);
 }
 
-pattern attribute_C_FirstCase(entity: Entity, attribute : Attribute, trace: Trace, table: Table){
+pattern attribute_D(entity: Entity, attribute : Attribute, trace: Trace, table: Table){
 	find treaceOfElement(_, trace, entity, table);
-	find entityAttribute(entity, attribute);
-	neg find treaceOfElement(_, _, attribute, _);
+	find entityAttribute(superEntity, attribute);
+	find allSuperEntity(entity, superEntity);
+	find treaceOfElement(_, _, attribute, column);
+	Table.columns(table, column);
 }
 
-pattern attribute_C_SecondCase(entity: Entity, subEntity: Entity, attribute : Attribute, trace: Trace, table: Table){
-	find treaceOfElement(_, trace, subEntity, table);
-	find entityAttribute(entity, attribute);
-	find allSuperEntity(subEntity, entity);
-	neg find treaceOfElement(_, _, attribute, _);
-}
+/////////////////////////////////////// Relation ////////////////////////////////////////
 
 pattern relation_C(relation: Relation, 
 	relationEndingLeft: RelationEnding, 
@@ -68,7 +51,7 @@ pattern relation_C(relation: Relation,
 	neg find treaceOfElement(_, _, relation, _);
 }
 
-pattern relation_UD(relation: Relation, 
+pattern relation_D(relation: Relation, 
 	relationEndingLeft: RelationEnding, 
 	relationEndingRight: RelationEnding,
 	entityLeft: Entity,
@@ -80,6 +63,10 @@ pattern relation_UD(relation: Relation,
 ){
 	find relation(relation, relationEndingLeft, relationEndingRight, entityLeft, entityRight, tableLeft, tableRight);	
 	find treaceOfElement(_, trace, relation, switchTable);
+}
+
+pattern relation_U(relation: Relation, switchTable: Table){
+	find treaceOfElement(_, _, relation, switchTable);
 }
 
 

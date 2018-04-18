@@ -6,11 +6,12 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+
 import hu.bme.mit.mdsd.erdiagram.EntityRelationDiagram;
 import hu.bme.mit.mdsd.m2m2c.ErdToRdbLiveTransformation;
 
-public class TransformHandler extends AbstractHandler implements IHandler {
-
+public class TransformHandlerFinish extends AbstractHandler implements IHandler {
+	
 	ErdToRdbLiveTransformation transformation;
 
     @Override
@@ -20,10 +21,8 @@ public class TransformHandler extends AbstractHandler implements IHandler {
         Object object = (EntityRelationDiagram) selection.getFirstElement();
 
         if(object instanceof EntityRelationDiagram) {
-        	EntityRelationDiagram erd = (EntityRelationDiagram) object;
-        	transformation = ErdToRdbLiveTransformation.getInstance();
-        	transformation.prepare(erd);
-        	transformation.execute();
+        	transformation = ErdToRdbLiveTransformation.getInstance();        	
+        	transformation.dispose();
         } else {
         	System.out.println("That was NOT an ERD");
         }
