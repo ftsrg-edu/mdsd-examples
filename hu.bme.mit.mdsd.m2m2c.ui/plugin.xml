@@ -4,7 +4,7 @@
     <command
         defaultHandler="hu.bme.mit.mdsd.m2m2c.ui.TransformHandlerPrepare"
         id="hu.bme.mit.mdsd.m2m2c.ui.prepareCommand"
-        name="Prepare to EDT">
+        name="Prepare EDT">
     </command>
     <command
         defaultHandler="hu.bme.mit.mdsd.m2m2c.ui.TransformHandler"

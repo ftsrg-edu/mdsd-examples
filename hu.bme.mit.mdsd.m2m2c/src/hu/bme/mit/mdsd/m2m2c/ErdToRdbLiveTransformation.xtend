@@ -1,8 +1,6 @@
 package hu.bme.mit.mdsd.m2m2c
 
 import hu.bme.mit.mdsd.erdiagram.EntityRelationDiagram
-import hu.bme.mit.mdsd.m2m2c.queries.Queries
-import hu.bme.mit.mdsd.m2m2c.rules.EntityRule_C
 import hu.bme.mit.mdsd.rdb.RdbPackage
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
@@ -19,6 +17,8 @@ import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.
 import trace.TracePackage
 import trace.TraceRoot
 import hu.bme.mit.mdsd.rdb.RelationalDataBase
+import hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries
+import hu.bme.mit.mdsd.m2m2c.rules.EntityRuleCreate
 
 class ErdToRdbLiveTransformation {
 
@@ -26,14 +26,14 @@ class ErdToRdbLiveTransformation {
 	private extension EventDrivenTransformation transformation
 
 	/* Transformation rule-related extensions */
-	private extension val Queries queries = Queries.instance
+	private extension val PreconditionQueries queries = PreconditionQueries.instance
 
 	extension IModelManipulations manipulation
 	private EditingDomain editingDomain
 	private ViatraQueryEngine engine
 	private ResourceSet resSet
 
-	private EntityRule_C entityRule_C
+	private EntityRuleCreate entityRuleCreate
 
 	private TraceRoot traceRoot
 	private EntityRelationDiagram erdiagram
@@ -65,10 +65,10 @@ class ErdToRdbLiveTransformation {
 		val traceResource = getOrCreateResource("trace")
 		val rdbResource = getOrCreateResource("rdb")
 
-		val rdb = if (traceResource.contents.head === null)
+		val rdb = if (rdbResource.contents.head === null)
 				create(rdbResource, rdbPackage.relationalDataBase) as RelationalDataBase
 			else
-				traceResource.contents.head as RelationalDataBase
+				rdbResource.contents.head as RelationalDataBase
 
 		traceRoot = if (traceResource.contents.head === null) {
 			traceRoot = create(traceResource, tracePackage.traceRoot) as TraceRoot
@@ -78,7 +78,7 @@ class ErdToRdbLiveTransformation {
 		} else {
 			traceResource.contents.head as TraceRoot
 		}
-		entityRule_C = new EntityRule_C(engine, manipulation, traceRoot)
+		entityRuleCreate = new EntityRuleCreate(engine, manipulation, traceRoot)
 
 		createTransformation
 	}
@@ -91,11 +91,13 @@ class ErdToRdbLiveTransformation {
 	private def createTransformation() {
 
 		// Initialize event-driven transformation
-		val fixedPriorityResolver = new InvertedDisappearancePriorityConflictResolver
-		fixedPriorityResolver.setPriority(entityRule_C.rule.ruleSpecification, 1)
+		
+//		val fixedPriorityResolver = new InvertedDisappearancePriorityConflictResolver
+//		fixedPriorityResolver.setPriority(entityRuleCreate.rule.ruleSpecification, 1)
 
-		transformation = EventDrivenTransformation.forEngine(engine).setConflictResolver(fixedPriorityResolver)
-		.addRule(entityRule_C.rule)
+		transformation = EventDrivenTransformation.forEngine(engine)
+//		.setConflictResolver(fixedPriorityResolver)
+		.addRule(entityRuleCreate.rule)
 		.setSchedulerFactory(Schedulers.getQueryEngineSchedulerFactory(engine)
 		).build
 
@@ -112,13 +114,9 @@ class ErdToRdbLiveTransformation {
 
 	private def Resource getOrCreateResource(String fileExtension) {
 		val resourceURI = erdiagram.eResource.getURI().trimFileExtension().appendFileExtension(fileExtension);
-		val resource = try {
+		val resource = 
 				// try to create a resource 
 				resSet.getResource(resourceURI, true);
-			} catch (RuntimeException e) {
-				// load resource, because it already exists
-				resSet.getResource(resourceURI, false);
-			}
 		return resource;
 	}
 }

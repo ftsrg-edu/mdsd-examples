@@ -4,11 +4,9 @@ import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
 import "hu.bme.mit.mdsd.trace"
 import "hu.bme.mit.mdsd.rdb" as rdb
 
-// U = Update, D = Delete, C = Create
-
 /////////////////////////////////////// Entity //////////////////////////////////////////
 
-pattern entity_C(entity: Entity){
+pattern entityCreated(entity: Entity){
 	neg find traceOfElement(_, _, entity, _);
 }
 

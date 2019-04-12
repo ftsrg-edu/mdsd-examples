@@ -1,22 +1,25 @@
 package hu.bme.mit.mdsd.m2m2c.rules
 
-import hu.bme.mit.mdsd.m2m2c.queries.Entity_CMatcher
 import hu.bme.mit.mdsd.rdb.Key
 import hu.bme.mit.mdsd.rdb.Table
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
 import org.eclipse.viatra.transformation.evm.specific.crud.CRUDActivationStateEnum
 import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.IModelManipulations
 import trace.TraceRoot
+import hu.bme.mit.mdsd.m2m2c.queries.EntityCreated
 
-class EntityRule_C extends AbstractRule{
+class EntityRuleCreate extends AbstractRule {
 
 	new(ViatraQueryEngine engine, IModelManipulations manipulation, TraceRoot traceRoot) {
 		super(engine, manipulation, traceRoot)
-
-		rule = createRule.name("EntityRule")
-			// left hand side - queries a single entity
-			.precondition(Entity_CMatcher.querySpecification)
+	}
+	
+	override doCreateRule() {
+		// left hand side - queries a single entity
+		createRule(EntityCreated.instance)
+			.name("EntityCreated")
 			.action(CRUDActivationStateEnum.CREATED) [
+				
 			println('''EntityRule CREATED («entity.name»)''')
 			
 			// create table
@@ -25,8 +28,9 @@ class EntityRule_C extends AbstractRule{
 			val key = table.createChild(rdbPackage.table_Columns, rdbPackage.key) as Key
 			key.set(rdbPackage.namedElement_Name, entity.name + "_ID")
 			
-			createTrace(traceRoot, entity, table)
+			createTrace(entity, table)
 			
-		].build
+		].build	
 	}
+	
 }

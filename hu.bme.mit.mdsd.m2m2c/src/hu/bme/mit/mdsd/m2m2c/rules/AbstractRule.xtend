@@ -9,7 +9,7 @@ import org.eclipse.viatra.transformation.runtime.emf.rules.eventdriven.EventDriv
 import trace.TraceRoot
 import hu.bme.mit.mdsd.m2m2c.util.TracingHelperUtility
 
-class AbstractRule {
+abstract class AbstractRule {
 	
 	protected ViatraQueryEngine engine
 	protected extension IModelManipulations manipulation	
@@ -24,8 +24,13 @@ class AbstractRule {
 	protected RdbPackage rdbPackage = RdbPackage.eINSTANCE
 
 	def EventDrivenTransformationRule<?, ?> getRule() {
+		if (rule === null)
+			rule = doCreateRule
+			
 		return rule
 	}
+	
+	abstract def EventDrivenTransformationRule<?, ?> doCreateRule()
 
 	new(ViatraQueryEngine engine, IModelManipulations manipulation, TraceRoot traceRoot) {
 		this.engine = engine;
@@ -33,6 +38,6 @@ class AbstractRule {
 		this.traceRoot = traceRoot
 		
 		this.commonHelperMethods = new CommonHelperMethods(manipulation)
-		this.tracingHelper = new TracingHelperUtility(manipulation)
+		this.tracingHelper = new TracingHelperUtility(manipulation, traceRoot)
 	}
 }

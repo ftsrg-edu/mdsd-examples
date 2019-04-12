@@ -12,15 +12,16 @@ import trace.TraceRoot;
 public class TracingHelperUtility {
 
 	static TracePackage tracePackage = TracePackage.eINSTANCE;
-
 	
 	private IModelManipulations manipulation;
+	private TraceRoot rootTrace;
 	
-	public TracingHelperUtility(IModelManipulations manipulation) {
+	public TracingHelperUtility(IModelManipulations manipulation, TraceRoot rootTrace) {
 		this.manipulation = manipulation;
+		this.rootTrace = rootTrace;
 	}
 
-	public void createTrace(TraceRoot rootTrace, NamedElement erdElement,
+	public void createTrace(NamedElement erdElement,
 			hu.bme.mit.mdsd.rdb.NamedElement rdbElement)
 			throws ModelManipulationException {
 		
@@ -38,4 +39,5 @@ public class TracingHelperUtility {
 			manipulation.remove(trace);
 		}
 	}
+
 }
