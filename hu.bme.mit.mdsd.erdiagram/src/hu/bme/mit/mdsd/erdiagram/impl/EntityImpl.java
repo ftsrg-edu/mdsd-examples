@@ -91,6 +91,7 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, ErdiagramPackage.ENTITY__ATTRIBUTES);
@@ -103,6 +104,7 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Entity> getIsA() {
 		if (isA == null) {
 			isA = new EObjectResolvingEList<Entity>(Entity.class, this, ErdiagramPackage.ENTITY__IS_A);
@@ -115,6 +117,7 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RelationEnding> getReferredBy() {
 		if (referredBy == null) {
 			referredBy = new EObjectWithInverseResolvingEList<RelationEnding>(RelationEnding.class, this, ErdiagramPackage.ENTITY__REFERRED_BY, ErdiagramPackage.RELATION_ENDING__TARGET);

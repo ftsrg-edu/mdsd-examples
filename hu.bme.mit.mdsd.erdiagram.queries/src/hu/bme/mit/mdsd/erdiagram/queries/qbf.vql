@@ -1,0 +1,32 @@
+package hu.bme.mit.mdsd.erdiagram.queries
+
+import epackage "hu.bme.mit.mdsd.erdiagram"
+
+@QueryBasedFeature(keepCache = false)
+pattern endingLabel(ending: RelationEnding, label: java String) {
+	find nameLabel(ending, nameLabel);
+	find typeLabel(ending, typeLabel);
+	label == eval (String.format("%s : %s", nameLabel, typeLabel));
+}
+
+pattern nameLabel(elem: NamedElement, label: java String) {
+	NamedElement.name(elem, label);
+	label != "";
+} or {
+	NamedElement.name(elem, "");
+	label == "<unnamed>";
+} or {
+	neg NamedElement.name(elem, _);
+	label == "<unnamed>";
+}
+
+pattern typeLabel(elem: RelationEnding, label: java String) {
+	RelationEnding.target.name(elem, label);
+	label != "";
+} or {
+	RelationEnding.target.name(elem, "");
+	label == "<untyped>";
+} or {
+	neg RelationEnding.target.name(elem, _);
+	label == "<untyped>";
+}

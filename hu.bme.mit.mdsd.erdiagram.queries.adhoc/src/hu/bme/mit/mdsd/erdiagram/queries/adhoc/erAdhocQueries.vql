@@ -1,0 +1,21 @@
+package hu.bme.mit.mdsd.erdiagram.queries.adhoc
+
+import epackage "hu.bme.mit.mdsd.erdiagram"
+
+
+pattern switchTable(relation: Relation, leftKey : Attribute, rightKey : Attribute) {
+	Relation.leftEnding(relation, left);
+	Relation.rightEnding(relation, right);
+	find endingForeignKey(left, _leftType, leftKey);
+	find endingForeignKey(right, _rightType, rightKey);
+}
+
+pattern endingForeignKey(
+	ending : RelationEnding, 
+	endingType : Entity, 
+	endingKey : Attribute
+) {
+	RelationEnding.target(ending, endingType);
+	// call from plugin hu.bme.mit.mdsd.erdiagram.queries
+	find hu.bme.mit.mdsd.erdiagram.queries.keyAttributes(endingType, endingKey);
+}

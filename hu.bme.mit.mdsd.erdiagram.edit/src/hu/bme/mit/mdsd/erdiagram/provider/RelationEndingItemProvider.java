@@ -48,6 +48,7 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 			addNullablePropertyDescriptor(object);
 			addMultiplicityPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
+			addEndingLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Ending Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndingLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RelationEnding_endingLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RelationEnding_endingLabel_feature", "_UI_RelationEnding_type"),
+				 ErdiagramPackage.Literals.RELATION_ENDING__ENDING_LABEL,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns RelationEnding.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,7 +160,7 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RelationEnding)object).getName();
+		String label = ((RelationEnding)object).getEndingLabel();
 		return label == null || label.length() == 0 ?
 			getString("_UI_RelationEnding_type") :
 			getString("_UI_RelationEnding_type") + " " + label;
@@ -158,6 +181,7 @@ public class RelationEndingItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(RelationEnding.class)) {
 			case ErdiagramPackage.RELATION_ENDING__NULLABLE:
 			case ErdiagramPackage.RELATION_ENDING__MULTIPLICITY:
+			case ErdiagramPackage.RELATION_ENDING__ENDING_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

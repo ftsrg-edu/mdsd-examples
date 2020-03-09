@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="extension.derived.hu.bme.mit.mdsd.erdiagram.queries.endingLabel" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="RelationEnding" feature-name="endingLabel" package-nsUri="hu.bme.mit.mdsd.erdiagram"/>
+  </extension>
+  <extension id="hu.bme.mit.mdsd.erdiagram.queries.Qbf" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.Qbf" id="hu.bme.mit.mdsd.erdiagram.queries.Qbf">
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.endingLabel"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.nameLabel"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.typeLabel"/>
+    </group>
+  </extension>
+  <extension id="hu.bme.mit.mdsd.erdiagram.queries.Validation" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.Validation" id="hu.bme.mit.mdsd.erdiagram.queries.Validation">
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.entityWithoutKey"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.isaConflictsWithKey"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.unnamed"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.duplicateAttributeName"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.keyAttributes"/>
+    </group>
+  </extension>
+</plugin>

@@ -14,7 +14,7 @@
   <entities name="Pilot" isA="//@entities.0" referredBy="//@relations.2/@rightEnding">
     <attributes name="Licence" type="STRING"/>
   </entities>
-  <entities name="Plane" referredBy="//@relations.3/@rightEnding //@relations.2/@leftEnding">
+  <entities name="Aircraft" referredBy="//@relations.3/@rightEnding //@relations.2/@leftEnding">
     <attributes name="serialNumber" isKey="true" type="STRING"/>
     <attributes name="nick" type="STRING"/>
   </entities>

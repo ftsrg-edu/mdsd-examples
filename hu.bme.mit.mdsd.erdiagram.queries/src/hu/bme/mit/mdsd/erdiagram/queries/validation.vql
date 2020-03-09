@@ -1,0 +1,78 @@
+package hu.bme.mit.mdsd.erdiagram.queries
+
+import epackage "hu.bme.mit.mdsd.erdiagram"
+
+
+
+@Constraint(
+	key = {entity},
+	severity = "error",
+	message = "Entity has no key",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
+)
+pattern entityWithoutKey(entity: Entity) = {
+	neg find keyAttributes(entity, _);
+}
+
+
+@Constraint(
+	key = {entity},
+	severity = "error",
+	message = "Entity has both a locally defined key and an is-a relationship",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
+)
+pattern isaConflictsWithKey(entity: Entity) = {
+	Entity.isA(entity, _);
+	Entity.attributes.isKey(entity, true);
+}
+
+
+
+@Constraint(
+	key = {unnamed},
+	severity = "error",
+	message = "Entity has no name",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
+)
+pattern unnamed(unnamed: NamedElement) {
+	neg NamedElement.name(unnamed, _);
+} or { 
+	NamedElement.name(unnamed, name);
+	name == "";
+}
+
+// Validation rule 4
+/*pattern duplicateAttributeName(attr: Attribute, name: java String, attr2 : Attribute) {
+	Attribute.name(attr, name);
+	Attribute.name(attr2, name);
+	Entity.attributes(entity, attr);
+	Entity.attributes(entity, attr2);
+	attr != attr2;
+}*/
+
+@Constraint(
+	key = {attr},
+	severity = "error",
+	message = "Duplicate attribute name $name$ within entity $entity.name$",
+	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
+)
+pattern duplicateAttributeName(attr: Attribute, entity: Entity, name: java String) {
+	find entityAttributeName(entity, attr, name);
+	freq == count find entityAttributeName(entity, _, name);
+	check (freq > 1);
+}
+private pattern entityAttributeName(
+	entity: Entity, attr : Attribute, name : java String
+) = {
+	Entity.isA*(entity, superEntity);
+	Entity.attributes(superEntity, attr);
+	Attribute.name(attr, name);
+}
+
+
+pattern keyAttributes(entity: Entity, keyAttribute: Attribute) {
+	Entity.isA*(entity, superEntity);
+	Entity.attributes(superEntity, keyAttribute);
+	Attribute.isKey(keyAttribute, true);
+}
+

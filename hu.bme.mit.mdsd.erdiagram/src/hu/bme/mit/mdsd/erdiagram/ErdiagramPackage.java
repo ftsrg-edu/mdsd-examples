@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see hu.bme.mit.mdsd.erdiagram.ErdiagramFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore settingDelegates='org.eclipse.viatra.query.querybasedfeature'"
  * @generated
  */
 public interface ErdiagramPackage extends EPackage {
@@ -379,13 +380,22 @@ public interface ErdiagramPackage extends EPackage {
 	int RELATION_ENDING__TARGET = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Ending Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_ENDING__ENDING_LABEL = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Relation Ending</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATION_ENDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int RELATION_ENDING_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Relation Ending</em>' class.
@@ -611,6 +621,17 @@ public interface ErdiagramPackage extends EPackage {
 	EReference getRelationEnding_Target();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getEndingLabel <em>Ending Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ending Label</em>'.
+	 * @see hu.bme.mit.mdsd.erdiagram.RelationEnding#getEndingLabel()
+	 * @see #getRelationEnding()
+	 * @generated
+	 */
+	EAttribute getRelationEnding_EndingLabel();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.mdsd.erdiagram.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -827,6 +848,14 @@ public interface ErdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATION_ENDING__TARGET = eINSTANCE.getRelationEnding_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Ending Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATION_ENDING__ENDING_LABEL = eINSTANCE.getRelationEnding_EndingLabel();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.mdsd.erdiagram.impl.NamedElementImpl <em>Named Element</em>}' class.

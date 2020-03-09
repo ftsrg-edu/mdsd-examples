@@ -15,6 +15,7 @@ package hu.bme.mit.mdsd.erdiagram;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getTarget <em>Target</em>}</li>
+ *   <li>{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getEndingLabel <em>Ending Label</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding()
@@ -105,5 +106,17 @@ public interface RelationEnding extends NamedElement {
 	 * @generated
 	 */
 	void setTarget(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Ending Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ending Label</em>' attribute.
+	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getRelationEnding_EndingLabel()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.viatra.query.querybasedfeature patternFQN='hu.bme.mit.mdsd.erdiagram.queries.endingLabel'"
+	 * @generated
+	 */
+	String getEndingLabel();
 
 } // RelationEnding

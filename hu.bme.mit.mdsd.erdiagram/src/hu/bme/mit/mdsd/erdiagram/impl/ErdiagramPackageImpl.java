@@ -112,7 +112,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ErdiagramPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -126,7 +126,8 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		if (isInited) return (ErdiagramPackage)EPackage.Registry.INSTANCE.getEPackage(ErdiagramPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ErdiagramPackageImpl theErdiagramPackage = (ErdiagramPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ErdiagramPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ErdiagramPackageImpl());
+		Object registeredErdiagramPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ErdiagramPackageImpl theErdiagramPackage = registeredErdiagramPackage instanceof ErdiagramPackageImpl ? (ErdiagramPackageImpl)registeredErdiagramPackage : new ErdiagramPackageImpl();
 
 		isInited = true;
 
@@ -139,7 +140,6 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		// Mark meta-data to indicate it can't be changed
 		theErdiagramPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ErdiagramPackage.eNS_URI, theErdiagramPackage);
 		return theErdiagramPackage;
@@ -150,6 +150,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityRelationDiagram() {
 		return entityRelationDiagramEClass;
 	}
@@ -159,6 +160,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityRelationDiagram_Entities() {
 		return (EReference)entityRelationDiagramEClass.getEStructuralFeatures().get(0);
 	}
@@ -168,6 +170,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityRelationDiagram_Relations() {
 		return (EReference)entityRelationDiagramEClass.getEStructuralFeatures().get(1);
 	}
@@ -177,6 +180,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityRelationDiagram_TemporalAttributes() {
 		return (EReference)entityRelationDiagramEClass.getEStructuralFeatures().get(2);
 	}
@@ -186,6 +190,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -195,6 +200,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_Attributes() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(0);
 	}
@@ -204,6 +210,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_IsA() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
@@ -213,6 +220,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntity_ReferredBy() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
@@ -222,6 +230,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAttribute() {
 		return attributeEClass;
 	}
@@ -231,6 +240,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttribute_IsKey() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -240,6 +250,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttribute_Type() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
 	}
@@ -249,6 +260,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRelation() {
 		return relationEClass;
 	}
@@ -258,6 +270,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRelation_LeftEnding() {
 		return (EReference)relationEClass.getEStructuralFeatures().get(0);
 	}
@@ -267,6 +280,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRelation_RightEnding() {
 		return (EReference)relationEClass.getEStructuralFeatures().get(1);
 	}
@@ -276,6 +290,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRelationEnding() {
 		return relationEndingEClass;
 	}
@@ -285,6 +300,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelationEnding_Nullable() {
 		return (EAttribute)relationEndingEClass.getEStructuralFeatures().get(0);
 	}
@@ -294,6 +310,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelationEnding_Multiplicity() {
 		return (EAttribute)relationEndingEClass.getEStructuralFeatures().get(1);
 	}
@@ -303,6 +320,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRelationEnding_Target() {
 		return (EReference)relationEndingEClass.getEStructuralFeatures().get(2);
 	}
@@ -312,6 +330,17 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EAttribute getRelationEnding_EndingLabel() {
+		return (EAttribute)relationEndingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -321,6 +350,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -330,6 +360,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMultiplicityType() {
 		return multiplicityTypeEEnum;
 	}
@@ -339,6 +370,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAttributeType() {
 		return attributeTypeEEnum;
 	}
@@ -348,6 +380,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ErdiagramFactory getErdiagramFactory() {
 		return (ErdiagramFactory)getEFactoryInstance();
 	}
@@ -393,6 +426,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		createEAttribute(relationEndingEClass, RELATION_ENDING__NULLABLE);
 		createEAttribute(relationEndingEClass, RELATION_ENDING__MULTIPLICITY);
 		createEReference(relationEndingEClass, RELATION_ENDING__TARGET);
+		createEAttribute(relationEndingEClass, RELATION_ENDING__ENDING_LABEL);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -459,6 +493,7 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 		initEAttribute(getRelationEnding_Nullable(), ecorePackage.getEBoolean(), "nullable", "false", 0, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationEnding_Multiplicity(), this.getMultiplicityType(), "multiplicity", null, 0, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationEnding_Target(), this.getEntity(), this.getEntity_ReferredBy(), "target", null, 1, 1, RelationEnding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationEnding_EndingLabel(), ecorePackage.getEString(), "endingLabel", null, 0, 1, RelationEnding.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -477,6 +512,44 @@ public class ErdiagramPackageImpl extends EPackageImpl implements ErdiagramPacka
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// org.eclipse.viatra.query.querybasedfeature
+		createOrgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "settingDelegates", "org.eclipse.viatra.query.querybasedfeature"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.eclipse.viatra.query.querybasedfeature</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.eclipse.viatra.query.querybasedfeature";
+		addAnnotation
+		  (getRelationEnding_EndingLabel(),
+		   source,
+		   new String[] {
+			   "patternFQN", "hu.bme.mit.mdsd.erdiagram.queries.endingLabel"
+		   });
 	}
 
 } //ErdiagramPackageImpl

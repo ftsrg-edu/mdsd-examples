@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getEndingLabel <em>Ending Label</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,6 +84,16 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	protected Entity target;
 
 	/**
+	 * The cached setting delegate for the '{@link #getEndingLabel() <em>Ending Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndingLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ENDING_LABEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ErdiagramPackage.Literals.RELATION_ENDING__ENDING_LABEL).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -105,6 +117,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNullable() {
 		return nullable;
 	}
@@ -114,6 +127,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNullable(boolean newNullable) {
 		boolean oldNullable = nullable;
 		nullable = newNullable;
@@ -126,6 +140,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MultiplicityType getMultiplicity() {
 		return multiplicity;
 	}
@@ -135,6 +150,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMultiplicity(MultiplicityType newMultiplicity) {
 		MultiplicityType oldMultiplicity = multiplicity;
 		multiplicity = newMultiplicity == null ? MULTIPLICITY_EDEFAULT : newMultiplicity;
@@ -147,6 +163,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -188,6 +205,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(Entity newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
@@ -200,6 +218,16 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErdiagramPackage.RELATION_ENDING__TARGET, newTarget, newTarget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getEndingLabel() {
+		return (String)ENDING_LABEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -247,6 +275,8 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case ErdiagramPackage.RELATION_ENDING__ENDING_LABEL:
+				return getEndingLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,6 +337,8 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 				return multiplicity != MULTIPLICITY_EDEFAULT;
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				return target != null;
+			case ErdiagramPackage.RELATION_ENDING__ENDING_LABEL:
+				return ENDING_LABEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -320,7 +352,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nullable: ");
 		result.append(nullable);
 		result.append(", multiplicity: ");

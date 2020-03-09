@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="hu.bme.mit.mdsd.erdiagram.queries.adhoc.ErAdhocQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.erdiagram.queries.adhoc.ErAdhocQueries" id="hu.bme.mit.mdsd.erdiagram.queries.adhoc.ErAdhocQueries">
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.adhoc.switchTable"/>
+      <query-specification fqn="hu.bme.mit.mdsd.erdiagram.queries.adhoc.endingForeignKey"/>
+    </group>
+  </extension>
+</plugin>

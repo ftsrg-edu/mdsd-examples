@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="erdiagram" nsURI="hu.bme.mit.mdsd.erdiagram" nsPrefix="erdiagram">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="settingDelegates" value="org.eclipse.viatra.query.querybasedfeature"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="EntityRelationDiagram" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//Entity" containment="true"/>
@@ -33,6 +36,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="#//MultiplicityType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/referredBy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endingLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.viatra.query.querybasedfeature">
+        <details key="patternFQN" value="hu.bme.mit.mdsd.erdiagram.queries.endingLabel"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MultiplicityType">
     <eLiterals name="One"/>
