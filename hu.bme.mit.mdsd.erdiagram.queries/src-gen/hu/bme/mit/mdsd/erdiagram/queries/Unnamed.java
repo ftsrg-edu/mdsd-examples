@@ -53,7 +53,7 @@ import org.eclipse.viatra.query.runtime.util.ViatraQueryLoggingUtil;
  *         {@literal @}Constraint(
  *         	key = {unnamed},
  *         	severity = "error",
- *         	message = "Entity has no name",
+ *         	message = "Element has no name",
  *         	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
  *         )
  *         pattern unnamed(unnamed: NamedElement) {
@@ -255,7 +255,7 @@ public final class Unnamed extends BaseGeneratedEMFQuerySpecification<Unnamed.Ma
    * {@literal @}Constraint(
    * 	key = {unnamed},
    * 	severity = "error",
-   * 	message = "Entity has no name",
+   * 	message = "Element has no name",
    * 	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
    * )
    * pattern unnamed(unnamed: NamedElement) {
@@ -632,7 +632,7 @@ public final class Unnamed extends BaseGeneratedEMFQuerySpecification<Unnamed.Ma
                               new ParameterReference("unnamed")
                               }));
           annotation.addAttribute("severity", "error");
-          annotation.addAttribute("message", "Entity has no name");
+          annotation.addAttribute("message", "Element has no name");
           annotation.addAttribute("targetEditorId", "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID");
           addAnnotation(annotation);
       }

@@ -31,7 +31,7 @@ pattern isaConflictsWithKey(entity: Entity) = {
 @Constraint(
 	key = {unnamed},
 	severity = "error",
-	message = "Entity has no name",
+	message = "Element has no name",
 	targetEditorId = "hu.bme.mit.mdsd.erdiagram.presentation.ErdiagramEditorID"
 )
 pattern unnamed(unnamed: NamedElement) {
