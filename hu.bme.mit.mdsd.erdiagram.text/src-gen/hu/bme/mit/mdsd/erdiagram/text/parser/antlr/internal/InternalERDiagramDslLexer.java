@@ -76,10 +76,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:12:7: ( 'isA' )
-            // InternalERDiagramDsl.g:12:9: 'isA'
+            // InternalERDiagramDsl.g:12:7: ( 'key' )
+            // InternalERDiagramDsl.g:12:9: 'key'
             {
-            match("isA"); 
+            match("key"); 
 
 
             }
@@ -97,10 +97,11 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:13:7: ( '{' )
-            // InternalERDiagramDsl.g:13:9: '{'
+            // InternalERDiagramDsl.g:13:7: ( 'isA' )
+            // InternalERDiagramDsl.g:13:9: 'isA'
             {
-            match('{'); 
+            match("isA"); 
+
 
             }
 
@@ -117,10 +118,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:14:7: ( ',' )
-            // InternalERDiagramDsl.g:14:9: ','
+            // InternalERDiagramDsl.g:14:7: ( '{' )
+            // InternalERDiagramDsl.g:14:9: '{'
             {
-            match(','); 
+            match('{'); 
 
             }
 
@@ -137,10 +138,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:15:7: ( '}' )
-            // InternalERDiagramDsl.g:15:9: '}'
+            // InternalERDiagramDsl.g:15:7: ( ',' )
+            // InternalERDiagramDsl.g:15:9: ','
             {
-            match('}'); 
+            match(','); 
 
             }
 
@@ -157,10 +158,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:16:7: ( ':' )
-            // InternalERDiagramDsl.g:16:9: ':'
+            // InternalERDiagramDsl.g:16:7: ( '}' )
+            // InternalERDiagramDsl.g:16:9: '}'
             {
-            match(':'); 
+            match('}'); 
 
             }
 
@@ -177,11 +178,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:17:7: ( 'key' )
-            // InternalERDiagramDsl.g:17:9: 'key'
+            // InternalERDiagramDsl.g:17:7: ( ':' )
+            // InternalERDiagramDsl.g:17:9: ':'
             {
-            match("key"); 
-
+            match(':'); 
 
             }
 
@@ -387,10 +387,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:546:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalERDiagramDsl.g:546:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalERDiagramDsl.g:565:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalERDiagramDsl.g:565:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalERDiagramDsl.g:546:11: ( '^' )?
+            // InternalERDiagramDsl.g:565:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -399,7 +399,7 @@ public class InternalERDiagramDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalERDiagramDsl.g:546:11: '^'
+                    // InternalERDiagramDsl.g:565:11: '^'
                     {
                     match('^'); 
 
@@ -417,7 +417,7 @@ public class InternalERDiagramDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalERDiagramDsl.g:546:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalERDiagramDsl.g:565:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -466,10 +466,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:548:10: ( ( '0' .. '9' )+ )
-            // InternalERDiagramDsl.g:548:12: ( '0' .. '9' )+
+            // InternalERDiagramDsl.g:567:10: ( ( '0' .. '9' )+ )
+            // InternalERDiagramDsl.g:567:12: ( '0' .. '9' )+
             {
-            // InternalERDiagramDsl.g:548:12: ( '0' .. '9' )+
+            // InternalERDiagramDsl.g:567:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -483,7 +483,7 @@ public class InternalERDiagramDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:548:13: '0' .. '9'
+            	    // InternalERDiagramDsl.g:567:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -515,10 +515,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:550:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalERDiagramDsl.g:550:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalERDiagramDsl.g:569:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalERDiagramDsl.g:569:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalERDiagramDsl.g:550:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalERDiagramDsl.g:569:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -536,10 +536,10 @@ public class InternalERDiagramDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalERDiagramDsl.g:550:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalERDiagramDsl.g:569:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalERDiagramDsl.g:550:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalERDiagramDsl.g:569:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -555,7 +555,7 @@ public class InternalERDiagramDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalERDiagramDsl.g:550:21: '\\\\' .
+                    	    // InternalERDiagramDsl.g:569:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -563,7 +563,7 @@ public class InternalERDiagramDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalERDiagramDsl.g:550:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalERDiagramDsl.g:569:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -588,10 +588,10 @@ public class InternalERDiagramDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalERDiagramDsl.g:550:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalERDiagramDsl.g:569:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalERDiagramDsl.g:550:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalERDiagramDsl.g:569:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -607,7 +607,7 @@ public class InternalERDiagramDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalERDiagramDsl.g:550:54: '\\\\' .
+                    	    // InternalERDiagramDsl.g:569:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -615,7 +615,7 @@ public class InternalERDiagramDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalERDiagramDsl.g:550:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalERDiagramDsl.g:569:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -658,12 +658,12 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:552:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalERDiagramDsl.g:552:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalERDiagramDsl.g:571:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalERDiagramDsl.g:571:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalERDiagramDsl.g:552:24: ( options {greedy=false; } : . )*
+            // InternalERDiagramDsl.g:571:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -688,7 +688,7 @@ public class InternalERDiagramDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:552:52: .
+            	    // InternalERDiagramDsl.g:571:52: .
             	    {
             	    matchAny(); 
 
@@ -718,12 +718,12 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:554:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalERDiagramDsl.g:554:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalERDiagramDsl.g:573:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalERDiagramDsl.g:573:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalERDiagramDsl.g:554:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalERDiagramDsl.g:573:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -736,7 +736,7 @@ public class InternalERDiagramDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:554:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalERDiagramDsl.g:573:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -756,7 +756,7 @@ public class InternalERDiagramDslLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalERDiagramDsl.g:554:40: ( ( '\\r' )? '\\n' )?
+            // InternalERDiagramDsl.g:573:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -765,9 +765,9 @@ public class InternalERDiagramDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalERDiagramDsl.g:554:41: ( '\\r' )? '\\n'
+                    // InternalERDiagramDsl.g:573:41: ( '\\r' )? '\\n'
                     {
-                    // InternalERDiagramDsl.g:554:41: ( '\\r' )?
+                    // InternalERDiagramDsl.g:573:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -776,7 +776,7 @@ public class InternalERDiagramDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalERDiagramDsl.g:554:41: '\\r'
+                            // InternalERDiagramDsl.g:573:41: '\\r'
                             {
                             match('\r'); 
 
@@ -808,10 +808,10 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:556:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalERDiagramDsl.g:556:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalERDiagramDsl.g:575:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalERDiagramDsl.g:575:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalERDiagramDsl.g:556:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalERDiagramDsl.g:575:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -865,8 +865,8 @@ public class InternalERDiagramDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalERDiagramDsl.g:558:16: ( . )
-            // InternalERDiagramDsl.g:558:18: .
+            // InternalERDiagramDsl.g:577:16: ( . )
+            // InternalERDiagramDsl.g:577:18: .
             {
             matchAny(); 
 
@@ -1054,26 +1054,26 @@ public class InternalERDiagramDslLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\27\4\uffff\7\27\1\25\2\uffff\3\25\2\uffff\1\27\1\uffff\2\27\4\uffff\10\27\5\uffff\1\27\1\70\1\uffff\1\71\1\72\5\27\1\100\2\27\3\uffff\5\27\1\uffff\1\110\6\27\1\uffff\1\117\1\27\1\121\1\27\1\123\1\27\1\uffff\1\27\1\uffff\1\27\1\uffff\1\127\1\130\1\131\3\uffff";
+        "\1\uffff\3\27\4\uffff\6\27\1\25\2\uffff\3\25\2\uffff\1\27\1\uffff\3\27\4\uffff\7\27\5\uffff\1\27\1\70\1\71\1\uffff\1\72\5\27\1\100\2\27\3\uffff\5\27\1\uffff\1\110\6\27\1\uffff\1\117\1\27\1\121\1\27\1\123\1\27\1\uffff\1\27\1\uffff\1\27\1\uffff\1\127\1\130\1\131\3\uffff";
     static final String DFA12_eofS =
         "\132\uffff";
     static final String DFA12_minS =
-        "\1\0\2\156\4\uffff\1\145\1\165\1\141\1\164\1\157\1\156\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\164\1\uffff\1\40\1\164\4\uffff\1\171\1\154\1\165\1\164\1\162\1\157\1\145\1\156\5\uffff\1\151\1\60\1\uffff\2\60\1\154\1\142\1\145\1\151\1\154\1\60\1\171\1\164\3\uffff\1\141\1\154\1\164\1\156\1\145\1\uffff\1\60\1\171\1\142\1\145\1\151\1\147\1\141\1\uffff\1\60\1\154\1\60\1\155\1\60\1\156\1\uffff\1\145\1\uffff\1\145\1\uffff\3\60\3\uffff";
+        "\1\0\1\156\1\145\1\156\4\uffff\1\165\1\141\1\164\1\157\1\156\1\141\1\101\2\uffff\2\0\1\52\2\uffff\1\164\1\uffff\1\171\1\40\1\164\4\uffff\1\154\1\165\1\164\1\162\1\157\1\145\1\156\5\uffff\1\151\2\60\1\uffff\1\60\1\154\1\142\1\145\1\151\1\154\1\60\1\171\1\164\3\uffff\1\141\1\154\1\164\1\156\1\145\1\uffff\1\60\1\171\1\142\1\145\1\151\1\147\1\141\1\uffff\1\60\1\154\1\60\1\155\1\60\1\156\1\uffff\1\145\1\uffff\1\145\1\uffff\3\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\156\1\163\4\uffff\1\145\1\165\1\157\1\164\1\157\1\156\1\141\1\172\2\uffff\2\uffff\1\57\2\uffff\1\164\1\uffff\1\101\1\164\4\uffff\1\171\1\154\1\165\1\164\1\162\1\157\1\145\1\156\5\uffff\1\151\1\172\1\uffff\2\172\1\154\1\142\1\145\1\151\1\154\1\172\1\171\1\164\3\uffff\1\141\1\154\1\164\1\156\1\145\1\uffff\1\172\1\171\1\142\1\145\1\151\1\147\1\141\1\uffff\1\172\1\154\1\172\1\155\1\172\1\156\1\uffff\1\145\1\uffff\1\145\1\uffff\3\172\3\uffff";
+        "\1\uffff\1\156\1\145\1\163\4\uffff\1\165\1\157\1\164\1\157\1\156\1\141\1\172\2\uffff\2\uffff\1\57\2\uffff\1\164\1\uffff\1\171\1\101\1\164\4\uffff\1\154\1\165\1\164\1\162\1\157\1\145\1\156\5\uffff\1\151\2\172\1\uffff\1\172\1\154\1\142\1\145\1\151\1\154\1\172\1\171\1\164\3\uffff\1\141\1\154\1\164\1\156\1\145\1\uffff\1\172\1\171\1\142\1\145\1\151\1\147\1\141\1\uffff\1\172\1\154\1\172\1\155\1\172\1\156\1\uffff\1\145\1\uffff\1\145\1\uffff\3\172\3\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\3\1\4\1\5\1\6\10\uffff\1\21\1\22\3\uffff\1\26\1\27\1\uffff\1\21\2\uffff\1\3\1\4\1\5\1\6\10\uffff\1\22\1\23\1\24\1\25\1\26\2\uffff\1\10\12\uffff\1\2\1\12\1\7\5\uffff\1\17\7\uffff\1\20\6\uffff\1\1\1\uffff\1\13\1\uffff\1\14\3\uffff\1\15\1\11\1\16";
+        "\4\uffff\1\4\1\5\1\6\1\7\7\uffff\1\21\1\22\3\uffff\1\26\1\27\1\uffff\1\21\3\uffff\1\4\1\5\1\6\1\7\7\uffff\1\22\1\23\1\24\1\25\1\26\3\uffff\1\10\11\uffff\1\2\1\3\1\12\5\uffff\1\17\7\uffff\1\20\6\uffff\1\1\1\uffff\1\13\1\uffff\1\14\3\uffff\1\15\1\11\1\16";
     static final String DFA12_specialS =
         "\1\0\20\uffff\1\1\1\2\107\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\25\2\24\2\25\1\24\22\25\1\24\1\25\1\21\4\25\1\22\4\25\1\4\2\25\1\23\12\20\1\6\6\25\32\17\3\25\1\16\1\17\1\25\1\17\1\13\1\17\1\11\1\1\3\17\1\2\1\17\1\7\1\17\1\15\1\10\1\14\3\17\1\12\7\17\1\3\1\25\1\5\uff82\25",
+            "\11\25\2\24\2\25\1\24\22\25\1\24\1\25\1\21\4\25\1\22\4\25\1\5\2\25\1\23\12\20\1\7\6\25\32\17\3\25\1\16\1\17\1\25\1\17\1\13\1\17\1\11\1\1\3\17\1\3\1\17\1\2\1\17\1\15\1\10\1\14\3\17\1\12\7\17\1\4\1\25\1\6\uff82\25",
             "\1\26",
-            "\1\31\4\uffff\1\30",
+            "\1\30",
+            "\1\32\4\uffff\1\31",
             "",
             "",
             "",
             "",
-            "\1\36",
             "\1\37",
             "\1\41\15\uffff\1\40",
             "\1\42",
@@ -1090,13 +1090,13 @@ public class InternalERDiagramDslLexer extends Lexer {
             "",
             "\1\53",
             "",
-            "\1\55\40\uffff\1\54",
-            "\1\56",
-            "",
-            "",
-            "",
-            "",
+            "\1\54",
+            "\1\56\40\uffff\1\55",
             "\1\57",
+            "",
+            "",
+            "",
+            "",
             "\1\60",
             "\1\61",
             "\1\62",
@@ -1111,8 +1111,8 @@ public class InternalERDiagramDslLexer extends Lexer {
             "",
             "\1\67",
             "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
-            "",
             "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
+            "",
             "\12\27\7\uffff\32\27\4\uffff\1\27\1\uffff\32\27",
             "\1\73",
             "\1\74",
@@ -1200,17 +1200,17 @@ public class InternalERDiagramDslLexer extends Lexer {
                         s = -1;
                         if ( (LA12_0=='e') ) {s = 1;}
 
-                        else if ( (LA12_0=='i') ) {s = 2;}
+                        else if ( (LA12_0=='k') ) {s = 2;}
 
-                        else if ( (LA12_0=='{') ) {s = 3;}
+                        else if ( (LA12_0=='i') ) {s = 3;}
 
-                        else if ( (LA12_0==',') ) {s = 4;}
+                        else if ( (LA12_0=='{') ) {s = 4;}
 
-                        else if ( (LA12_0=='}') ) {s = 5;}
+                        else if ( (LA12_0==',') ) {s = 5;}
 
-                        else if ( (LA12_0==':') ) {s = 6;}
+                        else if ( (LA12_0=='}') ) {s = 6;}
 
-                        else if ( (LA12_0=='k') ) {s = 7;}
+                        else if ( (LA12_0==':') ) {s = 7;}
 
                         else if ( (LA12_0=='n') ) {s = 8;}
 

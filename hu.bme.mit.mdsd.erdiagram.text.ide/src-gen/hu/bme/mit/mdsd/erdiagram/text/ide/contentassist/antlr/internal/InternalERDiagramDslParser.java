@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalERDiagramDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'", "'entity'", "'isA'", "'{'", "'}'", "','", "':'", "'is related with'", "'key'", "'nullable'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'", "'entity'", "'key'", "'isA'", "'{'", "'}'", "','", "':'", "'is related with'", "'nullable'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1211,47 +1211,40 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group__2__Impl"
-    // InternalERDiagramDsl.g:389:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__Group_2__0 )* ) ;
+    // InternalERDiagramDsl.g:389:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__Group_2__0 )? ) ;
     public final void rule__Entity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:393:1: ( ( ( rule__Entity__Group_2__0 )* ) )
-            // InternalERDiagramDsl.g:394:1: ( ( rule__Entity__Group_2__0 )* )
+            // InternalERDiagramDsl.g:393:1: ( ( ( rule__Entity__Group_2__0 )? ) )
+            // InternalERDiagramDsl.g:394:1: ( ( rule__Entity__Group_2__0 )? )
             {
-            // InternalERDiagramDsl.g:394:1: ( ( rule__Entity__Group_2__0 )* )
-            // InternalERDiagramDsl.g:395:2: ( rule__Entity__Group_2__0 )*
+            // InternalERDiagramDsl.g:394:1: ( ( rule__Entity__Group_2__0 )? )
+            // InternalERDiagramDsl.g:395:2: ( rule__Entity__Group_2__0 )?
             {
              before(grammarAccess.getEntityAccess().getGroup_2()); 
-            // InternalERDiagramDsl.g:396:2: ( rule__Entity__Group_2__0 )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+            // InternalERDiagramDsl.g:396:2: ( rule__Entity__Group_2__0 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==19) ) {
-                    alt5=1;
-                }
+            if ( (LA5_0==19) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalERDiagramDsl.g:396:3: rule__Entity__Group_2__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Entity__Group_2__0();
 
-
-                switch (alt5) {
-            	case 1 :
-            	    // InternalERDiagramDsl.g:396:3: rule__Entity__Group_2__0
-            	    {
-            	    pushFollow(FOLLOW_8);
-            	    rule__Entity__Group_2__0();
-
-            	    state._fsp--;
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop5;
-                }
-            } while (true);
+            }
 
              after(grammarAccess.getEntityAccess().getGroup_2()); 
 
@@ -1276,17 +1269,22 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group__3"
-    // InternalERDiagramDsl.g:404:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl ;
+    // InternalERDiagramDsl.g:404:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
     public final void rule__Entity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:408:1: ( rule__Entity__Group__3__Impl )
-            // InternalERDiagramDsl.g:409:2: rule__Entity__Group__3__Impl
+            // InternalERDiagramDsl.g:408:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
+            // InternalERDiagramDsl.g:409:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_7);
             rule__Entity__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__4();
 
             state._fsp--;
 
@@ -1309,40 +1307,47 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group__3__Impl"
-    // InternalERDiagramDsl.g:415:1: rule__Entity__Group__3__Impl : ( ( rule__Entity__Group_3__0 )? ) ;
+    // InternalERDiagramDsl.g:416:1: rule__Entity__Group__3__Impl : ( ( rule__Entity__Group_3__0 )* ) ;
     public final void rule__Entity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:419:1: ( ( ( rule__Entity__Group_3__0 )? ) )
-            // InternalERDiagramDsl.g:420:1: ( ( rule__Entity__Group_3__0 )? )
+            // InternalERDiagramDsl.g:420:1: ( ( ( rule__Entity__Group_3__0 )* ) )
+            // InternalERDiagramDsl.g:421:1: ( ( rule__Entity__Group_3__0 )* )
             {
-            // InternalERDiagramDsl.g:420:1: ( ( rule__Entity__Group_3__0 )? )
-            // InternalERDiagramDsl.g:421:2: ( rule__Entity__Group_3__0 )?
+            // InternalERDiagramDsl.g:421:1: ( ( rule__Entity__Group_3__0 )* )
+            // InternalERDiagramDsl.g:422:2: ( rule__Entity__Group_3__0 )*
             {
              before(grammarAccess.getEntityAccess().getGroup_3()); 
-            // InternalERDiagramDsl.g:422:2: ( rule__Entity__Group_3__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalERDiagramDsl.g:423:2: ( rule__Entity__Group_3__0 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==20) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalERDiagramDsl.g:422:3: rule__Entity__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Entity__Group_3__0();
-
-                    state._fsp--;
+                if ( (LA6_0==20) ) {
+                    alt6=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt6) {
+            	case 1 :
+            	    // InternalERDiagramDsl.g:423:3: rule__Entity__Group_3__0
+            	    {
+            	    pushFollow(FOLLOW_8);
+            	    rule__Entity__Group_3__0();
 
-            }
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
 
              after(grammarAccess.getEntityAccess().getGroup_3()); 
 
@@ -1366,15 +1371,106 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Entity__Group__3__Impl"
 
 
+    // $ANTLR start "rule__Entity__Group__4"
+    // InternalERDiagramDsl.g:431:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl ;
+    public final void rule__Entity__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:435:1: ( rule__Entity__Group__4__Impl )
+            // InternalERDiagramDsl.g:436:2: rule__Entity__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__4"
+
+
+    // $ANTLR start "rule__Entity__Group__4__Impl"
+    // InternalERDiagramDsl.g:442:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__Group_4__0 )? ) ;
+    public final void rule__Entity__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:446:1: ( ( ( rule__Entity__Group_4__0 )? ) )
+            // InternalERDiagramDsl.g:447:1: ( ( rule__Entity__Group_4__0 )? )
+            {
+            // InternalERDiagramDsl.g:447:1: ( ( rule__Entity__Group_4__0 )? )
+            // InternalERDiagramDsl.g:448:2: ( rule__Entity__Group_4__0 )?
+            {
+             before(grammarAccess.getEntityAccess().getGroup_4()); 
+            // InternalERDiagramDsl.g:449:2: ( rule__Entity__Group_4__0 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==21) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalERDiagramDsl.g:449:3: rule__Entity__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Entity__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEntityAccess().getGroup_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__4__Impl"
+
+
     // $ANTLR start "rule__Entity__Group_2__0"
-    // InternalERDiagramDsl.g:431:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
+    // InternalERDiagramDsl.g:458:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
     public final void rule__Entity__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:435:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
-            // InternalERDiagramDsl.g:436:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
+            // InternalERDiagramDsl.g:462:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
+            // InternalERDiagramDsl.g:463:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
             {
             pushFollow(FOLLOW_6);
             rule__Entity__Group_2__0__Impl();
@@ -1405,21 +1501,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_2__0__Impl"
-    // InternalERDiagramDsl.g:443:1: rule__Entity__Group_2__0__Impl : ( 'isA' ) ;
+    // InternalERDiagramDsl.g:470:1: rule__Entity__Group_2__0__Impl : ( 'key' ) ;
     public final void rule__Entity__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:447:1: ( ( 'isA' ) )
-            // InternalERDiagramDsl.g:448:1: ( 'isA' )
+            // InternalERDiagramDsl.g:474:1: ( ( 'key' ) )
+            // InternalERDiagramDsl.g:475:1: ( 'key' )
             {
-            // InternalERDiagramDsl.g:448:1: ( 'isA' )
-            // InternalERDiagramDsl.g:449:2: 'isA'
+            // InternalERDiagramDsl.g:475:1: ( 'key' )
+            // InternalERDiagramDsl.g:476:2: 'key'
             {
-             before(grammarAccess.getEntityAccess().getIsAKeyword_2_0()); 
+             before(grammarAccess.getEntityAccess().getKeyKeyword_2_0()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getIsAKeyword_2_0()); 
+             after(grammarAccess.getEntityAccess().getKeyKeyword_2_0()); 
 
             }
 
@@ -1442,14 +1538,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_2__1"
-    // InternalERDiagramDsl.g:458:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl ;
+    // InternalERDiagramDsl.g:485:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl ;
     public final void rule__Entity__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:462:1: ( rule__Entity__Group_2__1__Impl )
-            // InternalERDiagramDsl.g:463:2: rule__Entity__Group_2__1__Impl
+            // InternalERDiagramDsl.g:489:1: ( rule__Entity__Group_2__1__Impl )
+            // InternalERDiagramDsl.g:490:2: rule__Entity__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group_2__1__Impl();
@@ -1475,31 +1571,31 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_2__1__Impl"
-    // InternalERDiagramDsl.g:469:1: rule__Entity__Group_2__1__Impl : ( ( rule__Entity__IsAAssignment_2_1 ) ) ;
+    // InternalERDiagramDsl.g:496:1: rule__Entity__Group_2__1__Impl : ( ( rule__Entity__KeyAssignment_2_1 ) ) ;
     public final void rule__Entity__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:473:1: ( ( ( rule__Entity__IsAAssignment_2_1 ) ) )
-            // InternalERDiagramDsl.g:474:1: ( ( rule__Entity__IsAAssignment_2_1 ) )
+            // InternalERDiagramDsl.g:500:1: ( ( ( rule__Entity__KeyAssignment_2_1 ) ) )
+            // InternalERDiagramDsl.g:501:1: ( ( rule__Entity__KeyAssignment_2_1 ) )
             {
-            // InternalERDiagramDsl.g:474:1: ( ( rule__Entity__IsAAssignment_2_1 ) )
-            // InternalERDiagramDsl.g:475:2: ( rule__Entity__IsAAssignment_2_1 )
+            // InternalERDiagramDsl.g:501:1: ( ( rule__Entity__KeyAssignment_2_1 ) )
+            // InternalERDiagramDsl.g:502:2: ( rule__Entity__KeyAssignment_2_1 )
             {
-             before(grammarAccess.getEntityAccess().getIsAAssignment_2_1()); 
-            // InternalERDiagramDsl.g:476:2: ( rule__Entity__IsAAssignment_2_1 )
-            // InternalERDiagramDsl.g:476:3: rule__Entity__IsAAssignment_2_1
+             before(grammarAccess.getEntityAccess().getKeyAssignment_2_1()); 
+            // InternalERDiagramDsl.g:503:2: ( rule__Entity__KeyAssignment_2_1 )
+            // InternalERDiagramDsl.g:503:3: rule__Entity__KeyAssignment_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__IsAAssignment_2_1();
+            rule__Entity__KeyAssignment_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityAccess().getIsAAssignment_2_1()); 
+             after(grammarAccess.getEntityAccess().getKeyAssignment_2_1()); 
 
             }
 
@@ -1522,14 +1618,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_3__0"
-    // InternalERDiagramDsl.g:485:1: rule__Entity__Group_3__0 : rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1 ;
+    // InternalERDiagramDsl.g:512:1: rule__Entity__Group_3__0 : rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1 ;
     public final void rule__Entity__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:489:1: ( rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1 )
-            // InternalERDiagramDsl.g:490:2: rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1
+            // InternalERDiagramDsl.g:516:1: ( rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1 )
+            // InternalERDiagramDsl.g:517:2: rule__Entity__Group_3__0__Impl rule__Entity__Group_3__1
             {
             pushFollow(FOLLOW_6);
             rule__Entity__Group_3__0__Impl();
@@ -1560,21 +1656,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_3__0__Impl"
-    // InternalERDiagramDsl.g:497:1: rule__Entity__Group_3__0__Impl : ( '{' ) ;
+    // InternalERDiagramDsl.g:524:1: rule__Entity__Group_3__0__Impl : ( 'isA' ) ;
     public final void rule__Entity__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:501:1: ( ( '{' ) )
-            // InternalERDiagramDsl.g:502:1: ( '{' )
+            // InternalERDiagramDsl.g:528:1: ( ( 'isA' ) )
+            // InternalERDiagramDsl.g:529:1: ( 'isA' )
             {
-            // InternalERDiagramDsl.g:502:1: ( '{' )
-            // InternalERDiagramDsl.g:503:2: '{'
+            // InternalERDiagramDsl.g:529:1: ( 'isA' )
+            // InternalERDiagramDsl.g:530:2: 'isA'
             {
-             before(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3_0()); 
+             before(grammarAccess.getEntityAccess().getIsAKeyword_3_0()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3_0()); 
+             after(grammarAccess.getEntityAccess().getIsAKeyword_3_0()); 
 
             }
 
@@ -1597,22 +1693,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_3__1"
-    // InternalERDiagramDsl.g:512:1: rule__Entity__Group_3__1 : rule__Entity__Group_3__1__Impl rule__Entity__Group_3__2 ;
+    // InternalERDiagramDsl.g:539:1: rule__Entity__Group_3__1 : rule__Entity__Group_3__1__Impl ;
     public final void rule__Entity__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:516:1: ( rule__Entity__Group_3__1__Impl rule__Entity__Group_3__2 )
-            // InternalERDiagramDsl.g:517:2: rule__Entity__Group_3__1__Impl rule__Entity__Group_3__2
+            // InternalERDiagramDsl.g:543:1: ( rule__Entity__Group_3__1__Impl )
+            // InternalERDiagramDsl.g:544:2: rule__Entity__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__Entity__Group_3__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_3__2();
+            rule__Entity__Group_3__1__Impl();
 
             state._fsp--;
 
@@ -1635,31 +1726,31 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__Group_3__1__Impl"
-    // InternalERDiagramDsl.g:524:1: rule__Entity__Group_3__1__Impl : ( ( rule__Entity__AttributesAssignment_3_1 ) ) ;
+    // InternalERDiagramDsl.g:550:1: rule__Entity__Group_3__1__Impl : ( ( rule__Entity__IsAAssignment_3_1 ) ) ;
     public final void rule__Entity__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:528:1: ( ( ( rule__Entity__AttributesAssignment_3_1 ) ) )
-            // InternalERDiagramDsl.g:529:1: ( ( rule__Entity__AttributesAssignment_3_1 ) )
+            // InternalERDiagramDsl.g:554:1: ( ( ( rule__Entity__IsAAssignment_3_1 ) ) )
+            // InternalERDiagramDsl.g:555:1: ( ( rule__Entity__IsAAssignment_3_1 ) )
             {
-            // InternalERDiagramDsl.g:529:1: ( ( rule__Entity__AttributesAssignment_3_1 ) )
-            // InternalERDiagramDsl.g:530:2: ( rule__Entity__AttributesAssignment_3_1 )
+            // InternalERDiagramDsl.g:555:1: ( ( rule__Entity__IsAAssignment_3_1 ) )
+            // InternalERDiagramDsl.g:556:2: ( rule__Entity__IsAAssignment_3_1 )
             {
-             before(grammarAccess.getEntityAccess().getAttributesAssignment_3_1()); 
-            // InternalERDiagramDsl.g:531:2: ( rule__Entity__AttributesAssignment_3_1 )
-            // InternalERDiagramDsl.g:531:3: rule__Entity__AttributesAssignment_3_1
+             before(grammarAccess.getEntityAccess().getIsAAssignment_3_1()); 
+            // InternalERDiagramDsl.g:557:2: ( rule__Entity__IsAAssignment_3_1 )
+            // InternalERDiagramDsl.g:557:3: rule__Entity__IsAAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__AttributesAssignment_3_1();
+            rule__Entity__IsAAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityAccess().getAttributesAssignment_3_1()); 
+             after(grammarAccess.getEntityAccess().getIsAAssignment_3_1()); 
 
             }
 
@@ -1681,23 +1772,23 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Entity__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__Entity__Group_3__2"
-    // InternalERDiagramDsl.g:539:1: rule__Entity__Group_3__2 : rule__Entity__Group_3__2__Impl rule__Entity__Group_3__3 ;
-    public final void rule__Entity__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4__0"
+    // InternalERDiagramDsl.g:566:1: rule__Entity__Group_4__0 : rule__Entity__Group_4__0__Impl rule__Entity__Group_4__1 ;
+    public final void rule__Entity__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:543:1: ( rule__Entity__Group_3__2__Impl rule__Entity__Group_3__3 )
-            // InternalERDiagramDsl.g:544:2: rule__Entity__Group_3__2__Impl rule__Entity__Group_3__3
+            // InternalERDiagramDsl.g:570:1: ( rule__Entity__Group_4__0__Impl rule__Entity__Group_4__1 )
+            // InternalERDiagramDsl.g:571:2: rule__Entity__Group_4__0__Impl rule__Entity__Group_4__1
             {
-            pushFollow(FOLLOW_9);
-            rule__Entity__Group_3__2__Impl();
+            pushFollow(FOLLOW_6);
+            rule__Entity__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_3__3();
+            rule__Entity__Group_4__1();
 
             state._fsp--;
 
@@ -1716,40 +1807,200 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3__2"
+    // $ANTLR end "rule__Entity__Group_4__0"
 
 
-    // $ANTLR start "rule__Entity__Group_3__2__Impl"
-    // InternalERDiagramDsl.g:551:1: rule__Entity__Group_3__2__Impl : ( ( rule__Entity__Group_3_2__0 )* ) ;
-    public final void rule__Entity__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4__0__Impl"
+    // InternalERDiagramDsl.g:578:1: rule__Entity__Group_4__0__Impl : ( '{' ) ;
+    public final void rule__Entity__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:555:1: ( ( ( rule__Entity__Group_3_2__0 )* ) )
-            // InternalERDiagramDsl.g:556:1: ( ( rule__Entity__Group_3_2__0 )* )
+            // InternalERDiagramDsl.g:582:1: ( ( '{' ) )
+            // InternalERDiagramDsl.g:583:1: ( '{' )
             {
-            // InternalERDiagramDsl.g:556:1: ( ( rule__Entity__Group_3_2__0 )* )
-            // InternalERDiagramDsl.g:557:2: ( rule__Entity__Group_3_2__0 )*
+            // InternalERDiagramDsl.g:583:1: ( '{' )
+            // InternalERDiagramDsl.g:584:2: '{'
             {
-             before(grammarAccess.getEntityAccess().getGroup_3_2()); 
-            // InternalERDiagramDsl.g:558:2: ( rule__Entity__Group_3_2__0 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+             before(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4_0()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4_0()); 
 
-                if ( (LA7_0==22) ) {
-                    alt7=1;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group_4__1"
+    // InternalERDiagramDsl.g:593:1: rule__Entity__Group_4__1 : rule__Entity__Group_4__1__Impl rule__Entity__Group_4__2 ;
+    public final void rule__Entity__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:597:1: ( rule__Entity__Group_4__1__Impl rule__Entity__Group_4__2 )
+            // InternalERDiagramDsl.g:598:2: rule__Entity__Group_4__1__Impl rule__Entity__Group_4__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__Entity__Group_4__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group_4__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_4__1"
+
+
+    // $ANTLR start "rule__Entity__Group_4__1__Impl"
+    // InternalERDiagramDsl.g:605:1: rule__Entity__Group_4__1__Impl : ( ( rule__Entity__AttributesAssignment_4_1 ) ) ;
+    public final void rule__Entity__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:609:1: ( ( ( rule__Entity__AttributesAssignment_4_1 ) ) )
+            // InternalERDiagramDsl.g:610:1: ( ( rule__Entity__AttributesAssignment_4_1 ) )
+            {
+            // InternalERDiagramDsl.g:610:1: ( ( rule__Entity__AttributesAssignment_4_1 ) )
+            // InternalERDiagramDsl.g:611:2: ( rule__Entity__AttributesAssignment_4_1 )
+            {
+             before(grammarAccess.getEntityAccess().getAttributesAssignment_4_1()); 
+            // InternalERDiagramDsl.g:612:2: ( rule__Entity__AttributesAssignment_4_1 )
+            // InternalERDiagramDsl.g:612:3: rule__Entity__AttributesAssignment_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__AttributesAssignment_4_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityAccess().getAttributesAssignment_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_4__1__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group_4__2"
+    // InternalERDiagramDsl.g:620:1: rule__Entity__Group_4__2 : rule__Entity__Group_4__2__Impl rule__Entity__Group_4__3 ;
+    public final void rule__Entity__Group_4__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:624:1: ( rule__Entity__Group_4__2__Impl rule__Entity__Group_4__3 )
+            // InternalERDiagramDsl.g:625:2: rule__Entity__Group_4__2__Impl rule__Entity__Group_4__3
+            {
+            pushFollow(FOLLOW_9);
+            rule__Entity__Group_4__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group_4__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_4__2"
+
+
+    // $ANTLR start "rule__Entity__Group_4__2__Impl"
+    // InternalERDiagramDsl.g:632:1: rule__Entity__Group_4__2__Impl : ( ( rule__Entity__Group_4_2__0 )* ) ;
+    public final void rule__Entity__Group_4__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:636:1: ( ( ( rule__Entity__Group_4_2__0 )* ) )
+            // InternalERDiagramDsl.g:637:1: ( ( rule__Entity__Group_4_2__0 )* )
+            {
+            // InternalERDiagramDsl.g:637:1: ( ( rule__Entity__Group_4_2__0 )* )
+            // InternalERDiagramDsl.g:638:2: ( rule__Entity__Group_4_2__0 )*
+            {
+             before(grammarAccess.getEntityAccess().getGroup_4_2()); 
+            // InternalERDiagramDsl.g:639:2: ( rule__Entity__Group_4_2__0 )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==23) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:558:3: rule__Entity__Group_3_2__0
+            	    // InternalERDiagramDsl.g:639:3: rule__Entity__Group_4_2__0
             	    {
             	    pushFollow(FOLLOW_10);
-            	    rule__Entity__Group_3_2__0();
+            	    rule__Entity__Group_4_2__0();
 
             	    state._fsp--;
 
@@ -1758,11 +2009,11 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
-             after(grammarAccess.getEntityAccess().getGroup_3_2()); 
+             after(grammarAccess.getEntityAccess().getGroup_4_2()); 
 
             }
 
@@ -1781,21 +2032,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3__2__Impl"
+    // $ANTLR end "rule__Entity__Group_4__2__Impl"
 
 
-    // $ANTLR start "rule__Entity__Group_3__3"
-    // InternalERDiagramDsl.g:566:1: rule__Entity__Group_3__3 : rule__Entity__Group_3__3__Impl ;
-    public final void rule__Entity__Group_3__3() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4__3"
+    // InternalERDiagramDsl.g:647:1: rule__Entity__Group_4__3 : rule__Entity__Group_4__3__Impl ;
+    public final void rule__Entity__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:570:1: ( rule__Entity__Group_3__3__Impl )
-            // InternalERDiagramDsl.g:571:2: rule__Entity__Group_3__3__Impl
+            // InternalERDiagramDsl.g:651:1: ( rule__Entity__Group_4__3__Impl )
+            // InternalERDiagramDsl.g:652:2: rule__Entity__Group_4__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_3__3__Impl();
+            rule__Entity__Group_4__3__Impl();
 
             state._fsp--;
 
@@ -1814,25 +2065,25 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3__3"
+    // $ANTLR end "rule__Entity__Group_4__3"
 
 
-    // $ANTLR start "rule__Entity__Group_3__3__Impl"
-    // InternalERDiagramDsl.g:577:1: rule__Entity__Group_3__3__Impl : ( '}' ) ;
-    public final void rule__Entity__Group_3__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4__3__Impl"
+    // InternalERDiagramDsl.g:658:1: rule__Entity__Group_4__3__Impl : ( '}' ) ;
+    public final void rule__Entity__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:581:1: ( ( '}' ) )
-            // InternalERDiagramDsl.g:582:1: ( '}' )
+            // InternalERDiagramDsl.g:662:1: ( ( '}' ) )
+            // InternalERDiagramDsl.g:663:1: ( '}' )
             {
-            // InternalERDiagramDsl.g:582:1: ( '}' )
-            // InternalERDiagramDsl.g:583:2: '}'
+            // InternalERDiagramDsl.g:663:1: ( '}' )
+            // InternalERDiagramDsl.g:664:2: '}'
             {
-             before(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_3_3()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_3_3()); 
+             before(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_4_3()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_4_3()); 
 
             }
 
@@ -1851,26 +2102,26 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3__3__Impl"
+    // $ANTLR end "rule__Entity__Group_4__3__Impl"
 
 
-    // $ANTLR start "rule__Entity__Group_3_2__0"
-    // InternalERDiagramDsl.g:593:1: rule__Entity__Group_3_2__0 : rule__Entity__Group_3_2__0__Impl rule__Entity__Group_3_2__1 ;
-    public final void rule__Entity__Group_3_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4_2__0"
+    // InternalERDiagramDsl.g:674:1: rule__Entity__Group_4_2__0 : rule__Entity__Group_4_2__0__Impl rule__Entity__Group_4_2__1 ;
+    public final void rule__Entity__Group_4_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:597:1: ( rule__Entity__Group_3_2__0__Impl rule__Entity__Group_3_2__1 )
-            // InternalERDiagramDsl.g:598:2: rule__Entity__Group_3_2__0__Impl rule__Entity__Group_3_2__1
+            // InternalERDiagramDsl.g:678:1: ( rule__Entity__Group_4_2__0__Impl rule__Entity__Group_4_2__1 )
+            // InternalERDiagramDsl.g:679:2: rule__Entity__Group_4_2__0__Impl rule__Entity__Group_4_2__1
             {
             pushFollow(FOLLOW_6);
-            rule__Entity__Group_3_2__0__Impl();
+            rule__Entity__Group_4_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_3_2__1();
+            rule__Entity__Group_4_2__1();
 
             state._fsp--;
 
@@ -1889,25 +2140,25 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3_2__0"
+    // $ANTLR end "rule__Entity__Group_4_2__0"
 
 
-    // $ANTLR start "rule__Entity__Group_3_2__0__Impl"
-    // InternalERDiagramDsl.g:605:1: rule__Entity__Group_3_2__0__Impl : ( ',' ) ;
-    public final void rule__Entity__Group_3_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4_2__0__Impl"
+    // InternalERDiagramDsl.g:686:1: rule__Entity__Group_4_2__0__Impl : ( ',' ) ;
+    public final void rule__Entity__Group_4_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:609:1: ( ( ',' ) )
-            // InternalERDiagramDsl.g:610:1: ( ',' )
+            // InternalERDiagramDsl.g:690:1: ( ( ',' ) )
+            // InternalERDiagramDsl.g:691:1: ( ',' )
             {
-            // InternalERDiagramDsl.g:610:1: ( ',' )
-            // InternalERDiagramDsl.g:611:2: ','
+            // InternalERDiagramDsl.g:691:1: ( ',' )
+            // InternalERDiagramDsl.g:692:2: ','
             {
-             before(grammarAccess.getEntityAccess().getCommaKeyword_3_2_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getCommaKeyword_3_2_0()); 
+             before(grammarAccess.getEntityAccess().getCommaKeyword_4_2_0()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getCommaKeyword_4_2_0()); 
 
             }
 
@@ -1926,21 +2177,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3_2__0__Impl"
+    // $ANTLR end "rule__Entity__Group_4_2__0__Impl"
 
 
-    // $ANTLR start "rule__Entity__Group_3_2__1"
-    // InternalERDiagramDsl.g:620:1: rule__Entity__Group_3_2__1 : rule__Entity__Group_3_2__1__Impl ;
-    public final void rule__Entity__Group_3_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4_2__1"
+    // InternalERDiagramDsl.g:701:1: rule__Entity__Group_4_2__1 : rule__Entity__Group_4_2__1__Impl ;
+    public final void rule__Entity__Group_4_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:624:1: ( rule__Entity__Group_3_2__1__Impl )
-            // InternalERDiagramDsl.g:625:2: rule__Entity__Group_3_2__1__Impl
+            // InternalERDiagramDsl.g:705:1: ( rule__Entity__Group_4_2__1__Impl )
+            // InternalERDiagramDsl.g:706:2: rule__Entity__Group_4_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_3_2__1__Impl();
+            rule__Entity__Group_4_2__1__Impl();
 
             state._fsp--;
 
@@ -1959,35 +2210,35 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3_2__1"
+    // $ANTLR end "rule__Entity__Group_4_2__1"
 
 
-    // $ANTLR start "rule__Entity__Group_3_2__1__Impl"
-    // InternalERDiagramDsl.g:631:1: rule__Entity__Group_3_2__1__Impl : ( ( rule__Entity__AttributesAssignment_3_2_1 ) ) ;
-    public final void rule__Entity__Group_3_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_4_2__1__Impl"
+    // InternalERDiagramDsl.g:712:1: rule__Entity__Group_4_2__1__Impl : ( ( rule__Entity__AttributesAssignment_4_2_1 ) ) ;
+    public final void rule__Entity__Group_4_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:635:1: ( ( ( rule__Entity__AttributesAssignment_3_2_1 ) ) )
-            // InternalERDiagramDsl.g:636:1: ( ( rule__Entity__AttributesAssignment_3_2_1 ) )
+            // InternalERDiagramDsl.g:716:1: ( ( ( rule__Entity__AttributesAssignment_4_2_1 ) ) )
+            // InternalERDiagramDsl.g:717:1: ( ( rule__Entity__AttributesAssignment_4_2_1 ) )
             {
-            // InternalERDiagramDsl.g:636:1: ( ( rule__Entity__AttributesAssignment_3_2_1 ) )
-            // InternalERDiagramDsl.g:637:2: ( rule__Entity__AttributesAssignment_3_2_1 )
+            // InternalERDiagramDsl.g:717:1: ( ( rule__Entity__AttributesAssignment_4_2_1 ) )
+            // InternalERDiagramDsl.g:718:2: ( rule__Entity__AttributesAssignment_4_2_1 )
             {
-             before(grammarAccess.getEntityAccess().getAttributesAssignment_3_2_1()); 
-            // InternalERDiagramDsl.g:638:2: ( rule__Entity__AttributesAssignment_3_2_1 )
-            // InternalERDiagramDsl.g:638:3: rule__Entity__AttributesAssignment_3_2_1
+             before(grammarAccess.getEntityAccess().getAttributesAssignment_4_2_1()); 
+            // InternalERDiagramDsl.g:719:2: ( rule__Entity__AttributesAssignment_4_2_1 )
+            // InternalERDiagramDsl.g:719:3: rule__Entity__AttributesAssignment_4_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__AttributesAssignment_3_2_1();
+            rule__Entity__AttributesAssignment_4_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityAccess().getAttributesAssignment_3_2_1()); 
+             after(grammarAccess.getEntityAccess().getAttributesAssignment_4_2_1()); 
 
             }
 
@@ -2006,18 +2257,18 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__Group_3_2__1__Impl"
+    // $ANTLR end "rule__Entity__Group_4_2__1__Impl"
 
 
     // $ANTLR start "rule__Attribute__Group__0"
-    // InternalERDiagramDsl.g:647:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // InternalERDiagramDsl.g:728:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:651:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // InternalERDiagramDsl.g:652:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // InternalERDiagramDsl.g:732:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // InternalERDiagramDsl.g:733:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Attribute__Group__0__Impl();
@@ -2048,21 +2299,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // InternalERDiagramDsl.g:659:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__NameAssignment_0 ) ) ;
+    // InternalERDiagramDsl.g:740:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__NameAssignment_0 ) ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:663:1: ( ( ( rule__Attribute__NameAssignment_0 ) ) )
-            // InternalERDiagramDsl.g:664:1: ( ( rule__Attribute__NameAssignment_0 ) )
+            // InternalERDiagramDsl.g:744:1: ( ( ( rule__Attribute__NameAssignment_0 ) ) )
+            // InternalERDiagramDsl.g:745:1: ( ( rule__Attribute__NameAssignment_0 ) )
             {
-            // InternalERDiagramDsl.g:664:1: ( ( rule__Attribute__NameAssignment_0 ) )
-            // InternalERDiagramDsl.g:665:2: ( rule__Attribute__NameAssignment_0 )
+            // InternalERDiagramDsl.g:745:1: ( ( rule__Attribute__NameAssignment_0 ) )
+            // InternalERDiagramDsl.g:746:2: ( rule__Attribute__NameAssignment_0 )
             {
              before(grammarAccess.getAttributeAccess().getNameAssignment_0()); 
-            // InternalERDiagramDsl.g:666:2: ( rule__Attribute__NameAssignment_0 )
-            // InternalERDiagramDsl.g:666:3: rule__Attribute__NameAssignment_0
+            // InternalERDiagramDsl.g:747:2: ( rule__Attribute__NameAssignment_0 )
+            // InternalERDiagramDsl.g:747:3: rule__Attribute__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__NameAssignment_0();
@@ -2095,14 +2346,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // InternalERDiagramDsl.g:674:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
+    // InternalERDiagramDsl.g:755:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:678:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
-            // InternalERDiagramDsl.g:679:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
+            // InternalERDiagramDsl.g:759:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
+            // InternalERDiagramDsl.g:760:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__Attribute__Group__1__Impl();
@@ -2133,20 +2384,20 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // InternalERDiagramDsl.g:686:1: rule__Attribute__Group__1__Impl : ( ':' ) ;
+    // InternalERDiagramDsl.g:767:1: rule__Attribute__Group__1__Impl : ( ':' ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:690:1: ( ( ':' ) )
-            // InternalERDiagramDsl.g:691:1: ( ':' )
+            // InternalERDiagramDsl.g:771:1: ( ( ':' ) )
+            // InternalERDiagramDsl.g:772:1: ( ':' )
             {
-            // InternalERDiagramDsl.g:691:1: ( ':' )
-            // InternalERDiagramDsl.g:692:2: ':'
+            // InternalERDiagramDsl.g:772:1: ( ':' )
+            // InternalERDiagramDsl.g:773:2: ':'
             {
              before(grammarAccess.getAttributeAccess().getColonKeyword_1()); 
-            match(input,23,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getColonKeyword_1()); 
 
             }
@@ -2170,14 +2421,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__2"
-    // InternalERDiagramDsl.g:701:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
+    // InternalERDiagramDsl.g:782:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:705:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
-            // InternalERDiagramDsl.g:706:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
+            // InternalERDiagramDsl.g:786:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
+            // InternalERDiagramDsl.g:787:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Attribute__Group__2__Impl();
@@ -2208,21 +2459,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__2__Impl"
-    // InternalERDiagramDsl.g:713:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__TypeAssignment_2 ) ) ;
+    // InternalERDiagramDsl.g:794:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__TypeAssignment_2 ) ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:717:1: ( ( ( rule__Attribute__TypeAssignment_2 ) ) )
-            // InternalERDiagramDsl.g:718:1: ( ( rule__Attribute__TypeAssignment_2 ) )
+            // InternalERDiagramDsl.g:798:1: ( ( ( rule__Attribute__TypeAssignment_2 ) ) )
+            // InternalERDiagramDsl.g:799:1: ( ( rule__Attribute__TypeAssignment_2 ) )
             {
-            // InternalERDiagramDsl.g:718:1: ( ( rule__Attribute__TypeAssignment_2 ) )
-            // InternalERDiagramDsl.g:719:2: ( rule__Attribute__TypeAssignment_2 )
+            // InternalERDiagramDsl.g:799:1: ( ( rule__Attribute__TypeAssignment_2 ) )
+            // InternalERDiagramDsl.g:800:2: ( rule__Attribute__TypeAssignment_2 )
             {
              before(grammarAccess.getAttributeAccess().getTypeAssignment_2()); 
-            // InternalERDiagramDsl.g:720:2: ( rule__Attribute__TypeAssignment_2 )
-            // InternalERDiagramDsl.g:720:3: rule__Attribute__TypeAssignment_2
+            // InternalERDiagramDsl.g:801:2: ( rule__Attribute__TypeAssignment_2 )
+            // InternalERDiagramDsl.g:801:3: rule__Attribute__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__TypeAssignment_2();
@@ -2255,14 +2506,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__3"
-    // InternalERDiagramDsl.g:728:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
+    // InternalERDiagramDsl.g:809:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
     public final void rule__Attribute__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:732:1: ( rule__Attribute__Group__3__Impl )
-            // InternalERDiagramDsl.g:733:2: rule__Attribute__Group__3__Impl
+            // InternalERDiagramDsl.g:813:1: ( rule__Attribute__Group__3__Impl )
+            // InternalERDiagramDsl.g:814:2: rule__Attribute__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group__3__Impl();
@@ -2288,29 +2539,29 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__3__Impl"
-    // InternalERDiagramDsl.g:739:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__IsKeyAssignment_3 )? ) ;
+    // InternalERDiagramDsl.g:820:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__IsKeyAssignment_3 )? ) ;
     public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:743:1: ( ( ( rule__Attribute__IsKeyAssignment_3 )? ) )
-            // InternalERDiagramDsl.g:744:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
+            // InternalERDiagramDsl.g:824:1: ( ( ( rule__Attribute__IsKeyAssignment_3 )? ) )
+            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
             {
-            // InternalERDiagramDsl.g:744:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
-            // InternalERDiagramDsl.g:745:2: ( rule__Attribute__IsKeyAssignment_3 )?
+            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
+            // InternalERDiagramDsl.g:826:2: ( rule__Attribute__IsKeyAssignment_3 )?
             {
              before(grammarAccess.getAttributeAccess().getIsKeyAssignment_3()); 
-            // InternalERDiagramDsl.g:746:2: ( rule__Attribute__IsKeyAssignment_3 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalERDiagramDsl.g:827:2: ( rule__Attribute__IsKeyAssignment_3 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==25) ) {
-                alt8=1;
+            if ( (LA9_0==19) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalERDiagramDsl.g:746:3: rule__Attribute__IsKeyAssignment_3
+                    // InternalERDiagramDsl.g:827:3: rule__Attribute__IsKeyAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Attribute__IsKeyAssignment_3();
@@ -2346,14 +2597,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__0"
-    // InternalERDiagramDsl.g:755:1: rule__Relation__Group__0 : rule__Relation__Group__0__Impl rule__Relation__Group__1 ;
+    // InternalERDiagramDsl.g:836:1: rule__Relation__Group__0 : rule__Relation__Group__0__Impl rule__Relation__Group__1 ;
     public final void rule__Relation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:759:1: ( rule__Relation__Group__0__Impl rule__Relation__Group__1 )
-            // InternalERDiagramDsl.g:760:2: rule__Relation__Group__0__Impl rule__Relation__Group__1
+            // InternalERDiagramDsl.g:840:1: ( rule__Relation__Group__0__Impl rule__Relation__Group__1 )
+            // InternalERDiagramDsl.g:841:2: rule__Relation__Group__0__Impl rule__Relation__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__Relation__Group__0__Impl();
@@ -2384,21 +2635,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__0__Impl"
-    // InternalERDiagramDsl.g:767:1: rule__Relation__Group__0__Impl : ( ( rule__Relation__LeftEndingAssignment_0 ) ) ;
+    // InternalERDiagramDsl.g:848:1: rule__Relation__Group__0__Impl : ( ( rule__Relation__LeftEndingAssignment_0 ) ) ;
     public final void rule__Relation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:771:1: ( ( ( rule__Relation__LeftEndingAssignment_0 ) ) )
-            // InternalERDiagramDsl.g:772:1: ( ( rule__Relation__LeftEndingAssignment_0 ) )
+            // InternalERDiagramDsl.g:852:1: ( ( ( rule__Relation__LeftEndingAssignment_0 ) ) )
+            // InternalERDiagramDsl.g:853:1: ( ( rule__Relation__LeftEndingAssignment_0 ) )
             {
-            // InternalERDiagramDsl.g:772:1: ( ( rule__Relation__LeftEndingAssignment_0 ) )
-            // InternalERDiagramDsl.g:773:2: ( rule__Relation__LeftEndingAssignment_0 )
+            // InternalERDiagramDsl.g:853:1: ( ( rule__Relation__LeftEndingAssignment_0 ) )
+            // InternalERDiagramDsl.g:854:2: ( rule__Relation__LeftEndingAssignment_0 )
             {
              before(grammarAccess.getRelationAccess().getLeftEndingAssignment_0()); 
-            // InternalERDiagramDsl.g:774:2: ( rule__Relation__LeftEndingAssignment_0 )
-            // InternalERDiagramDsl.g:774:3: rule__Relation__LeftEndingAssignment_0
+            // InternalERDiagramDsl.g:855:2: ( rule__Relation__LeftEndingAssignment_0 )
+            // InternalERDiagramDsl.g:855:3: rule__Relation__LeftEndingAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Relation__LeftEndingAssignment_0();
@@ -2431,14 +2682,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__1"
-    // InternalERDiagramDsl.g:782:1: rule__Relation__Group__1 : rule__Relation__Group__1__Impl rule__Relation__Group__2 ;
+    // InternalERDiagramDsl.g:863:1: rule__Relation__Group__1 : rule__Relation__Group__1__Impl rule__Relation__Group__2 ;
     public final void rule__Relation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:786:1: ( rule__Relation__Group__1__Impl rule__Relation__Group__2 )
-            // InternalERDiagramDsl.g:787:2: rule__Relation__Group__1__Impl rule__Relation__Group__2
+            // InternalERDiagramDsl.g:867:1: ( rule__Relation__Group__1__Impl rule__Relation__Group__2 )
+            // InternalERDiagramDsl.g:868:2: rule__Relation__Group__1__Impl rule__Relation__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Relation__Group__1__Impl();
@@ -2469,20 +2720,20 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__1__Impl"
-    // InternalERDiagramDsl.g:794:1: rule__Relation__Group__1__Impl : ( 'is related with' ) ;
+    // InternalERDiagramDsl.g:875:1: rule__Relation__Group__1__Impl : ( 'is related with' ) ;
     public final void rule__Relation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:798:1: ( ( 'is related with' ) )
-            // InternalERDiagramDsl.g:799:1: ( 'is related with' )
+            // InternalERDiagramDsl.g:879:1: ( ( 'is related with' ) )
+            // InternalERDiagramDsl.g:880:1: ( 'is related with' )
             {
-            // InternalERDiagramDsl.g:799:1: ( 'is related with' )
-            // InternalERDiagramDsl.g:800:2: 'is related with'
+            // InternalERDiagramDsl.g:880:1: ( 'is related with' )
+            // InternalERDiagramDsl.g:881:2: 'is related with'
             {
              before(grammarAccess.getRelationAccess().getIsRelatedWithKeyword_1()); 
-            match(input,24,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getRelationAccess().getIsRelatedWithKeyword_1()); 
 
             }
@@ -2506,14 +2757,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__2"
-    // InternalERDiagramDsl.g:809:1: rule__Relation__Group__2 : rule__Relation__Group__2__Impl ;
+    // InternalERDiagramDsl.g:890:1: rule__Relation__Group__2 : rule__Relation__Group__2__Impl ;
     public final void rule__Relation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:813:1: ( rule__Relation__Group__2__Impl )
-            // InternalERDiagramDsl.g:814:2: rule__Relation__Group__2__Impl
+            // InternalERDiagramDsl.g:894:1: ( rule__Relation__Group__2__Impl )
+            // InternalERDiagramDsl.g:895:2: rule__Relation__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relation__Group__2__Impl();
@@ -2539,21 +2790,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__Group__2__Impl"
-    // InternalERDiagramDsl.g:820:1: rule__Relation__Group__2__Impl : ( ( rule__Relation__RightEndingAssignment_2 ) ) ;
+    // InternalERDiagramDsl.g:901:1: rule__Relation__Group__2__Impl : ( ( rule__Relation__RightEndingAssignment_2 ) ) ;
     public final void rule__Relation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:824:1: ( ( ( rule__Relation__RightEndingAssignment_2 ) ) )
-            // InternalERDiagramDsl.g:825:1: ( ( rule__Relation__RightEndingAssignment_2 ) )
+            // InternalERDiagramDsl.g:905:1: ( ( ( rule__Relation__RightEndingAssignment_2 ) ) )
+            // InternalERDiagramDsl.g:906:1: ( ( rule__Relation__RightEndingAssignment_2 ) )
             {
-            // InternalERDiagramDsl.g:825:1: ( ( rule__Relation__RightEndingAssignment_2 ) )
-            // InternalERDiagramDsl.g:826:2: ( rule__Relation__RightEndingAssignment_2 )
+            // InternalERDiagramDsl.g:906:1: ( ( rule__Relation__RightEndingAssignment_2 ) )
+            // InternalERDiagramDsl.g:907:2: ( rule__Relation__RightEndingAssignment_2 )
             {
              before(grammarAccess.getRelationAccess().getRightEndingAssignment_2()); 
-            // InternalERDiagramDsl.g:827:2: ( rule__Relation__RightEndingAssignment_2 )
-            // InternalERDiagramDsl.g:827:3: rule__Relation__RightEndingAssignment_2
+            // InternalERDiagramDsl.g:908:2: ( rule__Relation__RightEndingAssignment_2 )
+            // InternalERDiagramDsl.g:908:3: rule__Relation__RightEndingAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Relation__RightEndingAssignment_2();
@@ -2586,14 +2837,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__Group__0"
-    // InternalERDiagramDsl.g:836:1: rule__RelationEnding__Group__0 : rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1 ;
+    // InternalERDiagramDsl.g:917:1: rule__RelationEnding__Group__0 : rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1 ;
     public final void rule__RelationEnding__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:840:1: ( rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1 )
-            // InternalERDiagramDsl.g:841:2: rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1
+            // InternalERDiagramDsl.g:921:1: ( rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1 )
+            // InternalERDiagramDsl.g:922:2: rule__RelationEnding__Group__0__Impl rule__RelationEnding__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__RelationEnding__Group__0__Impl();
@@ -2624,21 +2875,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__Group__0__Impl"
-    // InternalERDiagramDsl.g:848:1: rule__RelationEnding__Group__0__Impl : ( ( rule__RelationEnding__UnorderedGroup_0 ) ) ;
+    // InternalERDiagramDsl.g:929:1: rule__RelationEnding__Group__0__Impl : ( ( rule__RelationEnding__UnorderedGroup_0 ) ) ;
     public final void rule__RelationEnding__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:852:1: ( ( ( rule__RelationEnding__UnorderedGroup_0 ) ) )
-            // InternalERDiagramDsl.g:853:1: ( ( rule__RelationEnding__UnorderedGroup_0 ) )
+            // InternalERDiagramDsl.g:933:1: ( ( ( rule__RelationEnding__UnorderedGroup_0 ) ) )
+            // InternalERDiagramDsl.g:934:1: ( ( rule__RelationEnding__UnorderedGroup_0 ) )
             {
-            // InternalERDiagramDsl.g:853:1: ( ( rule__RelationEnding__UnorderedGroup_0 ) )
-            // InternalERDiagramDsl.g:854:2: ( rule__RelationEnding__UnorderedGroup_0 )
+            // InternalERDiagramDsl.g:934:1: ( ( rule__RelationEnding__UnorderedGroup_0 ) )
+            // InternalERDiagramDsl.g:935:2: ( rule__RelationEnding__UnorderedGroup_0 )
             {
              before(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0()); 
-            // InternalERDiagramDsl.g:855:2: ( rule__RelationEnding__UnorderedGroup_0 )
-            // InternalERDiagramDsl.g:855:3: rule__RelationEnding__UnorderedGroup_0
+            // InternalERDiagramDsl.g:936:2: ( rule__RelationEnding__UnorderedGroup_0 )
+            // InternalERDiagramDsl.g:936:3: rule__RelationEnding__UnorderedGroup_0
             {
             pushFollow(FOLLOW_2);
             rule__RelationEnding__UnorderedGroup_0();
@@ -2671,14 +2922,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__Group__1"
-    // InternalERDiagramDsl.g:863:1: rule__RelationEnding__Group__1 : rule__RelationEnding__Group__1__Impl ;
+    // InternalERDiagramDsl.g:944:1: rule__RelationEnding__Group__1 : rule__RelationEnding__Group__1__Impl ;
     public final void rule__RelationEnding__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:867:1: ( rule__RelationEnding__Group__1__Impl )
-            // InternalERDiagramDsl.g:868:2: rule__RelationEnding__Group__1__Impl
+            // InternalERDiagramDsl.g:948:1: ( rule__RelationEnding__Group__1__Impl )
+            // InternalERDiagramDsl.g:949:2: rule__RelationEnding__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RelationEnding__Group__1__Impl();
@@ -2704,21 +2955,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__Group__1__Impl"
-    // InternalERDiagramDsl.g:874:1: rule__RelationEnding__Group__1__Impl : ( ( rule__RelationEnding__TargetAssignment_1 ) ) ;
+    // InternalERDiagramDsl.g:955:1: rule__RelationEnding__Group__1__Impl : ( ( rule__RelationEnding__TargetAssignment_1 ) ) ;
     public final void rule__RelationEnding__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:878:1: ( ( ( rule__RelationEnding__TargetAssignment_1 ) ) )
-            // InternalERDiagramDsl.g:879:1: ( ( rule__RelationEnding__TargetAssignment_1 ) )
+            // InternalERDiagramDsl.g:959:1: ( ( ( rule__RelationEnding__TargetAssignment_1 ) ) )
+            // InternalERDiagramDsl.g:960:1: ( ( rule__RelationEnding__TargetAssignment_1 ) )
             {
-            // InternalERDiagramDsl.g:879:1: ( ( rule__RelationEnding__TargetAssignment_1 ) )
-            // InternalERDiagramDsl.g:880:2: ( rule__RelationEnding__TargetAssignment_1 )
+            // InternalERDiagramDsl.g:960:1: ( ( rule__RelationEnding__TargetAssignment_1 ) )
+            // InternalERDiagramDsl.g:961:2: ( rule__RelationEnding__TargetAssignment_1 )
             {
              before(grammarAccess.getRelationEndingAccess().getTargetAssignment_1()); 
-            // InternalERDiagramDsl.g:881:2: ( rule__RelationEnding__TargetAssignment_1 )
-            // InternalERDiagramDsl.g:881:3: rule__RelationEnding__TargetAssignment_1
+            // InternalERDiagramDsl.g:962:2: ( rule__RelationEnding__TargetAssignment_1 )
+            // InternalERDiagramDsl.g:962:3: rule__RelationEnding__TargetAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__RelationEnding__TargetAssignment_1();
@@ -2751,15 +3002,15 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__UnorderedGroup_0"
-    // InternalERDiagramDsl.g:890:1: rule__RelationEnding__UnorderedGroup_0 : rule__RelationEnding__UnorderedGroup_0__0 {...}?;
+    // InternalERDiagramDsl.g:971:1: rule__RelationEnding__UnorderedGroup_0 : rule__RelationEnding__UnorderedGroup_0__0 {...}?;
     public final void rule__RelationEnding__UnorderedGroup_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0());
         	
         try {
-            // InternalERDiagramDsl.g:895:1: ( rule__RelationEnding__UnorderedGroup_0__0 {...}?)
-            // InternalERDiagramDsl.g:896:2: rule__RelationEnding__UnorderedGroup_0__0 {...}?
+            // InternalERDiagramDsl.g:976:1: ( rule__RelationEnding__UnorderedGroup_0__0 {...}?)
+            // InternalERDiagramDsl.g:977:2: rule__RelationEnding__UnorderedGroup_0__0 {...}?
             {
             pushFollow(FOLLOW_2);
             rule__RelationEnding__UnorderedGroup_0__0();
@@ -2789,44 +3040,44 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__UnorderedGroup_0__Impl"
-    // InternalERDiagramDsl.g:904:1: rule__RelationEnding__UnorderedGroup_0__Impl : ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) ) ;
+    // InternalERDiagramDsl.g:985:1: rule__RelationEnding__UnorderedGroup_0__Impl : ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) ) ;
     public final void rule__RelationEnding__UnorderedGroup_0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalERDiagramDsl.g:909:1: ( ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) ) )
-            // InternalERDiagramDsl.g:910:3: ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) )
+            // InternalERDiagramDsl.g:990:1: ( ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) ) )
+            // InternalERDiagramDsl.g:991:3: ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) )
             {
-            // InternalERDiagramDsl.g:910:3: ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalERDiagramDsl.g:991:3: ( ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) ) | ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( LA9_0 >= 16 && LA9_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
-                alt9=1;
+            if ( LA10_0 >= 16 && LA10_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
+                alt10=1;
             }
-            else if ( LA9_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
-                alt9=2;
+            else if ( LA10_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalERDiagramDsl.g:911:3: ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) )
+                    // InternalERDiagramDsl.g:992:3: ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) )
                     {
-                    // InternalERDiagramDsl.g:911:3: ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) )
-                    // InternalERDiagramDsl.g:912:4: {...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) )
+                    // InternalERDiagramDsl.g:992:3: ({...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) ) )
+                    // InternalERDiagramDsl.g:993:4: {...}? => ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
                         throw new FailedPredicateException(input, "rule__RelationEnding__UnorderedGroup_0__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0)");
                     }
-                    // InternalERDiagramDsl.g:912:110: ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) )
-                    // InternalERDiagramDsl.g:913:5: ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) )
+                    // InternalERDiagramDsl.g:993:110: ( ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) ) )
+                    // InternalERDiagramDsl.g:994:5: ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0);
@@ -2834,12 +3085,12 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
                     					selected = true;
                     				
-                    // InternalERDiagramDsl.g:919:5: ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) )
-                    // InternalERDiagramDsl.g:920:6: ( rule__RelationEnding__MultiplicityAssignment_0_0 )
+                    // InternalERDiagramDsl.g:1000:5: ( ( rule__RelationEnding__MultiplicityAssignment_0_0 ) )
+                    // InternalERDiagramDsl.g:1001:6: ( rule__RelationEnding__MultiplicityAssignment_0_0 )
                     {
                      before(grammarAccess.getRelationEndingAccess().getMultiplicityAssignment_0_0()); 
-                    // InternalERDiagramDsl.g:921:6: ( rule__RelationEnding__MultiplicityAssignment_0_0 )
-                    // InternalERDiagramDsl.g:921:7: rule__RelationEnding__MultiplicityAssignment_0_0
+                    // InternalERDiagramDsl.g:1002:6: ( rule__RelationEnding__MultiplicityAssignment_0_0 )
+                    // InternalERDiagramDsl.g:1002:7: rule__RelationEnding__MultiplicityAssignment_0_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__RelationEnding__MultiplicityAssignment_0_0();
@@ -2863,16 +3114,16 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // InternalERDiagramDsl.g:926:3: ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) )
+                    // InternalERDiagramDsl.g:1007:3: ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) )
                     {
-                    // InternalERDiagramDsl.g:926:3: ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) )
-                    // InternalERDiagramDsl.g:927:4: {...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) )
+                    // InternalERDiagramDsl.g:1007:3: ({...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) ) )
+                    // InternalERDiagramDsl.g:1008:4: {...}? => ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
                         throw new FailedPredicateException(input, "rule__RelationEnding__UnorderedGroup_0__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1)");
                     }
-                    // InternalERDiagramDsl.g:927:110: ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) )
-                    // InternalERDiagramDsl.g:928:5: ( ( rule__RelationEnding__NullableAssignment_0_1 ) )
+                    // InternalERDiagramDsl.g:1008:110: ( ( ( rule__RelationEnding__NullableAssignment_0_1 ) ) )
+                    // InternalERDiagramDsl.g:1009:5: ( ( rule__RelationEnding__NullableAssignment_0_1 ) )
                     {
 
                     					getUnorderedGroupHelper().select(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1);
@@ -2880,12 +3131,12 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
                     					selected = true;
                     				
-                    // InternalERDiagramDsl.g:934:5: ( ( rule__RelationEnding__NullableAssignment_0_1 ) )
-                    // InternalERDiagramDsl.g:935:6: ( rule__RelationEnding__NullableAssignment_0_1 )
+                    // InternalERDiagramDsl.g:1015:5: ( ( rule__RelationEnding__NullableAssignment_0_1 ) )
+                    // InternalERDiagramDsl.g:1016:6: ( rule__RelationEnding__NullableAssignment_0_1 )
                     {
                      before(grammarAccess.getRelationEndingAccess().getNullableAssignment_0_1()); 
-                    // InternalERDiagramDsl.g:936:6: ( rule__RelationEnding__NullableAssignment_0_1 )
-                    // InternalERDiagramDsl.g:936:7: rule__RelationEnding__NullableAssignment_0_1
+                    // InternalERDiagramDsl.g:1017:6: ( rule__RelationEnding__NullableAssignment_0_1 )
+                    // InternalERDiagramDsl.g:1017:7: rule__RelationEnding__NullableAssignment_0_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__RelationEnding__NullableAssignment_0_1();
@@ -2932,33 +3183,33 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__UnorderedGroup_0__0"
-    // InternalERDiagramDsl.g:949:1: rule__RelationEnding__UnorderedGroup_0__0 : rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )? ;
+    // InternalERDiagramDsl.g:1030:1: rule__RelationEnding__UnorderedGroup_0__0 : rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )? ;
     public final void rule__RelationEnding__UnorderedGroup_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:953:1: ( rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )? )
-            // InternalERDiagramDsl.g:954:2: rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )?
+            // InternalERDiagramDsl.g:1034:1: ( rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )? )
+            // InternalERDiagramDsl.g:1035:2: rule__RelationEnding__UnorderedGroup_0__Impl ( rule__RelationEnding__UnorderedGroup_0__1 )?
             {
             pushFollow(FOLLOW_5);
             rule__RelationEnding__UnorderedGroup_0__Impl();
 
             state._fsp--;
 
-            // InternalERDiagramDsl.g:955:2: ( rule__RelationEnding__UnorderedGroup_0__1 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalERDiagramDsl.g:1036:2: ( rule__RelationEnding__UnorderedGroup_0__1 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( LA10_0 >= 16 && LA10_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
-                alt10=1;
+            if ( LA11_0 >= 16 && LA11_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
+                alt11=1;
             }
-            else if ( LA10_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
-                alt10=1;
+            else if ( LA11_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalERDiagramDsl.g:955:2: rule__RelationEnding__UnorderedGroup_0__1
+                    // InternalERDiagramDsl.g:1036:2: rule__RelationEnding__UnorderedGroup_0__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__RelationEnding__UnorderedGroup_0__1();
@@ -2990,14 +3241,14 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__UnorderedGroup_0__1"
-    // InternalERDiagramDsl.g:961:1: rule__RelationEnding__UnorderedGroup_0__1 : rule__RelationEnding__UnorderedGroup_0__Impl ;
+    // InternalERDiagramDsl.g:1042:1: rule__RelationEnding__UnorderedGroup_0__1 : rule__RelationEnding__UnorderedGroup_0__Impl ;
     public final void rule__RelationEnding__UnorderedGroup_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:965:1: ( rule__RelationEnding__UnorderedGroup_0__Impl )
-            // InternalERDiagramDsl.g:966:2: rule__RelationEnding__UnorderedGroup_0__Impl
+            // InternalERDiagramDsl.g:1046:1: ( rule__RelationEnding__UnorderedGroup_0__Impl )
+            // InternalERDiagramDsl.g:1047:2: rule__RelationEnding__UnorderedGroup_0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RelationEnding__UnorderedGroup_0__Impl();
@@ -3023,17 +3274,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ERDiagram__EntitiesAssignment_0"
-    // InternalERDiagramDsl.g:973:1: rule__ERDiagram__EntitiesAssignment_0 : ( ruleEntity ) ;
+    // InternalERDiagramDsl.g:1054:1: rule__ERDiagram__EntitiesAssignment_0 : ( ruleEntity ) ;
     public final void rule__ERDiagram__EntitiesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:977:1: ( ( ruleEntity ) )
-            // InternalERDiagramDsl.g:978:2: ( ruleEntity )
+            // InternalERDiagramDsl.g:1058:1: ( ( ruleEntity ) )
+            // InternalERDiagramDsl.g:1059:2: ( ruleEntity )
             {
-            // InternalERDiagramDsl.g:978:2: ( ruleEntity )
-            // InternalERDiagramDsl.g:979:3: ruleEntity
+            // InternalERDiagramDsl.g:1059:2: ( ruleEntity )
+            // InternalERDiagramDsl.g:1060:3: ruleEntity
             {
              before(grammarAccess.getERDiagramAccess().getEntitiesEntityParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3064,17 +3315,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ERDiagram__RelationAssignment_1"
-    // InternalERDiagramDsl.g:988:1: rule__ERDiagram__RelationAssignment_1 : ( ruleRelation ) ;
+    // InternalERDiagramDsl.g:1069:1: rule__ERDiagram__RelationAssignment_1 : ( ruleRelation ) ;
     public final void rule__ERDiagram__RelationAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:992:1: ( ( ruleRelation ) )
-            // InternalERDiagramDsl.g:993:2: ( ruleRelation )
+            // InternalERDiagramDsl.g:1073:1: ( ( ruleRelation ) )
+            // InternalERDiagramDsl.g:1074:2: ( ruleRelation )
             {
-            // InternalERDiagramDsl.g:993:2: ( ruleRelation )
-            // InternalERDiagramDsl.g:994:3: ruleRelation
+            // InternalERDiagramDsl.g:1074:2: ( ruleRelation )
+            // InternalERDiagramDsl.g:1075:3: ruleRelation
             {
              before(grammarAccess.getERDiagramAccess().getRelationRelationParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3105,17 +3356,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // InternalERDiagramDsl.g:1003:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalERDiagramDsl.g:1084:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1007:1: ( ( RULE_ID ) )
-            // InternalERDiagramDsl.g:1008:2: ( RULE_ID )
+            // InternalERDiagramDsl.g:1088:1: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1089:2: ( RULE_ID )
             {
-            // InternalERDiagramDsl.g:1008:2: ( RULE_ID )
-            // InternalERDiagramDsl.g:1009:3: RULE_ID
+            // InternalERDiagramDsl.g:1089:2: ( RULE_ID )
+            // InternalERDiagramDsl.g:1090:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3141,30 +3392,30 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Entity__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Entity__IsAAssignment_2_1"
-    // InternalERDiagramDsl.g:1018:1: rule__Entity__IsAAssignment_2_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Entity__IsAAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__KeyAssignment_2_1"
+    // InternalERDiagramDsl.g:1099:1: rule__Entity__KeyAssignment_2_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Entity__KeyAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1022:1: ( ( ( RULE_ID ) ) )
-            // InternalERDiagramDsl.g:1023:2: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1103:1: ( ( ( RULE_ID ) ) )
+            // InternalERDiagramDsl.g:1104:2: ( ( RULE_ID ) )
             {
-            // InternalERDiagramDsl.g:1023:2: ( ( RULE_ID ) )
-            // InternalERDiagramDsl.g:1024:3: ( RULE_ID )
+            // InternalERDiagramDsl.g:1104:2: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1105:3: ( RULE_ID )
             {
-             before(grammarAccess.getEntityAccess().getIsAEntityCrossReference_2_1_0()); 
-            // InternalERDiagramDsl.g:1025:3: ( RULE_ID )
-            // InternalERDiagramDsl.g:1026:4: RULE_ID
+             before(grammarAccess.getEntityAccess().getKeyAttributeCrossReference_2_1_0()); 
+            // InternalERDiagramDsl.g:1106:3: ( RULE_ID )
+            // InternalERDiagramDsl.g:1107:4: RULE_ID
             {
-             before(grammarAccess.getEntityAccess().getIsAEntityIDTerminalRuleCall_2_1_0_1()); 
+             before(grammarAccess.getEntityAccess().getKeyAttributeIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getIsAEntityIDTerminalRuleCall_2_1_0_1()); 
+             after(grammarAccess.getEntityAccess().getKeyAttributeIDTerminalRuleCall_2_1_0_1()); 
 
             }
 
-             after(grammarAccess.getEntityAccess().getIsAEntityCrossReference_2_1_0()); 
+             after(grammarAccess.getEntityAccess().getKeyAttributeCrossReference_2_1_0()); 
 
             }
 
@@ -3183,29 +3434,74 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__IsAAssignment_2_1"
+    // $ANTLR end "rule__Entity__KeyAssignment_2_1"
 
 
-    // $ANTLR start "rule__Entity__AttributesAssignment_3_1"
-    // InternalERDiagramDsl.g:1037:1: rule__Entity__AttributesAssignment_3_1 : ( ruleAttribute ) ;
-    public final void rule__Entity__AttributesAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__IsAAssignment_3_1"
+    // InternalERDiagramDsl.g:1118:1: rule__Entity__IsAAssignment_3_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Entity__IsAAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1041:1: ( ( ruleAttribute ) )
-            // InternalERDiagramDsl.g:1042:2: ( ruleAttribute )
+            // InternalERDiagramDsl.g:1122:1: ( ( ( RULE_ID ) ) )
+            // InternalERDiagramDsl.g:1123:2: ( ( RULE_ID ) )
             {
-            // InternalERDiagramDsl.g:1042:2: ( ruleAttribute )
-            // InternalERDiagramDsl.g:1043:3: ruleAttribute
+            // InternalERDiagramDsl.g:1123:2: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1124:3: ( RULE_ID )
             {
-             before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_1_0()); 
+             before(grammarAccess.getEntityAccess().getIsAEntityCrossReference_3_1_0()); 
+            // InternalERDiagramDsl.g:1125:3: ( RULE_ID )
+            // InternalERDiagramDsl.g:1126:4: RULE_ID
+            {
+             before(grammarAccess.getEntityAccess().getIsAEntityIDTerminalRuleCall_3_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getIsAEntityIDTerminalRuleCall_3_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getEntityAccess().getIsAEntityCrossReference_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__IsAAssignment_3_1"
+
+
+    // $ANTLR start "rule__Entity__AttributesAssignment_4_1"
+    // InternalERDiagramDsl.g:1137:1: rule__Entity__AttributesAssignment_4_1 : ( ruleAttribute ) ;
+    public final void rule__Entity__AttributesAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalERDiagramDsl.g:1141:1: ( ( ruleAttribute ) )
+            // InternalERDiagramDsl.g:1142:2: ( ruleAttribute )
+            {
+            // InternalERDiagramDsl.g:1142:2: ( ruleAttribute )
+            // InternalERDiagramDsl.g:1143:3: ruleAttribute
+            {
+             before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAttribute();
 
             state._fsp--;
 
-             after(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_1_0()); 
+             after(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_1_0()); 
 
             }
 
@@ -3224,29 +3520,29 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__AttributesAssignment_3_1"
+    // $ANTLR end "rule__Entity__AttributesAssignment_4_1"
 
 
-    // $ANTLR start "rule__Entity__AttributesAssignment_3_2_1"
-    // InternalERDiagramDsl.g:1052:1: rule__Entity__AttributesAssignment_3_2_1 : ( ruleAttribute ) ;
-    public final void rule__Entity__AttributesAssignment_3_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__AttributesAssignment_4_2_1"
+    // InternalERDiagramDsl.g:1152:1: rule__Entity__AttributesAssignment_4_2_1 : ( ruleAttribute ) ;
+    public final void rule__Entity__AttributesAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1056:1: ( ( ruleAttribute ) )
-            // InternalERDiagramDsl.g:1057:2: ( ruleAttribute )
+            // InternalERDiagramDsl.g:1156:1: ( ( ruleAttribute ) )
+            // InternalERDiagramDsl.g:1157:2: ( ruleAttribute )
             {
-            // InternalERDiagramDsl.g:1057:2: ( ruleAttribute )
-            // InternalERDiagramDsl.g:1058:3: ruleAttribute
+            // InternalERDiagramDsl.g:1157:2: ( ruleAttribute )
+            // InternalERDiagramDsl.g:1158:3: ruleAttribute
             {
-             before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_2_1_0()); 
+             before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_2_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAttribute();
 
             state._fsp--;
 
-             after(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_2_1_0()); 
+             after(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_2_1_0()); 
 
             }
 
@@ -3265,21 +3561,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__AttributesAssignment_3_2_1"
+    // $ANTLR end "rule__Entity__AttributesAssignment_4_2_1"
 
 
     // $ANTLR start "rule__Attribute__NameAssignment_0"
-    // InternalERDiagramDsl.g:1067:1: rule__Attribute__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalERDiagramDsl.g:1167:1: rule__Attribute__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Attribute__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1071:1: ( ( RULE_ID ) )
-            // InternalERDiagramDsl.g:1072:2: ( RULE_ID )
+            // InternalERDiagramDsl.g:1171:1: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1172:2: ( RULE_ID )
             {
-            // InternalERDiagramDsl.g:1072:2: ( RULE_ID )
-            // InternalERDiagramDsl.g:1073:3: RULE_ID
+            // InternalERDiagramDsl.g:1172:2: ( RULE_ID )
+            // InternalERDiagramDsl.g:1173:3: RULE_ID
             {
              before(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3306,17 +3602,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__TypeAssignment_2"
-    // InternalERDiagramDsl.g:1082:1: rule__Attribute__TypeAssignment_2 : ( ruleAttributeType ) ;
+    // InternalERDiagramDsl.g:1182:1: rule__Attribute__TypeAssignment_2 : ( ruleAttributeType ) ;
     public final void rule__Attribute__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1086:1: ( ( ruleAttributeType ) )
-            // InternalERDiagramDsl.g:1087:2: ( ruleAttributeType )
+            // InternalERDiagramDsl.g:1186:1: ( ( ruleAttributeType ) )
+            // InternalERDiagramDsl.g:1187:2: ( ruleAttributeType )
             {
-            // InternalERDiagramDsl.g:1087:2: ( ruleAttributeType )
-            // InternalERDiagramDsl.g:1088:3: ruleAttributeType
+            // InternalERDiagramDsl.g:1187:2: ( ruleAttributeType )
+            // InternalERDiagramDsl.g:1188:3: ruleAttributeType
             {
              before(grammarAccess.getAttributeAccess().getTypeAttributeTypeEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3347,24 +3643,24 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__IsKeyAssignment_3"
-    // InternalERDiagramDsl.g:1097:1: rule__Attribute__IsKeyAssignment_3 : ( ( 'key' ) ) ;
+    // InternalERDiagramDsl.g:1197:1: rule__Attribute__IsKeyAssignment_3 : ( ( 'key' ) ) ;
     public final void rule__Attribute__IsKeyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1101:1: ( ( ( 'key' ) ) )
-            // InternalERDiagramDsl.g:1102:2: ( ( 'key' ) )
+            // InternalERDiagramDsl.g:1201:1: ( ( ( 'key' ) ) )
+            // InternalERDiagramDsl.g:1202:2: ( ( 'key' ) )
             {
-            // InternalERDiagramDsl.g:1102:2: ( ( 'key' ) )
-            // InternalERDiagramDsl.g:1103:3: ( 'key' )
-            {
-             before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
-            // InternalERDiagramDsl.g:1104:3: ( 'key' )
-            // InternalERDiagramDsl.g:1105:4: 'key'
+            // InternalERDiagramDsl.g:1202:2: ( ( 'key' ) )
+            // InternalERDiagramDsl.g:1203:3: ( 'key' )
             {
              before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
-            match(input,25,FOLLOW_2); 
+            // InternalERDiagramDsl.g:1204:3: ( 'key' )
+            // InternalERDiagramDsl.g:1205:4: 'key'
+            {
+             before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
 
             }
@@ -3392,17 +3688,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__LeftEndingAssignment_0"
-    // InternalERDiagramDsl.g:1116:1: rule__Relation__LeftEndingAssignment_0 : ( ruleRelationEnding ) ;
+    // InternalERDiagramDsl.g:1216:1: rule__Relation__LeftEndingAssignment_0 : ( ruleRelationEnding ) ;
     public final void rule__Relation__LeftEndingAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1120:1: ( ( ruleRelationEnding ) )
-            // InternalERDiagramDsl.g:1121:2: ( ruleRelationEnding )
+            // InternalERDiagramDsl.g:1220:1: ( ( ruleRelationEnding ) )
+            // InternalERDiagramDsl.g:1221:2: ( ruleRelationEnding )
             {
-            // InternalERDiagramDsl.g:1121:2: ( ruleRelationEnding )
-            // InternalERDiagramDsl.g:1122:3: ruleRelationEnding
+            // InternalERDiagramDsl.g:1221:2: ( ruleRelationEnding )
+            // InternalERDiagramDsl.g:1222:3: ruleRelationEnding
             {
              before(grammarAccess.getRelationAccess().getLeftEndingRelationEndingParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3433,17 +3729,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Relation__RightEndingAssignment_2"
-    // InternalERDiagramDsl.g:1131:1: rule__Relation__RightEndingAssignment_2 : ( ruleRelationEnding ) ;
+    // InternalERDiagramDsl.g:1231:1: rule__Relation__RightEndingAssignment_2 : ( ruleRelationEnding ) ;
     public final void rule__Relation__RightEndingAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1135:1: ( ( ruleRelationEnding ) )
-            // InternalERDiagramDsl.g:1136:2: ( ruleRelationEnding )
+            // InternalERDiagramDsl.g:1235:1: ( ( ruleRelationEnding ) )
+            // InternalERDiagramDsl.g:1236:2: ( ruleRelationEnding )
             {
-            // InternalERDiagramDsl.g:1136:2: ( ruleRelationEnding )
-            // InternalERDiagramDsl.g:1137:3: ruleRelationEnding
+            // InternalERDiagramDsl.g:1236:2: ( ruleRelationEnding )
+            // InternalERDiagramDsl.g:1237:3: ruleRelationEnding
             {
              before(grammarAccess.getRelationAccess().getRightEndingRelationEndingParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3474,17 +3770,17 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__MultiplicityAssignment_0_0"
-    // InternalERDiagramDsl.g:1146:1: rule__RelationEnding__MultiplicityAssignment_0_0 : ( ruleMultiplicityType ) ;
+    // InternalERDiagramDsl.g:1246:1: rule__RelationEnding__MultiplicityAssignment_0_0 : ( ruleMultiplicityType ) ;
     public final void rule__RelationEnding__MultiplicityAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1150:1: ( ( ruleMultiplicityType ) )
-            // InternalERDiagramDsl.g:1151:2: ( ruleMultiplicityType )
+            // InternalERDiagramDsl.g:1250:1: ( ( ruleMultiplicityType ) )
+            // InternalERDiagramDsl.g:1251:2: ( ruleMultiplicityType )
             {
-            // InternalERDiagramDsl.g:1151:2: ( ruleMultiplicityType )
-            // InternalERDiagramDsl.g:1152:3: ruleMultiplicityType
+            // InternalERDiagramDsl.g:1251:2: ( ruleMultiplicityType )
+            // InternalERDiagramDsl.g:1252:3: ruleMultiplicityType
             {
              before(grammarAccess.getRelationEndingAccess().getMultiplicityMultiplicityTypeEnumRuleCall_0_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3515,21 +3811,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__NullableAssignment_0_1"
-    // InternalERDiagramDsl.g:1161:1: rule__RelationEnding__NullableAssignment_0_1 : ( ( 'nullable' ) ) ;
+    // InternalERDiagramDsl.g:1261:1: rule__RelationEnding__NullableAssignment_0_1 : ( ( 'nullable' ) ) ;
     public final void rule__RelationEnding__NullableAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1165:1: ( ( ( 'nullable' ) ) )
-            // InternalERDiagramDsl.g:1166:2: ( ( 'nullable' ) )
+            // InternalERDiagramDsl.g:1265:1: ( ( ( 'nullable' ) ) )
+            // InternalERDiagramDsl.g:1266:2: ( ( 'nullable' ) )
             {
-            // InternalERDiagramDsl.g:1166:2: ( ( 'nullable' ) )
-            // InternalERDiagramDsl.g:1167:3: ( 'nullable' )
+            // InternalERDiagramDsl.g:1266:2: ( ( 'nullable' ) )
+            // InternalERDiagramDsl.g:1267:3: ( 'nullable' )
             {
              before(grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0()); 
-            // InternalERDiagramDsl.g:1168:3: ( 'nullable' )
-            // InternalERDiagramDsl.g:1169:4: 'nullable'
+            // InternalERDiagramDsl.g:1268:3: ( 'nullable' )
+            // InternalERDiagramDsl.g:1269:4: 'nullable'
             {
              before(grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0()); 
             match(input,26,FOLLOW_2); 
@@ -3560,21 +3856,21 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__RelationEnding__TargetAssignment_1"
-    // InternalERDiagramDsl.g:1180:1: rule__RelationEnding__TargetAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalERDiagramDsl.g:1280:1: rule__RelationEnding__TargetAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__RelationEnding__TargetAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1184:1: ( ( ( RULE_ID ) ) )
-            // InternalERDiagramDsl.g:1185:2: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1284:1: ( ( ( RULE_ID ) ) )
+            // InternalERDiagramDsl.g:1285:2: ( ( RULE_ID ) )
             {
-            // InternalERDiagramDsl.g:1185:2: ( ( RULE_ID ) )
-            // InternalERDiagramDsl.g:1186:3: ( RULE_ID )
+            // InternalERDiagramDsl.g:1285:2: ( ( RULE_ID ) )
+            // InternalERDiagramDsl.g:1286:3: ( RULE_ID )
             {
              before(grammarAccess.getRelationEndingAccess().getTargetEntityCrossReference_1_0()); 
-            // InternalERDiagramDsl.g:1187:3: ( RULE_ID )
-            // InternalERDiagramDsl.g:1188:4: RULE_ID
+            // InternalERDiagramDsl.g:1287:3: ( RULE_ID )
+            // InternalERDiagramDsl.g:1288:4: RULE_ID
             {
              before(grammarAccess.getRelationEndingAccess().getTargetEntityIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3614,13 +3910,13 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000004030002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000600000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000380000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000000000F800L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
 
 }

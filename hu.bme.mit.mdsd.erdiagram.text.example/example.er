@@ -1,0 +1,14 @@
+entity person key id {
+	name : string,
+	id : int key
+}
+
+entity driver isA person {
+	licence : string
+}
+
+entity car key numberPlate {
+	numberPlate : string key
+}
+
+one person is related with nullable many car

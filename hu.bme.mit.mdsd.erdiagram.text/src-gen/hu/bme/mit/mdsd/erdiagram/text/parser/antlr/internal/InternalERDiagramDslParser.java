@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'isA'", "'{'", "','", "'}'", "':'", "'key'", "'is related with'", "'nullable'", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'key'", "'isA'", "'{'", "','", "'}'", "':'", "'is related with'", "'nullable'", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -301,7 +301,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalERDiagramDsl.g:129:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )* (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )? ) ;
+    // InternalERDiagramDsl.g:129:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )* (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )? ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -310,22 +310,24 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        EObject lv_attributes_5_0 = null;
-
+        Token otherlv_10=null;
         EObject lv_attributes_7_0 = null;
+
+        EObject lv_attributes_9_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:135:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )* (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )? ) )
-            // InternalERDiagramDsl.g:136:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )* (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )? )
+            // InternalERDiagramDsl.g:135:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )* (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )? ) )
+            // InternalERDiagramDsl.g:136:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )* (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )? )
             {
-            // InternalERDiagramDsl.g:136:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )* (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )? )
-            // InternalERDiagramDsl.g:137:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )* (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )?
+            // InternalERDiagramDsl.g:136:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )* (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )? )
+            // InternalERDiagramDsl.g:137:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )* (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )?
             {
             otherlv_0=(Token)match(input,11,FOLLOW_5); 
 
@@ -357,39 +359,81 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalERDiagramDsl.g:159:3: (otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) ) )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+            // InternalERDiagramDsl.g:159:3: (otherlv_2= 'key' ( (otherlv_3= RULE_ID ) ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==12) ) {
-                    alt3=1;
+            if ( (LA3_0==12) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalERDiagramDsl.g:160:4: otherlv_2= 'key' ( (otherlv_3= RULE_ID ) )
+                    {
+                    otherlv_2=(Token)match(input,12,FOLLOW_5); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getKeyKeyword_2_0());
+                    			
+                    // InternalERDiagramDsl.g:164:4: ( (otherlv_3= RULE_ID ) )
+                    // InternalERDiagramDsl.g:165:5: (otherlv_3= RULE_ID )
+                    {
+                    // InternalERDiagramDsl.g:165:5: (otherlv_3= RULE_ID )
+                    // InternalERDiagramDsl.g:166:6: otherlv_3= RULE_ID
+                    {
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEntityRule());
+                    						}
+                    					
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_7); 
+
+                    						newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getKeyAttributeCrossReference_2_1_0());
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalERDiagramDsl.g:178:3: (otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) ) )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==13) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt4) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:160:4: otherlv_2= 'isA' ( (otherlv_3= RULE_ID ) )
+            	    // InternalERDiagramDsl.g:179:4: otherlv_4= 'isA' ( (otherlv_5= RULE_ID ) )
             	    {
-            	    otherlv_2=(Token)match(input,12,FOLLOW_5); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_5); 
 
-            	    				newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getIsAKeyword_2_0());
+            	    				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getIsAKeyword_3_0());
             	    			
-            	    // InternalERDiagramDsl.g:164:4: ( (otherlv_3= RULE_ID ) )
-            	    // InternalERDiagramDsl.g:165:5: (otherlv_3= RULE_ID )
+            	    // InternalERDiagramDsl.g:183:4: ( (otherlv_5= RULE_ID ) )
+            	    // InternalERDiagramDsl.g:184:5: (otherlv_5= RULE_ID )
             	    {
-            	    // InternalERDiagramDsl.g:165:5: (otherlv_3= RULE_ID )
-            	    // InternalERDiagramDsl.g:166:6: otherlv_3= RULE_ID
+            	    // InternalERDiagramDsl.g:184:5: (otherlv_5= RULE_ID )
+            	    // InternalERDiagramDsl.g:185:6: otherlv_5= RULE_ID
             	    {
 
             	    						if (current==null) {
             	    							current = createModelElement(grammarAccess.getEntityRule());
             	    						}
             	    					
-            	    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_6); 
+            	    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_7); 
 
-            	    						newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getIsAEntityCrossReference_2_1_0());
+            	    						newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getIsAEntityCrossReference_3_1_0());
             	    					
 
             	    }
@@ -402,36 +446,36 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop4;
                 }
             } while (true);
 
-            // InternalERDiagramDsl.g:178:3: (otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}' )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalERDiagramDsl.g:197:3: (otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA5_0==13) ) {
-                alt5=1;
+            if ( (LA6_0==14) ) {
+                alt6=1;
             }
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalERDiagramDsl.g:179:4: otherlv_4= '{' ( (lv_attributes_5_0= ruleAttribute ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )* otherlv_8= '}'
+                    // InternalERDiagramDsl.g:198:4: otherlv_6= '{' ( (lv_attributes_7_0= ruleAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )* otherlv_10= '}'
                     {
-                    otherlv_4=(Token)match(input,13,FOLLOW_5); 
+                    otherlv_6=(Token)match(input,14,FOLLOW_5); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4_0());
                     			
-                    // InternalERDiagramDsl.g:183:4: ( (lv_attributes_5_0= ruleAttribute ) )
-                    // InternalERDiagramDsl.g:184:5: (lv_attributes_5_0= ruleAttribute )
+                    // InternalERDiagramDsl.g:202:4: ( (lv_attributes_7_0= ruleAttribute ) )
+                    // InternalERDiagramDsl.g:203:5: (lv_attributes_7_0= ruleAttribute )
                     {
-                    // InternalERDiagramDsl.g:184:5: (lv_attributes_5_0= ruleAttribute )
-                    // InternalERDiagramDsl.g:185:6: lv_attributes_5_0= ruleAttribute
+                    // InternalERDiagramDsl.g:203:5: (lv_attributes_7_0= ruleAttribute )
+                    // InternalERDiagramDsl.g:204:6: lv_attributes_7_0= ruleAttribute
                     {
 
-                    						newCompositeNode(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_1_0());
+                    						newCompositeNode(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_7);
-                    lv_attributes_5_0=ruleAttribute();
+                    pushFollow(FOLLOW_8);
+                    lv_attributes_7_0=ruleAttribute();
 
                     state._fsp--;
 
@@ -442,7 +486,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"attributes",
-                    							lv_attributes_5_0,
+                    							lv_attributes_7_0,
                     							"hu.bme.mit.mdsd.erdiagram.text.ERDiagramDsl.Attribute");
                     						afterParserOrEnumRuleCall();
                     					
@@ -452,36 +496,36 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalERDiagramDsl.g:202:4: (otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) ) )*
-                    loop4:
+                    // InternalERDiagramDsl.g:221:4: (otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) ) )*
+                    loop5:
                     do {
-                        int alt4=2;
-                        int LA4_0 = input.LA(1);
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
 
-                        if ( (LA4_0==14) ) {
-                            alt4=1;
+                        if ( (LA5_0==15) ) {
+                            alt5=1;
                         }
 
 
-                        switch (alt4) {
+                        switch (alt5) {
                     	case 1 :
-                    	    // InternalERDiagramDsl.g:203:5: otherlv_6= ',' ( (lv_attributes_7_0= ruleAttribute ) )
+                    	    // InternalERDiagramDsl.g:222:5: otherlv_8= ',' ( (lv_attributes_9_0= ruleAttribute ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,14,FOLLOW_5); 
+                    	    otherlv_8=(Token)match(input,15,FOLLOW_5); 
 
-                    	    					newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getCommaKeyword_3_2_0());
+                    	    					newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getCommaKeyword_4_2_0());
                     	    				
-                    	    // InternalERDiagramDsl.g:207:5: ( (lv_attributes_7_0= ruleAttribute ) )
-                    	    // InternalERDiagramDsl.g:208:6: (lv_attributes_7_0= ruleAttribute )
+                    	    // InternalERDiagramDsl.g:226:5: ( (lv_attributes_9_0= ruleAttribute ) )
+                    	    // InternalERDiagramDsl.g:227:6: (lv_attributes_9_0= ruleAttribute )
                     	    {
-                    	    // InternalERDiagramDsl.g:208:6: (lv_attributes_7_0= ruleAttribute )
-                    	    // InternalERDiagramDsl.g:209:7: lv_attributes_7_0= ruleAttribute
+                    	    // InternalERDiagramDsl.g:227:6: (lv_attributes_9_0= ruleAttribute )
+                    	    // InternalERDiagramDsl.g:228:7: lv_attributes_9_0= ruleAttribute
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_3_2_1_0());
+                    	    							newCompositeNode(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_attributes_7_0=ruleAttribute();
+                    	    pushFollow(FOLLOW_8);
+                    	    lv_attributes_9_0=ruleAttribute();
 
                     	    state._fsp--;
 
@@ -492,7 +536,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"attributes",
-                    	    								lv_attributes_7_0,
+                    	    								lv_attributes_9_0,
                     	    								"hu.bme.mit.mdsd.erdiagram.text.ERDiagramDsl.Attribute");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -507,13 +551,13 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop4;
+                    	    break loop5;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,15,FOLLOW_2); 
+                    otherlv_10=(Token)match(input,16,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_3_3());
+                    				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_4_3());
                     			
 
                     }
@@ -544,7 +588,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalERDiagramDsl.g:236:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalERDiagramDsl.g:255:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -552,8 +596,8 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalERDiagramDsl.g:236:50: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalERDiagramDsl.g:237:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalERDiagramDsl.g:255:50: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalERDiagramDsl.g:256:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -580,7 +624,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalERDiagramDsl.g:243:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) ;
+    // InternalERDiagramDsl.g:262:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -594,19 +638,19 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:249:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) )
-            // InternalERDiagramDsl.g:250:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
+            // InternalERDiagramDsl.g:268:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) )
+            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
             {
-            // InternalERDiagramDsl.g:250:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
-            // InternalERDiagramDsl.g:251:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )?
+            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
+            // InternalERDiagramDsl.g:270:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )?
             {
-            // InternalERDiagramDsl.g:251:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalERDiagramDsl.g:252:4: (lv_name_0_0= RULE_ID )
+            // InternalERDiagramDsl.g:270:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalERDiagramDsl.g:271:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalERDiagramDsl.g:252:4: (lv_name_0_0= RULE_ID )
-            // InternalERDiagramDsl.g:253:5: lv_name_0_0= RULE_ID
+            // InternalERDiagramDsl.g:271:4: (lv_name_0_0= RULE_ID )
+            // InternalERDiagramDsl.g:272:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -626,20 +670,20 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_9); 
+            otherlv_1=(Token)match(input,17,FOLLOW_10); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getColonKeyword_1());
             		
-            // InternalERDiagramDsl.g:273:3: ( (lv_type_2_0= ruleAttributeType ) )
-            // InternalERDiagramDsl.g:274:4: (lv_type_2_0= ruleAttributeType )
+            // InternalERDiagramDsl.g:292:3: ( (lv_type_2_0= ruleAttributeType ) )
+            // InternalERDiagramDsl.g:293:4: (lv_type_2_0= ruleAttributeType )
             {
-            // InternalERDiagramDsl.g:274:4: (lv_type_2_0= ruleAttributeType )
-            // InternalERDiagramDsl.g:275:5: lv_type_2_0= ruleAttributeType
+            // InternalERDiagramDsl.g:293:4: (lv_type_2_0= ruleAttributeType )
+            // InternalERDiagramDsl.g:294:5: lv_type_2_0= ruleAttributeType
             {
 
             					newCompositeNode(grammarAccess.getAttributeAccess().getTypeAttributeTypeEnumRuleCall_2_0());
             				
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             lv_type_2_0=ruleAttributeType();
 
             state._fsp--;
@@ -661,21 +705,21 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalERDiagramDsl.g:292:3: ( (lv_isKey_3_0= 'key' ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalERDiagramDsl.g:311:3: ( (lv_isKey_3_0= 'key' ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
-                alt6=1;
+            if ( (LA7_0==12) ) {
+                alt7=1;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalERDiagramDsl.g:293:4: (lv_isKey_3_0= 'key' )
+                    // InternalERDiagramDsl.g:312:4: (lv_isKey_3_0= 'key' )
                     {
-                    // InternalERDiagramDsl.g:293:4: (lv_isKey_3_0= 'key' )
-                    // InternalERDiagramDsl.g:294:5: lv_isKey_3_0= 'key'
+                    // InternalERDiagramDsl.g:312:4: (lv_isKey_3_0= 'key' )
+                    // InternalERDiagramDsl.g:313:5: lv_isKey_3_0= 'key'
                     {
-                    lv_isKey_3_0=(Token)match(input,17,FOLLOW_2); 
+                    lv_isKey_3_0=(Token)match(input,12,FOLLOW_2); 
 
                     					newLeafNode(lv_isKey_3_0, grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0());
                     				
@@ -717,7 +761,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelation"
-    // InternalERDiagramDsl.g:310:1: entryRuleRelation returns [EObject current=null] : iv_ruleRelation= ruleRelation EOF ;
+    // InternalERDiagramDsl.g:329:1: entryRuleRelation returns [EObject current=null] : iv_ruleRelation= ruleRelation EOF ;
     public final EObject entryRuleRelation() throws RecognitionException {
         EObject current = null;
 
@@ -725,8 +769,8 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalERDiagramDsl.g:310:49: (iv_ruleRelation= ruleRelation EOF )
-            // InternalERDiagramDsl.g:311:2: iv_ruleRelation= ruleRelation EOF
+            // InternalERDiagramDsl.g:329:49: (iv_ruleRelation= ruleRelation EOF )
+            // InternalERDiagramDsl.g:330:2: iv_ruleRelation= ruleRelation EOF
             {
              newCompositeNode(grammarAccess.getRelationRule()); 
             pushFollow(FOLLOW_1);
@@ -753,7 +797,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelation"
-    // InternalERDiagramDsl.g:317:1: ruleRelation returns [EObject current=null] : ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) ) ;
+    // InternalERDiagramDsl.g:336:1: ruleRelation returns [EObject current=null] : ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) ) ;
     public final EObject ruleRelation() throws RecognitionException {
         EObject current = null;
 
@@ -767,22 +811,22 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:323:2: ( ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) ) )
-            // InternalERDiagramDsl.g:324:2: ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) )
+            // InternalERDiagramDsl.g:342:2: ( ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) ) )
+            // InternalERDiagramDsl.g:343:2: ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) )
             {
-            // InternalERDiagramDsl.g:324:2: ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) )
-            // InternalERDiagramDsl.g:325:3: ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) )
+            // InternalERDiagramDsl.g:343:2: ( ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) ) )
+            // InternalERDiagramDsl.g:344:3: ( (lv_leftEnding_0_0= ruleRelationEnding ) ) otherlv_1= 'is related with' ( (lv_rightEnding_2_0= ruleRelationEnding ) )
             {
-            // InternalERDiagramDsl.g:325:3: ( (lv_leftEnding_0_0= ruleRelationEnding ) )
-            // InternalERDiagramDsl.g:326:4: (lv_leftEnding_0_0= ruleRelationEnding )
+            // InternalERDiagramDsl.g:344:3: ( (lv_leftEnding_0_0= ruleRelationEnding ) )
+            // InternalERDiagramDsl.g:345:4: (lv_leftEnding_0_0= ruleRelationEnding )
             {
-            // InternalERDiagramDsl.g:326:4: (lv_leftEnding_0_0= ruleRelationEnding )
-            // InternalERDiagramDsl.g:327:5: lv_leftEnding_0_0= ruleRelationEnding
+            // InternalERDiagramDsl.g:345:4: (lv_leftEnding_0_0= ruleRelationEnding )
+            // InternalERDiagramDsl.g:346:5: lv_leftEnding_0_0= ruleRelationEnding
             {
 
             					newCompositeNode(grammarAccess.getRelationAccess().getLeftEndingRelationEndingParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_leftEnding_0_0=ruleRelationEnding();
 
             state._fsp--;
@@ -804,15 +848,15 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,18,FOLLOW_12); 
+            otherlv_1=(Token)match(input,18,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRelationAccess().getIsRelatedWithKeyword_1());
             		
-            // InternalERDiagramDsl.g:348:3: ( (lv_rightEnding_2_0= ruleRelationEnding ) )
-            // InternalERDiagramDsl.g:349:4: (lv_rightEnding_2_0= ruleRelationEnding )
+            // InternalERDiagramDsl.g:367:3: ( (lv_rightEnding_2_0= ruleRelationEnding ) )
+            // InternalERDiagramDsl.g:368:4: (lv_rightEnding_2_0= ruleRelationEnding )
             {
-            // InternalERDiagramDsl.g:349:4: (lv_rightEnding_2_0= ruleRelationEnding )
-            // InternalERDiagramDsl.g:350:5: lv_rightEnding_2_0= ruleRelationEnding
+            // InternalERDiagramDsl.g:368:4: (lv_rightEnding_2_0= ruleRelationEnding )
+            // InternalERDiagramDsl.g:369:5: lv_rightEnding_2_0= ruleRelationEnding
             {
 
             					newCompositeNode(grammarAccess.getRelationAccess().getRightEndingRelationEndingParserRuleCall_2_0());
@@ -862,7 +906,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelationEnding"
-    // InternalERDiagramDsl.g:371:1: entryRuleRelationEnding returns [EObject current=null] : iv_ruleRelationEnding= ruleRelationEnding EOF ;
+    // InternalERDiagramDsl.g:390:1: entryRuleRelationEnding returns [EObject current=null] : iv_ruleRelationEnding= ruleRelationEnding EOF ;
     public final EObject entryRuleRelationEnding() throws RecognitionException {
         EObject current = null;
 
@@ -870,8 +914,8 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalERDiagramDsl.g:371:55: (iv_ruleRelationEnding= ruleRelationEnding EOF )
-            // InternalERDiagramDsl.g:372:2: iv_ruleRelationEnding= ruleRelationEnding EOF
+            // InternalERDiagramDsl.g:390:55: (iv_ruleRelationEnding= ruleRelationEnding EOF )
+            // InternalERDiagramDsl.g:391:2: iv_ruleRelationEnding= ruleRelationEnding EOF
             {
              newCompositeNode(grammarAccess.getRelationEndingRule()); 
             pushFollow(FOLLOW_1);
@@ -898,7 +942,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationEnding"
-    // InternalERDiagramDsl.g:378:1: ruleRelationEnding returns [EObject current=null] : ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalERDiagramDsl.g:397:1: ruleRelationEnding returns [EObject current=null] : ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleRelationEnding() throws RecognitionException {
         EObject current = null;
 
@@ -911,71 +955,71 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:384:2: ( ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalERDiagramDsl.g:385:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalERDiagramDsl.g:403:2: ( ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalERDiagramDsl.g:404:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalERDiagramDsl.g:385:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) )
-            // InternalERDiagramDsl.g:386:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) )
+            // InternalERDiagramDsl.g:404:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalERDiagramDsl.g:405:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) ) ( (otherlv_3= RULE_ID ) )
             {
-            // InternalERDiagramDsl.g:386:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) )
-            // InternalERDiagramDsl.g:387:4: ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) )
+            // InternalERDiagramDsl.g:405:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) ) )
+            // InternalERDiagramDsl.g:406:4: ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) )
             {
-            // InternalERDiagramDsl.g:387:4: ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) )
-            // InternalERDiagramDsl.g:388:5: ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?)
+            // InternalERDiagramDsl.g:406:4: ( ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?) )
+            // InternalERDiagramDsl.g:407:5: ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0());
             				
-            // InternalERDiagramDsl.g:391:5: ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?)
-            // InternalERDiagramDsl.g:392:6: ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?
+            // InternalERDiagramDsl.g:410:5: ( ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?)
+            // InternalERDiagramDsl.g:411:6: ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+ {...}?
             {
-            // InternalERDiagramDsl.g:392:6: ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+
-            int cnt7=0;
-            loop7:
+            // InternalERDiagramDsl.g:411:6: ( ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) ) )+
+            int cnt8=0;
+            loop8:
             do {
-                int alt7=3;
-                int LA7_0 = input.LA(1);
+                int alt8=3;
+                int LA8_0 = input.LA(1);
 
-                if ( LA7_0 >= 25 && LA7_0 <= 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
-                    alt7=1;
+                if ( LA8_0 >= 25 && LA8_0 <= 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
+                    alt8=1;
                 }
-                else if ( LA7_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
-                    alt7=2;
+                else if ( LA8_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+                    alt8=2;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalERDiagramDsl.g:393:4: ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) )
+            	    // InternalERDiagramDsl.g:412:4: ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) )
             	    {
-            	    // InternalERDiagramDsl.g:393:4: ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) )
-            	    // InternalERDiagramDsl.g:394:5: {...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) )
+            	    // InternalERDiagramDsl.g:412:4: ({...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) ) )
+            	    // InternalERDiagramDsl.g:413:5: {...}? => ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleRelationEnding", "getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0)");
             	    }
-            	    // InternalERDiagramDsl.g:394:111: ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) )
-            	    // InternalERDiagramDsl.g:395:6: ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) )
+            	    // InternalERDiagramDsl.g:413:111: ( ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) ) )
+            	    // InternalERDiagramDsl.g:414:6: ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0);
             	    					
-            	    // InternalERDiagramDsl.g:398:9: ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) )
-            	    // InternalERDiagramDsl.g:398:10: {...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) )
+            	    // InternalERDiagramDsl.g:417:9: ({...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) ) )
+            	    // InternalERDiagramDsl.g:417:10: {...}? => ( (lv_multiplicity_1_0= ruleMultiplicityType ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleRelationEnding", "true");
             	    }
-            	    // InternalERDiagramDsl.g:398:19: ( (lv_multiplicity_1_0= ruleMultiplicityType ) )
-            	    // InternalERDiagramDsl.g:398:20: (lv_multiplicity_1_0= ruleMultiplicityType )
+            	    // InternalERDiagramDsl.g:417:19: ( (lv_multiplicity_1_0= ruleMultiplicityType ) )
+            	    // InternalERDiagramDsl.g:417:20: (lv_multiplicity_1_0= ruleMultiplicityType )
             	    {
-            	    // InternalERDiagramDsl.g:398:20: (lv_multiplicity_1_0= ruleMultiplicityType )
-            	    // InternalERDiagramDsl.g:399:10: lv_multiplicity_1_0= ruleMultiplicityType
+            	    // InternalERDiagramDsl.g:417:20: (lv_multiplicity_1_0= ruleMultiplicityType )
+            	    // InternalERDiagramDsl.g:418:10: lv_multiplicity_1_0= ruleMultiplicityType
             	    {
 
             	    										newCompositeNode(grammarAccess.getRelationEndingAccess().getMultiplicityMultiplicityTypeEnumRuleCall_0_0_0());
             	    									
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_14);
             	    lv_multiplicity_1_0=ruleMultiplicityType();
 
             	    state._fsp--;
@@ -1013,33 +1057,33 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalERDiagramDsl.g:421:4: ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) )
+            	    // InternalERDiagramDsl.g:440:4: ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) )
             	    {
-            	    // InternalERDiagramDsl.g:421:4: ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) )
-            	    // InternalERDiagramDsl.g:422:5: {...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) )
+            	    // InternalERDiagramDsl.g:440:4: ({...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) ) )
+            	    // InternalERDiagramDsl.g:441:5: {...}? => ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleRelationEnding", "getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1)");
             	    }
-            	    // InternalERDiagramDsl.g:422:111: ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) )
-            	    // InternalERDiagramDsl.g:423:6: ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) )
+            	    // InternalERDiagramDsl.g:441:111: ( ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) ) )
+            	    // InternalERDiagramDsl.g:442:6: ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1);
             	    					
-            	    // InternalERDiagramDsl.g:426:9: ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) )
-            	    // InternalERDiagramDsl.g:426:10: {...}? => ( (lv_nullable_2_0= 'nullable' ) )
+            	    // InternalERDiagramDsl.g:445:9: ({...}? => ( (lv_nullable_2_0= 'nullable' ) ) )
+            	    // InternalERDiagramDsl.g:445:10: {...}? => ( (lv_nullable_2_0= 'nullable' ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleRelationEnding", "true");
             	    }
-            	    // InternalERDiagramDsl.g:426:19: ( (lv_nullable_2_0= 'nullable' ) )
-            	    // InternalERDiagramDsl.g:426:20: (lv_nullable_2_0= 'nullable' )
+            	    // InternalERDiagramDsl.g:445:19: ( (lv_nullable_2_0= 'nullable' ) )
+            	    // InternalERDiagramDsl.g:445:20: (lv_nullable_2_0= 'nullable' )
             	    {
-            	    // InternalERDiagramDsl.g:426:20: (lv_nullable_2_0= 'nullable' )
-            	    // InternalERDiagramDsl.g:427:10: lv_nullable_2_0= 'nullable'
+            	    // InternalERDiagramDsl.g:445:20: (lv_nullable_2_0= 'nullable' )
+            	    // InternalERDiagramDsl.g:446:10: lv_nullable_2_0= 'nullable'
             	    {
-            	    lv_nullable_2_0=(Token)match(input,19,FOLLOW_13); 
+            	    lv_nullable_2_0=(Token)match(input,19,FOLLOW_14); 
 
             	    										newLeafNode(lv_nullable_2_0, grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0());
             	    									
@@ -1072,12 +1116,12 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt7 >= 1 ) break loop7;
+            	    if ( cnt8 >= 1 ) break loop8;
                         EarlyExitException eee =
-                            new EarlyExitException(7, input);
+                            new EarlyExitException(8, input);
                         throw eee;
                 }
-                cnt7++;
+                cnt8++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0()) ) {
@@ -1095,11 +1139,11 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalERDiagramDsl.g:452:3: ( (otherlv_3= RULE_ID ) )
-            // InternalERDiagramDsl.g:453:4: (otherlv_3= RULE_ID )
+            // InternalERDiagramDsl.g:471:3: ( (otherlv_3= RULE_ID ) )
+            // InternalERDiagramDsl.g:472:4: (otherlv_3= RULE_ID )
             {
-            // InternalERDiagramDsl.g:453:4: (otherlv_3= RULE_ID )
-            // InternalERDiagramDsl.g:454:5: otherlv_3= RULE_ID
+            // InternalERDiagramDsl.g:472:4: (otherlv_3= RULE_ID )
+            // InternalERDiagramDsl.g:473:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -1139,7 +1183,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeType"
-    // InternalERDiagramDsl.g:469:1: ruleAttributeType returns [Enumerator current=null] : ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) ) ;
+    // InternalERDiagramDsl.g:488:1: ruleAttributeType returns [Enumerator current=null] : ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) ) ;
     public final Enumerator ruleAttributeType() throws RecognitionException {
         Enumerator current = null;
 
@@ -1153,50 +1197,50 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:475:2: ( ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) ) )
-            // InternalERDiagramDsl.g:476:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) )
+            // InternalERDiagramDsl.g:494:2: ( ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) ) )
+            // InternalERDiagramDsl.g:495:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) )
             {
-            // InternalERDiagramDsl.g:476:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) )
-            int alt8=5;
+            // InternalERDiagramDsl.g:495:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) )
+            int alt9=5;
             switch ( input.LA(1) ) {
             case 20:
                 {
-                alt8=1;
+                alt9=1;
                 }
                 break;
             case 21:
                 {
-                alt8=2;
+                alt9=2;
                 }
                 break;
             case 22:
                 {
-                alt8=3;
+                alt9=3;
                 }
                 break;
             case 23:
                 {
-                alt8=4;
+                alt9=4;
                 }
                 break;
             case 24:
                 {
-                alt8=5;
+                alt9=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalERDiagramDsl.g:477:3: (enumLiteral_0= 'int' )
+                    // InternalERDiagramDsl.g:496:3: (enumLiteral_0= 'int' )
                     {
-                    // InternalERDiagramDsl.g:477:3: (enumLiteral_0= 'int' )
-                    // InternalERDiagramDsl.g:478:4: enumLiteral_0= 'int'
+                    // InternalERDiagramDsl.g:496:3: (enumLiteral_0= 'int' )
+                    // InternalERDiagramDsl.g:497:4: enumLiteral_0= 'int'
                     {
                     enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
 
@@ -1210,10 +1254,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalERDiagramDsl.g:485:3: (enumLiteral_1= 'double' )
+                    // InternalERDiagramDsl.g:504:3: (enumLiteral_1= 'double' )
                     {
-                    // InternalERDiagramDsl.g:485:3: (enumLiteral_1= 'double' )
-                    // InternalERDiagramDsl.g:486:4: enumLiteral_1= 'double'
+                    // InternalERDiagramDsl.g:504:3: (enumLiteral_1= 'double' )
+                    // InternalERDiagramDsl.g:505:4: enumLiteral_1= 'double'
                     {
                     enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
 
@@ -1227,10 +1271,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalERDiagramDsl.g:493:3: (enumLiteral_2= 'string' )
+                    // InternalERDiagramDsl.g:512:3: (enumLiteral_2= 'string' )
                     {
-                    // InternalERDiagramDsl.g:493:3: (enumLiteral_2= 'string' )
-                    // InternalERDiagramDsl.g:494:4: enumLiteral_2= 'string'
+                    // InternalERDiagramDsl.g:512:3: (enumLiteral_2= 'string' )
+                    // InternalERDiagramDsl.g:513:4: enumLiteral_2= 'string'
                     {
                     enumLiteral_2=(Token)match(input,22,FOLLOW_2); 
 
@@ -1244,10 +1288,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalERDiagramDsl.g:501:3: (enumLiteral_3= 'boolean' )
+                    // InternalERDiagramDsl.g:520:3: (enumLiteral_3= 'boolean' )
                     {
-                    // InternalERDiagramDsl.g:501:3: (enumLiteral_3= 'boolean' )
-                    // InternalERDiagramDsl.g:502:4: enumLiteral_3= 'boolean'
+                    // InternalERDiagramDsl.g:520:3: (enumLiteral_3= 'boolean' )
+                    // InternalERDiagramDsl.g:521:4: enumLiteral_3= 'boolean'
                     {
                     enumLiteral_3=(Token)match(input,23,FOLLOW_2); 
 
@@ -1261,10 +1305,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalERDiagramDsl.g:509:3: (enumLiteral_4= 'datetime' )
+                    // InternalERDiagramDsl.g:528:3: (enumLiteral_4= 'datetime' )
                     {
-                    // InternalERDiagramDsl.g:509:3: (enumLiteral_4= 'datetime' )
-                    // InternalERDiagramDsl.g:510:4: enumLiteral_4= 'datetime'
+                    // InternalERDiagramDsl.g:528:3: (enumLiteral_4= 'datetime' )
+                    // InternalERDiagramDsl.g:529:4: enumLiteral_4= 'datetime'
                     {
                     enumLiteral_4=(Token)match(input,24,FOLLOW_2); 
 
@@ -1300,7 +1344,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplicityType"
-    // InternalERDiagramDsl.g:520:1: ruleMultiplicityType returns [Enumerator current=null] : ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) ) ;
+    // InternalERDiagramDsl.g:539:1: ruleMultiplicityType returns [Enumerator current=null] : ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) ) ;
     public final Enumerator ruleMultiplicityType() throws RecognitionException {
         Enumerator current = null;
 
@@ -1311,31 +1355,31 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:526:2: ( ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) ) )
-            // InternalERDiagramDsl.g:527:2: ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) )
+            // InternalERDiagramDsl.g:545:2: ( ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) ) )
+            // InternalERDiagramDsl.g:546:2: ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) )
             {
-            // InternalERDiagramDsl.g:527:2: ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalERDiagramDsl.g:546:2: ( (enumLiteral_0= 'one' ) | (enumLiteral_1= 'many' ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==25) ) {
-                alt9=1;
+            if ( (LA10_0==25) ) {
+                alt10=1;
             }
-            else if ( (LA9_0==26) ) {
-                alt9=2;
+            else if ( (LA10_0==26) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalERDiagramDsl.g:528:3: (enumLiteral_0= 'one' )
+                    // InternalERDiagramDsl.g:547:3: (enumLiteral_0= 'one' )
                     {
-                    // InternalERDiagramDsl.g:528:3: (enumLiteral_0= 'one' )
-                    // InternalERDiagramDsl.g:529:4: enumLiteral_0= 'one'
+                    // InternalERDiagramDsl.g:547:3: (enumLiteral_0= 'one' )
+                    // InternalERDiagramDsl.g:548:4: enumLiteral_0= 'one'
                     {
                     enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
 
@@ -1349,10 +1393,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalERDiagramDsl.g:536:3: (enumLiteral_1= 'many' )
+                    // InternalERDiagramDsl.g:555:3: (enumLiteral_1= 'many' )
                     {
-                    // InternalERDiagramDsl.g:536:3: (enumLiteral_1= 'many' )
-                    // InternalERDiagramDsl.g:537:4: enumLiteral_1= 'many'
+                    // InternalERDiagramDsl.g:555:3: (enumLiteral_1= 'many' )
+                    // InternalERDiagramDsl.g:556:4: enumLiteral_1= 'many'
                     {
                     enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
 
@@ -1396,13 +1440,14 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000006080802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000006080002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000003002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000C000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000001F00000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000006080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000006080010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000007002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001F00000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000006080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000006080010L});
 
 }

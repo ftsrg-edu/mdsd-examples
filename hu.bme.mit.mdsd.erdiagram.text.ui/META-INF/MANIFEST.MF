@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: hu.bme.mit.mdsd.erdiagram.text.ui
 Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.mdsd.erdiagram.text.ui
 Bundle-Vendor: My Company
@@ -14,12 +15,10 @@ Require-Bundle: hu.bme.mit.mdsd.erdiagram.text,
  org.eclipse.ui.ide;bundle-version="3.5.0",
  org.eclipse.ui,
  org.eclipse.compare,
- org.eclipse.xtext.builder,
- org.eclipse.xtend.lib;resolution:=optional,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: hu.bme.mit.mdsd.erdiagram.text.ui.contentassist,
- hu.bme.mit.mdsd.erdiagram.text.ui.internal,
- hu.bme.mit.mdsd.erdiagram.text.ui.quickfix
+ hu.bme.mit.mdsd.erdiagram.text.ui.quickfix,
+ hu.bme.mit.mdsd.erdiagram.text.ui.internal
 Bundle-Activator: hu.bme.mit.mdsd.erdiagram.text.ui.internal.TextActivator

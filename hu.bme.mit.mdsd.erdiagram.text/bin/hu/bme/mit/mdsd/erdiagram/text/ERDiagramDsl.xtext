@@ -2,13 +2,14 @@ grammar hu.bme.mit.mdsd.erdiagram.text.ERDiagramDsl with org.eclipse.xtext.commo
 
 generate eRDiagramDsl "http://www.bme.hu/mit/mdsd/erdiagram/text/ERDiagramDsl"
 
+//Entry rule
 ERDiagram:
 	entities+=Entity*
 	relation+=Relation*
 ;
 
 Entity:
-	'entity' name=ID ('isA' isA+=[Entity])*
+	'entity' name=ID ('key' key=[Attribute])? ('isA' isA+=[Entity])*
 	('{'
 	attributes+=Attribute
 	(',' attributes+=Attribute)*

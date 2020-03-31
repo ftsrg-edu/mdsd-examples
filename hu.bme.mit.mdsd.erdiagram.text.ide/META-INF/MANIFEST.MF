@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: hu.bme.mit.mdsd.erdiagram.text.ide
 Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.mdsd.erdiagram.text.ide
 Bundle-Vendor: My Company
@@ -7,8 +8,8 @@ Bundle-SymbolicName: hu.bme.mit.mdsd.erdiagram.text.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: hu.bme.mit.mdsd.erdiagram.text,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: hu.bme.mit.mdsd.erdiagram.text.ide.contentassist.antlr,
- hu.bme.mit.mdsd.erdiagram.text.ide.contentassist.antlr.internal
-
+Export-Package: hu.bme.mit.mdsd.erdiagram.text.ide.contentassist.antlr.internal,
+ hu.bme.mit.mdsd.erdiagram.text.ide.contentassist.antlr
