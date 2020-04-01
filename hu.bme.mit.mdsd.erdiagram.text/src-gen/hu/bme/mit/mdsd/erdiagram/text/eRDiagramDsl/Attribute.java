@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#getType <em>Type</em>}</li>
- *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsKey <em>Is Key</em>}</li>
+ *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsTransient <em>Is Transient</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.ERDiagramDslPackage#getAttribute()
@@ -73,25 +73,25 @@ public interface Attribute extends EObject
   void setType(AttributeType value);
 
   /**
-   * Returns the value of the '<em><b>Is Key</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Transient</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Key</em>' attribute.
-   * @see #setIsKey(boolean)
-   * @see hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.ERDiagramDslPackage#getAttribute_IsKey()
+   * @return the value of the '<em>Is Transient</em>' attribute.
+   * @see #setIsTransient(boolean)
+   * @see hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.ERDiagramDslPackage#getAttribute_IsTransient()
    * @model
    * @generated
    */
-  boolean isIsKey();
+  boolean isIsTransient();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsKey <em>Is Key</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsTransient <em>Is Transient</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Key</em>' attribute.
-   * @see #isIsKey()
+   * @param value the new value of the '<em>Is Transient</em>' attribute.
+   * @see #isIsTransient()
    * @generated
    */
-  void setIsKey(boolean value);
+  void setIsTransient(boolean value);
 
 } // Attribute

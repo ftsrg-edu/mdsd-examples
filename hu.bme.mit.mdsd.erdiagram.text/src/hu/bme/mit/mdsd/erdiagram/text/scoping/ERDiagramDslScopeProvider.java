@@ -37,7 +37,7 @@ public class ERDiagramDslScopeProvider extends AbstractERDiagramDslScopeProvider
 		if (context instanceof Entity && reference == ERDiagramDslPackage.Literals.ENTITY__KEY) {
 			Entity entity = (Entity) context;
 			Collection<Attribute> referrableAttributes = new ArrayList<Attribute>(entity.getAttributes());
-			referrableAttributes.removeIf(it -> it.isIsKey() == false); // Removing not key attributes
+			referrableAttributes.removeIf(it -> it.isIsTransient()); // Removing transient attributes
 			return Scopes.scopeFor(referrableAttributes);
 		}
 		return super.getScope(context, reference);

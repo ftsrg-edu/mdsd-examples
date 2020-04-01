@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalERDiagramDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'", "'entity'", "'key'", "'isA'", "'{'", "'}'", "','", "':'", "'is related with'", "'nullable'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'", "'entity'", "'key'", "'isA'", "'{'", "'}'", "','", "':'", "'is related with'", "'transient'", "'nullable'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,6 +40,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
+    public static final int T__27=27;
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -967,7 +968,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( ((LA4_0>=16 && LA4_0<=17)||LA4_0==26) ) {
+                if ( ((LA4_0>=16 && LA4_0<=17)||LA4_0==27) ) {
                     alt4=1;
                 }
 
@@ -2539,32 +2540,32 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Attribute__Group__3__Impl"
-    // InternalERDiagramDsl.g:820:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__IsKeyAssignment_3 )? ) ;
+    // InternalERDiagramDsl.g:820:1: rule__Attribute__Group__3__Impl : ( ( rule__Attribute__IsTransientAssignment_3 )? ) ;
     public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:824:1: ( ( ( rule__Attribute__IsKeyAssignment_3 )? ) )
-            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
+            // InternalERDiagramDsl.g:824:1: ( ( ( rule__Attribute__IsTransientAssignment_3 )? ) )
+            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsTransientAssignment_3 )? )
             {
-            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsKeyAssignment_3 )? )
-            // InternalERDiagramDsl.g:826:2: ( rule__Attribute__IsKeyAssignment_3 )?
+            // InternalERDiagramDsl.g:825:1: ( ( rule__Attribute__IsTransientAssignment_3 )? )
+            // InternalERDiagramDsl.g:826:2: ( rule__Attribute__IsTransientAssignment_3 )?
             {
-             before(grammarAccess.getAttributeAccess().getIsKeyAssignment_3()); 
-            // InternalERDiagramDsl.g:827:2: ( rule__Attribute__IsKeyAssignment_3 )?
+             before(grammarAccess.getAttributeAccess().getIsTransientAssignment_3()); 
+            // InternalERDiagramDsl.g:827:2: ( rule__Attribute__IsTransientAssignment_3 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==19) ) {
+            if ( (LA9_0==26) ) {
                 alt9=1;
             }
             switch (alt9) {
                 case 1 :
-                    // InternalERDiagramDsl.g:827:3: rule__Attribute__IsKeyAssignment_3
+                    // InternalERDiagramDsl.g:827:3: rule__Attribute__IsTransientAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Attribute__IsKeyAssignment_3();
+                    rule__Attribute__IsTransientAssignment_3();
 
                     state._fsp--;
 
@@ -2574,7 +2575,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
             }
 
-             after(grammarAccess.getAttributeAccess().getIsKeyAssignment_3()); 
+             after(grammarAccess.getAttributeAccess().getIsTransientAssignment_3()); 
 
             }
 
@@ -3057,7 +3058,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
             if ( LA10_0 >= 16 && LA10_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
                 alt10=1;
             }
-            else if ( LA10_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+            else if ( LA10_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
                 alt10=2;
             }
             else {
@@ -3204,7 +3205,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
             if ( LA11_0 >= 16 && LA11_0 <= 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
                 alt11=1;
             }
-            else if ( LA11_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+            else if ( LA11_0 == 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
                 alt11=1;
             }
             switch (alt11) {
@@ -3642,30 +3643,30 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Attribute__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__Attribute__IsKeyAssignment_3"
-    // InternalERDiagramDsl.g:1197:1: rule__Attribute__IsKeyAssignment_3 : ( ( 'key' ) ) ;
-    public final void rule__Attribute__IsKeyAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Attribute__IsTransientAssignment_3"
+    // InternalERDiagramDsl.g:1197:1: rule__Attribute__IsTransientAssignment_3 : ( ( 'transient' ) ) ;
+    public final void rule__Attribute__IsTransientAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalERDiagramDsl.g:1201:1: ( ( ( 'key' ) ) )
-            // InternalERDiagramDsl.g:1202:2: ( ( 'key' ) )
+            // InternalERDiagramDsl.g:1201:1: ( ( ( 'transient' ) ) )
+            // InternalERDiagramDsl.g:1202:2: ( ( 'transient' ) )
             {
-            // InternalERDiagramDsl.g:1202:2: ( ( 'key' ) )
-            // InternalERDiagramDsl.g:1203:3: ( 'key' )
+            // InternalERDiagramDsl.g:1202:2: ( ( 'transient' ) )
+            // InternalERDiagramDsl.g:1203:3: ( 'transient' )
             {
-             before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
-            // InternalERDiagramDsl.g:1204:3: ( 'key' )
-            // InternalERDiagramDsl.g:1205:4: 'key'
+             before(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); 
+            // InternalERDiagramDsl.g:1204:3: ( 'transient' )
+            // InternalERDiagramDsl.g:1205:4: 'transient'
             {
-             before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
+             before(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); 
 
             }
 
-             after(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); 
+             after(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); 
 
             }
 
@@ -3684,7 +3685,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Attribute__IsKeyAssignment_3"
+    // $ANTLR end "rule__Attribute__IsTransientAssignment_3"
 
 
     // $ANTLR start "rule__Relation__LeftEndingAssignment_0"
@@ -3828,7 +3829,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
             // InternalERDiagramDsl.g:1269:4: 'nullable'
             {
              before(grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0()); 
 
             }
@@ -3906,9 +3907,9 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000004030000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000008030000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000004030002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000008030002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000380000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000100002L});
@@ -3916,7 +3917,7 @@ public class InternalERDiagramDslParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000800002L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000000000F800L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
 
 }

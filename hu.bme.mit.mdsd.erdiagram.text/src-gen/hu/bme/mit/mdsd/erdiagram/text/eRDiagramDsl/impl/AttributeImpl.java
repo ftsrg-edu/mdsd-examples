@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.impl.AttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.impl.AttributeImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.impl.AttributeImpl#isIsKey <em>Is Key</em>}</li>
+ *   <li>{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.impl.AttributeImpl#isIsTransient <em>Is Transient</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,24 +72,24 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   protected AttributeType type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isIsKey() <em>Is Key</em>}' attribute.
+   * The default value of the '{@link #isIsTransient() <em>Is Transient</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsKey()
+   * @see #isIsTransient()
    * @generated
    * @ordered
    */
-  protected static final boolean IS_KEY_EDEFAULT = false;
+  protected static final boolean IS_TRANSIENT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isIsKey() <em>Is Key</em>}' attribute.
+   * The cached value of the '{@link #isIsTransient() <em>Is Transient</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsKey()
+   * @see #isIsTransient()
    * @generated
    * @ordered
    */
-  protected boolean isKey = IS_KEY_EDEFAULT;
+  protected boolean isTransient = IS_TRANSIENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -168,9 +168,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public boolean isIsKey()
+  public boolean isIsTransient()
   {
-    return isKey;
+    return isTransient;
   }
 
   /**
@@ -179,12 +179,12 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public void setIsKey(boolean newIsKey)
+  public void setIsTransient(boolean newIsTransient)
   {
-    boolean oldIsKey = isKey;
-    isKey = newIsKey;
+    boolean oldIsTransient = isTransient;
+    isTransient = newIsTransient;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ERDiagramDslPackage.ATTRIBUTE__IS_KEY, oldIsKey, isKey));
+      eNotify(new ENotificationImpl(this, Notification.SET, ERDiagramDslPackage.ATTRIBUTE__IS_TRANSIENT, oldIsTransient, isTransient));
   }
 
   /**
@@ -201,8 +201,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         return getName();
       case ERDiagramDslPackage.ATTRIBUTE__TYPE:
         return getType();
-      case ERDiagramDslPackage.ATTRIBUTE__IS_KEY:
-        return isIsKey();
+      case ERDiagramDslPackage.ATTRIBUTE__IS_TRANSIENT:
+        return isIsTransient();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -223,8 +223,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
       case ERDiagramDslPackage.ATTRIBUTE__TYPE:
         setType((AttributeType)newValue);
         return;
-      case ERDiagramDslPackage.ATTRIBUTE__IS_KEY:
-        setIsKey((Boolean)newValue);
+      case ERDiagramDslPackage.ATTRIBUTE__IS_TRANSIENT:
+        setIsTransient((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -246,8 +246,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
       case ERDiagramDslPackage.ATTRIBUTE__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case ERDiagramDslPackage.ATTRIBUTE__IS_KEY:
-        setIsKey(IS_KEY_EDEFAULT);
+      case ERDiagramDslPackage.ATTRIBUTE__IS_TRANSIENT:
+        setIsTransient(IS_TRANSIENT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -267,8 +267,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ERDiagramDslPackage.ATTRIBUTE__TYPE:
         return type != TYPE_EDEFAULT;
-      case ERDiagramDslPackage.ATTRIBUTE__IS_KEY:
-        return isKey != IS_KEY_EDEFAULT;
+      case ERDiagramDslPackage.ATTRIBUTE__IS_TRANSIENT:
+        return isTransient != IS_TRANSIENT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -288,8 +288,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     result.append(name);
     result.append(", type: ");
     result.append(type);
-    result.append(", isKey: ");
-    result.append(isKey);
+    result.append(", isTransient: ");
+    result.append(isTransient);
     result.append(')');
     return result.toString();
   }

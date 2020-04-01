@@ -51,7 +51,7 @@ public class ERDiagramDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getAttributesAssignment_4_2_1(), "rule__Entity__AttributesAssignment_4_2_1");
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getTypeAssignment_2(), "rule__Attribute__TypeAssignment_2");
-			builder.put(grammarAccess.getAttributeAccess().getIsKeyAssignment_3(), "rule__Attribute__IsKeyAssignment_3");
+			builder.put(grammarAccess.getAttributeAccess().getIsTransientAssignment_3(), "rule__Attribute__IsTransientAssignment_3");
 			builder.put(grammarAccess.getRelationAccess().getLeftEndingAssignment_0(), "rule__Relation__LeftEndingAssignment_0");
 			builder.put(grammarAccess.getRelationAccess().getRightEndingAssignment_2(), "rule__Relation__RightEndingAssignment_2");
 			builder.put(grammarAccess.getRelationEndingAccess().getMultiplicityAssignment_0_0(), "rule__RelationEnding__MultiplicityAssignment_0_0");

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'key'", "'isA'", "'{'", "','", "'}'", "':'", "'is related with'", "'nullable'", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'key'", "'isA'", "'{'", "','", "'}'", "':'", "'transient'", "'is related with'", "'nullable'", "'int'", "'double'", "'string'", "'boolean'", "'datetime'", "'one'", "'many'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,6 +40,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
+    public static final int T__27=27;
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -199,7 +200,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==19||(LA2_0>=25 && LA2_0<=26)) ) {
+                if ( (LA2_0==20||(LA2_0>=26 && LA2_0<=27)) ) {
                     alt2=1;
                 }
 
@@ -624,13 +625,13 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalERDiagramDsl.g:262:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) ;
+    // InternalERDiagramDsl.g:262:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isTransient_3_0= 'transient' ) )? ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
-        Token lv_isKey_3_0=null;
+        Token lv_isTransient_3_0=null;
         Enumerator lv_type_2_0 = null;
 
 
@@ -638,11 +639,11 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalERDiagramDsl.g:268:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? ) )
-            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
+            // InternalERDiagramDsl.g:268:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isTransient_3_0= 'transient' ) )? ) )
+            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isTransient_3_0= 'transient' ) )? )
             {
-            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )? )
-            // InternalERDiagramDsl.g:270:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isKey_3_0= 'key' ) )?
+            // InternalERDiagramDsl.g:269:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isTransient_3_0= 'transient' ) )? )
+            // InternalERDiagramDsl.g:270:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= ruleAttributeType ) ) ( (lv_isTransient_3_0= 'transient' ) )?
             {
             // InternalERDiagramDsl.g:270:3: ( (lv_name_0_0= RULE_ID ) )
             // InternalERDiagramDsl.g:271:4: (lv_name_0_0= RULE_ID )
@@ -705,29 +706,29 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalERDiagramDsl.g:311:3: ( (lv_isKey_3_0= 'key' ) )?
+            // InternalERDiagramDsl.g:311:3: ( (lv_isTransient_3_0= 'transient' ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==12) ) {
+            if ( (LA7_0==18) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalERDiagramDsl.g:312:4: (lv_isKey_3_0= 'key' )
+                    // InternalERDiagramDsl.g:312:4: (lv_isTransient_3_0= 'transient' )
                     {
-                    // InternalERDiagramDsl.g:312:4: (lv_isKey_3_0= 'key' )
-                    // InternalERDiagramDsl.g:313:5: lv_isKey_3_0= 'key'
+                    // InternalERDiagramDsl.g:312:4: (lv_isTransient_3_0= 'transient' )
+                    // InternalERDiagramDsl.g:313:5: lv_isTransient_3_0= 'transient'
                     {
-                    lv_isKey_3_0=(Token)match(input,12,FOLLOW_2); 
+                    lv_isTransient_3_0=(Token)match(input,18,FOLLOW_2); 
 
-                    					newLeafNode(lv_isKey_3_0, grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0());
+                    					newLeafNode(lv_isTransient_3_0, grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAttributeRule());
                     					}
-                    					setWithLastConsumed(current, "isKey", true, "key");
+                    					setWithLastConsumed(current, "isTransient", true, "transient");
                     				
 
                     }
@@ -848,7 +849,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,18,FOLLOW_13); 
+            otherlv_1=(Token)match(input,19,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRelationAccess().getIsRelatedWithKeyword_1());
             		
@@ -980,10 +981,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                 int alt8=3;
                 int LA8_0 = input.LA(1);
 
-                if ( LA8_0 >= 25 && LA8_0 <= 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
+                if ( LA8_0 >= 26 && LA8_0 <= 27 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 0) ) {
                     alt8=1;
                 }
-                else if ( LA8_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
+                else if ( LA8_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getRelationEndingAccess().getUnorderedGroup_0(), 1) ) {
                     alt8=2;
                 }
 
@@ -1083,7 +1084,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             	    // InternalERDiagramDsl.g:445:20: (lv_nullable_2_0= 'nullable' )
             	    // InternalERDiagramDsl.g:446:10: lv_nullable_2_0= 'nullable'
             	    {
-            	    lv_nullable_2_0=(Token)match(input,19,FOLLOW_14); 
+            	    lv_nullable_2_0=(Token)match(input,20,FOLLOW_14); 
 
             	    										newLeafNode(lv_nullable_2_0, grammarAccess.getRelationEndingAccess().getNullableNullableKeyword_0_1_0());
             	    									
@@ -1203,27 +1204,27 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             // InternalERDiagramDsl.g:495:2: ( (enumLiteral_0= 'int' ) | (enumLiteral_1= 'double' ) | (enumLiteral_2= 'string' ) | (enumLiteral_3= 'boolean' ) | (enumLiteral_4= 'datetime' ) )
             int alt9=5;
             switch ( input.LA(1) ) {
-            case 20:
+            case 21:
                 {
                 alt9=1;
                 }
                 break;
-            case 21:
+            case 22:
                 {
                 alt9=2;
                 }
                 break;
-            case 22:
+            case 23:
                 {
                 alt9=3;
                 }
                 break;
-            case 23:
+            case 24:
                 {
                 alt9=4;
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt9=5;
                 }
@@ -1242,7 +1243,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:496:3: (enumLiteral_0= 'int' )
                     // InternalERDiagramDsl.g:497:4: enumLiteral_0= 'int'
                     {
-                    enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_2); 
 
                     				current = grammarAccess.getAttributeTypeAccess().getINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getAttributeTypeAccess().getINTEnumLiteralDeclaration_0());
@@ -1259,7 +1260,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:504:3: (enumLiteral_1= 'double' )
                     // InternalERDiagramDsl.g:505:4: enumLiteral_1= 'double'
                     {
-                    enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_2); 
 
                     				current = grammarAccess.getAttributeTypeAccess().getDOUBLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getAttributeTypeAccess().getDOUBLEEnumLiteralDeclaration_1());
@@ -1276,7 +1277,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:512:3: (enumLiteral_2= 'string' )
                     // InternalERDiagramDsl.g:513:4: enumLiteral_2= 'string'
                     {
-                    enumLiteral_2=(Token)match(input,22,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,23,FOLLOW_2); 
 
                     				current = grammarAccess.getAttributeTypeAccess().getSTRINGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getAttributeTypeAccess().getSTRINGEnumLiteralDeclaration_2());
@@ -1293,7 +1294,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:520:3: (enumLiteral_3= 'boolean' )
                     // InternalERDiagramDsl.g:521:4: enumLiteral_3= 'boolean'
                     {
-                    enumLiteral_3=(Token)match(input,23,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,24,FOLLOW_2); 
 
                     				current = grammarAccess.getAttributeTypeAccess().getBOOLEANEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getAttributeTypeAccess().getBOOLEANEnumLiteralDeclaration_3());
@@ -1310,7 +1311,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:528:3: (enumLiteral_4= 'datetime' )
                     // InternalERDiagramDsl.g:529:4: enumLiteral_4= 'datetime'
                     {
-                    enumLiteral_4=(Token)match(input,24,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,25,FOLLOW_2); 
 
                     				current = grammarAccess.getAttributeTypeAccess().getDATETIMEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getAttributeTypeAccess().getDATETIMEEnumLiteralDeclaration_4());
@@ -1362,10 +1363,10 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==25) ) {
+            if ( (LA10_0==26) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==26) ) {
+            else if ( (LA10_0==27) ) {
                 alt10=2;
             }
             else {
@@ -1381,7 +1382,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:547:3: (enumLiteral_0= 'one' )
                     // InternalERDiagramDsl.g:548:4: enumLiteral_0= 'one'
                     {
-                    enumLiteral_0=(Token)match(input,25,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
 
                     				current = grammarAccess.getMultiplicityTypeAccess().getOneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMultiplicityTypeAccess().getOneEnumLiteralDeclaration_0());
@@ -1398,7 +1399,7 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
                     // InternalERDiagramDsl.g:555:3: (enumLiteral_1= 'many' )
                     // InternalERDiagramDsl.g:556:4: enumLiteral_1= 'many'
                     {
-                    enumLiteral_1=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
 
                     				current = grammarAccess.getMultiplicityTypeAccess().getManyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMultiplicityTypeAccess().getManyEnumLiteralDeclaration_1());
@@ -1437,17 +1438,17 @@ public class InternalERDiagramDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000006080802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000006080002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000C100802L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000C100002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000007002L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001F00000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000006080000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000006080010L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000003E00000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000000C100000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000C100010L});
 
 }

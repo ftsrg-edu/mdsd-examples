@@ -310,15 +310,15 @@ ruleAttribute returns [EObject current=null]
 		)
 		(
 			(
-				lv_isKey_3_0='key'
+				lv_isTransient_3_0='transient'
 				{
-					newLeafNode(lv_isKey_3_0, grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0());
+					newLeafNode(lv_isTransient_3_0, grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeRule());
 					}
-					setWithLastConsumed($current, "isKey", true, "key");
+					setWithLastConsumed($current, "isTransient", true, "transient");
 				}
 			)
 		)?

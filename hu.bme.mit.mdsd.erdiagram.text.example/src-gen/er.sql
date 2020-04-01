@@ -1,11 +1,11 @@
 CREATE TABLE person (
-	name varchar(255),  
-	id int PRIMARY KEY
+	id int PRIMARY KEY, 
+	name varchar(255) 
 );
 CREATE TABLE driver (
 	licence varchar(255),  
-	name varchar(255),  
-	id int PRIMARY KEY
+	id int,  
+	name varchar(255) 
 );
 CREATE TABLE car (
 	numberPlate varchar(255) PRIMARY KEY

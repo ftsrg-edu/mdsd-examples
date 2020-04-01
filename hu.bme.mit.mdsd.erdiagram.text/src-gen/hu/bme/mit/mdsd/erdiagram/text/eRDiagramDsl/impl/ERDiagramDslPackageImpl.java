@@ -268,7 +268,7 @@ public class ERDiagramDslPackageImpl extends EPackageImpl implements ERDiagramDs
    * @generated
    */
   @Override
-  public EAttribute getAttribute_IsKey()
+  public EAttribute getAttribute_IsTransient()
   {
     return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
   }
@@ -416,7 +416,7 @@ public class ERDiagramDslPackageImpl extends EPackageImpl implements ERDiagramDs
     attributeEClass = createEClass(ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
     createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
-    createEAttribute(attributeEClass, ATTRIBUTE__IS_KEY);
+    createEAttribute(attributeEClass, ATTRIBUTE__IS_TRANSIENT);
 
     relationEClass = createEClass(RELATION);
     createEReference(relationEClass, RELATION__LEFT_ENDING);
@@ -476,7 +476,7 @@ public class ERDiagramDslPackageImpl extends EPackageImpl implements ERDiagramDs
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Type(), this.getAttributeType(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_IsKey(), ecorePackage.getEBoolean(), "isKey", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_IsTransient(), ecorePackage.getEBoolean(), "isTransient", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelation_LeftEnding(), this.getRelationEnding(), null, "leftEnding", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

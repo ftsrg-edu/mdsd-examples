@@ -19,6 +19,8 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -41,9 +43,12 @@ public class ERDiagramDslGenerator extends AbstractGenerator {
         _builder.append(" (");
         _builder.newLineIfNotEmpty();
         {
-          Set<Attribute> _allAttributes = this.getAllAttributes(entity);
+          final Function1<Attribute, Boolean> _function = (Attribute it) -> {
+            return Boolean.valueOf(it.isIsTransient());
+          };
+          Iterable<Attribute> _reject = IterableExtensions.<Attribute>reject(this.getAllAttributes(entity), _function);
           boolean _hasElements = false;
-          for(final Attribute attribute : _allAttributes) {
+          for(final Attribute attribute : _reject) {
             if (!_hasElements) {
               _hasElements = true;
             } else {
@@ -57,8 +62,9 @@ public class ERDiagramDslGenerator extends AbstractGenerator {
             _builder.append(_transformType, "\t");
             _builder.append(" ");
             {
-              boolean _isIsKey = attribute.isIsKey();
-              if (_isIsKey) {
+              Attribute _key = entity.getKey();
+              boolean _tripleEquals = (attribute == _key);
+              if (_tripleEquals) {
                 _builder.append("PRIMARY KEY");
               }
             }
@@ -73,7 +79,7 @@ public class ERDiagramDslGenerator extends AbstractGenerator {
       EList<Relation> _relation = diagram.getRelation();
       for(final Relation relation : _relation) {
         _builder.append("CREATE TABLE ");
-        String _name_2 = this.getName(relation);
+        CharSequence _name_2 = this.getName(relation);
         _builder.append(_name_2);
         _builder.append(" (");
         _builder.newLineIfNotEmpty();
@@ -168,11 +174,14 @@ public class ERDiagramDslGenerator extends AbstractGenerator {
     return null;
   }
   
-  private String getName(final Relation relation) {
-    String _name = relation.getLeftEnding().getTarget().getName();
-    String _plus = (_name + "To");
-    String _name_1 = relation.getRightEnding().getTarget().getName();
-    return (_plus + _name_1);
+  private CharSequence getName(final Relation relation) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = this.getLeftEndingEntity(relation).getName();
+    _builder.append(_name);
+    _builder.append("To");
+    String _name_1 = this.getRightEndingEntity(relation).getName();
+    _builder.append(_name_1);
+    return _builder;
   }
   
   private Entity getLeftEndingEntity(final Relation relation) {

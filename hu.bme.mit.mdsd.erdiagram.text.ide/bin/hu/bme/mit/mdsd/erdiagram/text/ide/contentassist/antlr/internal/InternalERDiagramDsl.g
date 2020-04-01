@@ -823,9 +823,9 @@ rule__Attribute__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAttributeAccess().getIsKeyAssignment_3()); }
-	(rule__Attribute__IsKeyAssignment_3)?
-	{ after(grammarAccess.getAttributeAccess().getIsKeyAssignment_3()); }
+	{ before(grammarAccess.getAttributeAccess().getIsTransientAssignment_3()); }
+	(rule__Attribute__IsTransientAssignment_3)?
+	{ after(grammarAccess.getAttributeAccess().getIsTransientAssignment_3()); }
 )
 ;
 finally {
@@ -1194,19 +1194,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Attribute__IsKeyAssignment_3
+rule__Attribute__IsTransientAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); }
+		{ before(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); }
 		(
-			{ before(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); }
-			'key'
-			{ after(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); }
+			{ before(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); }
+			'transient'
+			{ after(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); }
 		)
-		{ after(grammarAccess.getAttributeAccess().getIsKeyKeyKeyword_3_0()); }
+		{ after(grammarAccess.getAttributeAccess().getIsTransientTransientKeyword_3_0()); }
 	)
 ;
 finally {

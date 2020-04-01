@@ -61,7 +61,7 @@ public class ERDiagramDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (name=ID type=AttributeType isKey?='key'?)
+	 *     (name=ID type=AttributeType isTransient?='transient'?)
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

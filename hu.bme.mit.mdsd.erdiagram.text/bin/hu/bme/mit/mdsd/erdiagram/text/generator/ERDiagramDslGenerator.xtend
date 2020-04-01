@@ -26,12 +26,14 @@ class ERDiagramDslGenerator extends AbstractGenerator {
 		fsa.generateFile('er.sql', '''
 			«FOR entity : diagram.entities»
 				CREATE TABLE «entity.name» (
-					«FOR attribute : entity.allAttributes SEPARATOR ', '»
-						«attribute.name» «attribute.type.transformType» «IF attribute.isIsKey»PRIMARY KEY«ENDIF»
+«««					Note that methods are called using the extension syntax, and only non-transient attributes are serialized
+					«FOR attribute : entity.allAttributes.reject[it.isTransient] SEPARATOR ', '»
+						«attribute.name» «attribute.type.transformType» «IF attribute === entity.key»PRIMARY KEY«ENDIF»
 					«ENDFOR»
 				);
 			«ENDFOR»
 			«FOR relation : diagram.relation»
+«««				Note how property accessors are used
 				CREATE TABLE «relation.name» (
 					«relation.leftEndingKey.name» «relation.leftEndingKey.type.transformType»,
 					CONSTRAINT fk_«relation.leftEndingKey.name» FOREIGN KEY («relation.leftEndingKey.name»)
@@ -54,6 +56,8 @@ class ERDiagramDslGenerator extends AbstractGenerator {
 		return attributes
 	}
 	
+	// Note that the return type specification of methods can be omitted if it can be automatically inferred
+	
 	private def transformType(AttributeType type) {
 		switch (type) {
 			case AttributeType.BOOLEAN: {
@@ -74,9 +78,7 @@ class ERDiagramDslGenerator extends AbstractGenerator {
 		}
 	}
 	
-	private def getName(Relation relation) {
-		return relation.leftEnding.target.name + 'To' + relation.rightEnding.target.name
-	}
+	private def getName(Relation relation) '''«relation.leftEndingEntity.name»To«relation.rightEndingEntity.name»'''
 	
 	private def getLeftEndingEntity(Relation relation) {
 		return relation.leftEnding.target

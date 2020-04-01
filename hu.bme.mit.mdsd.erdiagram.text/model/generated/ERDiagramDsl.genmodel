@@ -30,7 +30,7 @@
     <genClasses ecoreClass="ERDiagramDsl.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ERDiagramDsl.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ERDiagramDsl.ecore#//Attribute/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ERDiagramDsl.ecore#//Attribute/isKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ERDiagramDsl.ecore#//Attribute/isTransient"/>
     </genClasses>
     <genClasses ecoreClass="ERDiagramDsl.ecore#//Relation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ERDiagramDsl.ecore#//Relation/leftEnding"/>

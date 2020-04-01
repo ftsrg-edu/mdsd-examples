@@ -179,13 +179,13 @@ public interface ERDiagramDslPackage extends EPackage
   int ATTRIBUTE__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Is Key</b></em>' attribute.
+   * The feature id for the '<em><b>Is Transient</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__IS_KEY = 2;
+  int ATTRIBUTE__IS_TRANSIENT = 2;
 
   /**
    * The number of structural features of the '<em>Attribute</em>' class.
@@ -419,15 +419,15 @@ public interface ERDiagramDslPackage extends EPackage
   EAttribute getAttribute_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsKey <em>Is Key</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsTransient <em>Is Transient</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Key</em>'.
-   * @see hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsKey()
+   * @return the meta object for the attribute '<em>Is Transient</em>'.
+   * @see hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Attribute#isIsTransient()
    * @see #getAttribute()
    * @generated
    */
-  EAttribute getAttribute_IsKey();
+  EAttribute getAttribute_IsTransient();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.Relation <em>Relation</em>}'.
@@ -642,12 +642,12 @@ public interface ERDiagramDslPackage extends EPackage
     EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
     /**
-     * The meta object literal for the '<em><b>Is Key</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Transient</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__IS_KEY = eINSTANCE.getAttribute_IsKey();
+    EAttribute ATTRIBUTE__IS_TRANSIENT = eINSTANCE.getAttribute_IsTransient();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.mdsd.erdiagram.text.eRDiagramDsl.impl.RelationImpl <em>Relation</em>}' class.

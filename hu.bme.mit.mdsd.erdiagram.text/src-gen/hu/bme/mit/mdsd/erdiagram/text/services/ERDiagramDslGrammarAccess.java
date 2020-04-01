@@ -166,14 +166,14 @@ public class ERDiagramDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeAttributeTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cIsKeyAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cIsKeyKeyKeyword_3_0 = (Keyword)cIsKeyAssignment_3.eContents().get(0);
+		private final Assignment cIsTransientAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cIsTransientTransientKeyword_3_0 = (Keyword)cIsTransientAssignment_3.eContents().get(0);
 		
 		//Attribute:
-		//	name=ID ':' type=AttributeType isKey?='key'?;
+		//	name=ID ':' type=AttributeType isTransient?='transient'?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' type=AttributeType isKey?='key'?
+		//name=ID ':' type=AttributeType isTransient?='transient'?
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -191,11 +191,11 @@ public class ERDiagramDslGrammarAccess extends AbstractGrammarElementFinder {
 		//AttributeType
 		public RuleCall getTypeAttributeTypeEnumRuleCall_2_0() { return cTypeAttributeTypeEnumRuleCall_2_0; }
 		
-		//isKey?='key'?
-		public Assignment getIsKeyAssignment_3() { return cIsKeyAssignment_3; }
+		//isTransient?='transient'?
+		public Assignment getIsTransientAssignment_3() { return cIsTransientAssignment_3; }
 		
-		//'key'
-		public Keyword getIsKeyKeyKeyword_3_0() { return cIsKeyKeyKeyword_3_0; }
+		//'transient'
+		public Keyword getIsTransientTransientKeyword_3_0() { return cIsTransientTransientKeyword_3_0; }
 	}
 	public class RelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.mdsd.erdiagram.text.ERDiagramDsl.Relation");
@@ -431,7 +431,7 @@ public class ERDiagramDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Attribute:
-	//	name=ID ':' type=AttributeType isKey?='key'?;
+	//	name=ID ':' type=AttributeType isTransient?='transient'?;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}

@@ -1,6 +1,6 @@
 entity person key id {
 	name : string,
-	id : int key
+	id : int
 }
 
 entity driver isA person {
@@ -8,7 +8,8 @@ entity driver isA person {
 }
 
 entity car key numberPlate {
-	numberPlate : string key
+	numberPlate : string,
+	year : int transient
 }
 
 one person is related with nullable many car

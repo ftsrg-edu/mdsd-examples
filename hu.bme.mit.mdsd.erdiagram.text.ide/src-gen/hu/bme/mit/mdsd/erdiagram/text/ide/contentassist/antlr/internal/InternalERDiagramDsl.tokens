@@ -9,9 +9,10 @@
 'isA'=20
 'key'=19
 'many'=17
-'nullable'=26
+'nullable'=27
 'one'=16
 'string'=13
+'transient'=26
 '{'=21
 '}'=22
 RULE_ANY_OTHER=10
@@ -37,3 +38,4 @@ T__23=23
 T__24=24
 T__25=25
 T__26=26
+T__27=27
