@@ -74,8 +74,15 @@ public class TransformHandlerPrepare extends AbstractHandler implements IHandler
     private Resource getOrCreateResource(String fileExtension, EntityRelationDiagram erd) {
 		URI resourceURI = erd.eResource().getURI().trimFileExtension().appendFileExtension(fileExtension);
 		ResourceSet resSet = erd.eResource().getResourceSet();
-		// try to create a resource 
-		Resource resource = resSet.getResource(resourceURI, true);
+		Resource resource = null;
+		try {
+			// try to load existing resource 
+			resource = resSet.getResource(resourceURI, true);
+		} catch (RuntimeException e) {
+			// loading failed, i.e. file does not exists... 
+			// no problem, use the Resource, file will be created on save
+			resource = resSet.getResource(resourceURI, false);
+		}
 		return resource;
 	}
 }

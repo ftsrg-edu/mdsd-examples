@@ -114,9 +114,14 @@ class ErdToRdbLiveTransformation {
 
 	private def Resource getOrCreateResource(String fileExtension) {
 		val resourceURI = erdiagram.eResource.getURI().trimFileExtension().appendFileExtension(fileExtension);
-		val resource = 
-				// try to create a resource 
+		val resource = try {
+				// try to load existing resource 
 				resSet.getResource(resourceURI, true);
+			} catch (RuntimeException e) {
+				// loading failed, i.e. file does not exists... 
+				// no problem, use the Resource, file will be created on save
+				resSet.getResource(resourceURI, false);
+			}
 		return resource;
 	}
 }

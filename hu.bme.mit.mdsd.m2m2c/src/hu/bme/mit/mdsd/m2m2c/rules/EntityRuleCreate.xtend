@@ -20,7 +20,7 @@ class EntityRuleCreate extends AbstractRule {
 			.name("EntityCreated")
 			.action(CRUDActivationStateEnum.CREATED) [
 				
-			println('''EntityRule CREATED («entity.name»)''')
+			println('''Entity CREATED («entity.name»)''')
 			
 			// create table
 			val table = traceRoot.rdbRoot.createChild(rdbPackage.relationalDataBase_Tables, rdbPackage.table) as Table

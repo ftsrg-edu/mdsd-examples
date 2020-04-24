@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:erdiagram="http://mit.bme.hu/mdsd/erdiagram" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_oSZ1MECfEeivdP576tSASg" selectedViews="_qB-8cECfEeivdP576tSASg _ImTmIEC7EeiNKMm4DfGUWQ" version="14.1.0.201810161215">
+  <viewpoint:DAnalysis uid="_oSZ1MECfEeivdP576tSASg" selectedViews="_qB-8cECfEeivdP576tSASg _ImTmIEC7EeiNKMm4DfGUWQ" version="14.3.0.201909031200">
     <semanticResources>My.erdiagram</semanticResources>
     <semanticResources>platform:/resource/hu.bme.mit.mdsd.rdb.design/description/rdb.odesign</semanticResources>
     <semanticResources>environment:/viewpoint</semanticResources>
     <semanticResources>My.trace</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_qB-8cECfEeivdP576tSASg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/hu.bme.mit.mdsd.erdiagram.design/description/erdiagram.odesign#//@ownedViewpoints[name='erdiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_qaPEYECfEeivdP576tSASg" name="new EntityRelationDiagram" repPath="#_qaFTYECfEeivdP576tSASg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_qaPEYECfEeivdP576tSASg" name="source EntityRelationDiagram" repPath="#_qaFTYECfEeivdP576tSASg">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/hu.bme.mit.mdsd.erdiagram.design/description/erdiagram.odesign#//@ownedViewpoints[name='erdiagram']/@ownedRepresentations[name='EntityRelationDiagram']"/>
         <target xmi:type="erdiagram:EntityRelationDiagram" href="My.erdiagram#/"/>
       </ownedRepresentationDescriptors>
@@ -19,7 +19,7 @@
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/hu.bme.mit.mdsd.rdb.design/description/rdb.odesign#//@ownedViewpoints[name='rdb']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram uid="_qaFTYECfEeivdP576tSASg" name="new EntityRelationDiagram">
+  <diagram:DSemanticDiagram uid="_qaFTYECfEeivdP576tSASg">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_qaFTYUCfEeivdP576tSASg" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_qaFTYkCfEeivdP576tSASg"/>
     </ownedAnnotationEntries>
