@@ -18,7 +18,8 @@ class EntityRuleCreate extends AbstractRule {
 		// left hand side - queries a single entity
 		createRule(EntityCreated.instance)
 			.name("EntityCreated")
-			.action(CRUDActivationStateEnum.CREATED) [
+			.action(CRUDActivationStateEnum.CREATED) 
+		[
 				
 			println('''Entity CREATED («entity.name»)''')
 			
