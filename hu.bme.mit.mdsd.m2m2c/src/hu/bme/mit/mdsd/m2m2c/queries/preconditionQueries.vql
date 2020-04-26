@@ -165,7 +165,63 @@ pattern isaDeleted(
 
 /////////////////////////////////////// Relation //////////////////////////////////////////
 
-// TODO
+pattern relationCreated(relation: Relation){
+	neg find traceOfElement(_, _, relation, _);
+}
+// no delete pattern - see tableToRemove
+
+pattern relationEndCreated(
+	ending: RelationEnding, refKey: Key,
+	contextRelation: Relation, contextTable: Table
+){
+	find hasEnding(contextRelation, ending);
+	find traceOfElement(_, _, contextRelation, contextTable);
+	RelationEnding.target(ending, refEntity);
+	find traceOfElement(_, _, refEntity, refTable);
+	Table.columns(refTable, refKey);
+	Key(refKey); // redundant, already type restricted in the parameters
+	
+	neg find relationEndMapped(
+		ending, _, refKey, contextRelation, contextTable
+	);
+}
+private pattern hasEnding(
+	contextRelation: Relation, ending: RelationEnding
+) {
+	Relation.leftEnding(contextRelation, ending);
+} or  {
+	Relation.rightEnding(contextRelation, ending);
+}
+private pattern relationEndMapped(
+	ending: RelationEnding, foreignKey: ForeignKey, 
+	refKey: Key,
+	contextRelation: Relation, contextTable: Table	
+){
+	find hasEnding(contextRelation, ending);
+	Table.columns(contextTable, foreignKey);
+	find traceOfElement(_, _, contextRelation, contextTable);
+	find traceOfElement(_, _, ending, foreignKey);
+	
+	RelationEnding.target(ending, refEntity);
+	find traceOfElement(_, _, refEntity, refTable);
+	Table.columns(refTable, refKey);
+	ForeignKey.referencedKey(foreignKey, refKey);
+	
+	// if types do not match, delete&re-create foreign key
+	Key.type(refKey, type);
+	ForeignKey.type(foreignKey, type);
+}
+pattern relationEndDeleted(
+	foreignKey: ForeignKey, contextTable: Table, trace: Trace
+){
+	Table.columns(contextTable, foreignKey);
+	neg find relationEndMapped(
+		_, foreignKey, _, _, contextTable
+	);
+	// if the foreign key has a trace link, 
+	// it corresponds to a relation end rather than an is-a 
+	Trace.rdbElement(trace, foreignKey); // find trace element and remove alongside
+}
 
 /////////////////////////////////////// Table //////////////////////////////////////////
 

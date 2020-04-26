@@ -74,4 +74,21 @@ class ErdToRdbRuleSet extends RuleSetBase {
 			subT.remove(table_Columns, foreignKey)
 		]
 	
+	// relations
+	public val relationCreatedRule = 
+		addRule(relationCreated)[
+			val table = traceRoot.rdbRoot.createChild(relationalDataBase_Tables, table) as Table			
+			createTrace(relation, table)
+		]
+	public val relationEndCreatedRule = 
+		addRule(relationEndCreated)[
+			val foreignKeyColumn = contextTable.createChild(table_Columns, foreignKey) as ForeignKey
+			foreignKeyColumn.set(column_Type, refKey.type)
+			foreignKeyColumn.set(foreignKey_ReferencedKey, refKey)
+			createTrace(ending, foreignKeyColumn)
+		]
+	public val relationEndDeletedRule =
+		addRule(relationEndDeleted)[
+			deleteTraceAndTarget(trace)
+		]
 }

@@ -11,6 +11,9 @@
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.isaCreated"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.isaMapped"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.isaDeleted"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationCreated"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationEndCreated"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.relationEndDeleted"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.tableToRemove"/>
     </group>
   </extension>
