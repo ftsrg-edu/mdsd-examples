@@ -77,18 +77,95 @@ pattern defaultPrimaryKeyToRemove(table: Table, key: Key){
 
 /////////////////////////////////////// Attribute //////////////////////////////////////////
 
-// TODO
+pattern attributeCreated(
+	attribute: Attribute, contextEntity: Entity, contextTable: Table
+){
+	Entity.attributes(contextEntity, attribute);
+	find traceOfElement(_, _, contextEntity, contextTable);
+	neg find traceOfElement(_, _, attribute, _);
+}
+private pattern attributeMapped(
+	attribute: Attribute, column: Column,
+	contextEntity: Entity, contextTable: Table
+){
+	Entity.attributes(contextEntity, attribute);
+	find traceOfElement(_, _, contextEntity, contextTable);
+	find traceOfElement(_, _, attribute, column);
+	
+	// the column shall be a key exactly if the attribute was...
+	// otherwise the mapping is invalid, and the column must be deleted&recreated with the right type
+	Attribute.isKey(attribute, attributeIsKey);
+	count Key(column) == eval(if (attributeIsKey) 1 else 0);
+}
+pattern attributeDeleted(
+	column: Column, contextTable: Table, trace: Trace
+){
+	Table.columns(contextTable, column);
+	neg find attributeMapped(_, column, _, contextTable);
+	// if this column does not correspond to an attribute, 
+	// do not delete it for lack of an attribute
+	Trace.rdbElement(_, column); // default table primary key columns, created for entity, have no trace link
+	neg ForeignKey(column); // columns created for association or is-a are foreign key columns
+
+	Trace.rdbElement(trace, column); // find trace element and remove alongside
+}
+
+pattern typeToPropagate(attribute: Attribute, column: Column) {
+	find traceOfElement(_, _, attribute, column);
+	Attribute.type(attribute, _); // type is not unset, there is a type to propagate
+	neg find typeMapped(attribute, column);
+}
+private pattern typeMapped(attribute: Attribute, column: Column) {
+	find traceOfElement(_, _, attribute, column);
+	Attribute.type(attribute, aType);
+	Column.type(column, cType);
+	cType == eval(CommonHelperMethods::toColumnType(aType));
+}
+
 
 /////////////////////////////////////// Is-A //////////////////////////////////////////
-
-// TODO
-
+pattern isaCreated(
+	subE: Entity, superE: Entity, subT: Table, superT: Table, superKey: Key
+){
+	Entity.isA(subE, superE);
+	find traceOfElement(_, _, subE, subT);
+	find traceOfElement(_, _, superE, superT);
+	Table.columns(superT, superKey);
+	
+	neg find isaMapped(subE, superE, subT, superT, superKey, _);
+}
+pattern isaMapped(
+	subE: Entity, superE: Entity, subT: Table, superT: Table, superKey: Key, foreignKey: ForeignKey
+){
+	Entity.isA(subE, superE);
+	find traceOfElement(_, _, subE, subT);
+	find traceOfElement(_, _, superE, superT);
+	Table.columns(superT, superKey);
+	Table.columns(subT, foreignKey);
+	ForeignKey.referencedKey(foreignKey, superKey);
+	
+	// if names do not match, delete&re-create foreign key
+	Key.name(superKey, name);
+	ForeignKey.name(foreignKey, name);
+	
+	// if types do not match, delete&re-create foreign key
+	Key.type(superKey, type);
+	ForeignKey.type(foreignKey, type);
+}
+pattern isaDeleted(
+	subT: Table, foreignKey: ForeignKey
+){
+	Table.columns(subT, foreignKey);
+	neg find isaMapped(_, _, subT, _, _, foreignKey);
+	// if the foreign key has no trace link, 
+	// it corresponds to an is-a rather than a relation end than an is-a 
+	neg find traceOfElement(_, _, _, foreignKey);
+}
 
 
 /////////////////////////////////////// Relation //////////////////////////////////////////
 
 // TODO
-
 
 /////////////////////////////////////// Table //////////////////////////////////////////
 
@@ -97,3 +174,4 @@ pattern tableToRemove(table: Table, trace: Trace){
 	neg find traceOfElement(_, _, _, table);
 	Trace.rdbElement(trace, table); // find trace element and remove alongside
 }
+
