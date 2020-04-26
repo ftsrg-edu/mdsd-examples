@@ -4,9 +4,96 @@ import "http://mit.bme.hu/mdsd/erdiagram" as erdiagram
 import "hu.bme.mit.mdsd.trace"
 import "hu.bme.mit.mdsd.rdb" as rdb
 
+import java hu.bme.mit.mdsd.m2m2c.util.CommonHelperMethods
+
+
+/////////////////////////////////////// Traceability //////////////////////////////////////////
+// Linked elements: 
+// 	Entity <> Table
+// 	Attribute <> Column
+// 	Relation <> Table
+// 	RelationEnding <> ForeignKey
+// No traceability links: 
+//  (entity without key attribute) <> default Key
+// 	(is-a) <> ForeignKey
+
+
+/////////////////////////////////////// NamedElement //////////////////////////////////////////
+pattern nameToPropagate(sourceElement: erdiagram::NamedElement, targetElement: rdb::NamedElement) {
+	find traceOfElement(_, _, sourceElement, targetElement);
+	erdiagram::NamedElement.name(sourceElement, _); // name is not unset, there is a name to propagate
+	neg find nameMapped(sourceElement, targetElement);
+}
+private pattern nameMapped(sourceElement: erdiagram::NamedElement, targetElement: rdb::NamedElement) {
+	find traceOfElement(_, _, sourceElement, targetElement);
+	erdiagram::NamedElement.name(sourceElement, name);
+	rdb::NamedElement.name(targetElement, name);
+}
+
+
 /////////////////////////////////////// Entity //////////////////////////////////////////
 
 pattern entityCreated(entity: Entity){
 	neg find traceOfElement(_, _, entity, _);
 }
+// no delete pattern - see tableToRemove
 
+
+///////////////////////// Default primary key (if entity has no key) //////////////////////////////////////////
+
+
+pattern defaultPrimaryKeyRequired(entity: Entity, table: Table){
+	find traceOfElement(_, _, entity, table);
+	Entity.name(entity, _); // name is not unset, there is a name to propagate
+	
+	// no key attribute exists		
+	neg Entity.attributes.isKey(entity, true); // TODO what if inherited?
+	
+	neg find defaultPrimaryKeyMapped(entity, table, _);
+}
+private pattern defaultPrimaryKeyMapped(entity: Entity, table: Table, key: Key) {
+	find traceOfElement(_, _, entity, table);
+	Table.columns(table, key);
+	
+	// no key attribute exists		
+	neg Entity.attributes.isKey(entity, true); // TODO what if inherited?
+	
+	// if names do not match, do not consider this a valid mapping
+	Entity.name(entity, eName);
+	Key.name(key, kName);
+	kName == eval(CommonHelperMethods.toKeyColumnName(eName));
+}
+pattern defaultPrimaryKeyToRemove(table: Table, key: Key){
+	Table.columns(table, key);
+	neg find defaultPrimaryKeyMapped(_, table, key);
+	
+	// if this key column is not a default primary key, but corresponds to an attribute instead
+	// do not delete it for name mismatch;
+	// default key column is recognized by not having a trace link to an attribute
+	neg find traceOfElement(_, _, _, key);
+	
+}
+
+
+/////////////////////////////////////// Attribute //////////////////////////////////////////
+
+// TODO
+
+/////////////////////////////////////// Is-A //////////////////////////////////////////
+
+// TODO
+
+
+
+/////////////////////////////////////// Relation //////////////////////////////////////////
+
+// TODO
+
+
+/////////////////////////////////////// Table //////////////////////////////////////////
+
+// Works for entity and relation tables as well
+pattern tableToRemove(table: Table, trace: Trace){
+	neg find traceOfElement(_, _, _, table);
+	Trace.rdbElement(trace, table); // find trace element and remove alongside
+}

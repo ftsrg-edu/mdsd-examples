@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
   <extension id="hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
     <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries" id="hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries">
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.nameToPropagate"/>
       <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.entityCreated"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.defaultPrimaryKeyRequired"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.defaultPrimaryKeyToRemove"/>
+      <query-specification fqn="hu.bme.mit.mdsd.m2m2c.queries.tableToRemove"/>
     </group>
   </extension>
   <extension id="hu.bme.mit.mdsd.m2m2c.queries.TraceabilityQueries" point="org.eclipse.viatra.query.runtime.queryspecification">

@@ -1,7 +1,10 @@
 package hu.bme.mit.mdsd.m2m2c
 
 import hu.bme.mit.mdsd.erdiagram.EntityRelationDiagram
+import hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries
+import hu.bme.mit.mdsd.m2m2c.rules.ErdToRdbRuleSet
 import hu.bme.mit.mdsd.rdb.RdbPackage
+import hu.bme.mit.mdsd.rdb.RelationalDataBase
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain
@@ -9,16 +12,12 @@ import org.eclipse.emf.edit.domain.EditingDomain
 import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
 import org.eclipse.viatra.query.runtime.emf.EMFScope
 import org.eclipse.viatra.transformation.evm.specific.Schedulers
-import org.eclipse.viatra.transformation.evm.specific.resolver.InvertedDisappearancePriorityConflictResolver
 import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.IModelManipulations
 import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.ModelManipulationWithEditingDomain
 import org.eclipse.viatra.transformation.runtime.emf.modelmanipulation.SimpleModelManipulations
 import org.eclipse.viatra.transformation.runtime.emf.transformation.eventdriven.EventDrivenTransformation
 import trace.TracePackage
 import trace.TraceRoot
-import hu.bme.mit.mdsd.rdb.RelationalDataBase
-import hu.bme.mit.mdsd.m2m2c.queries.PreconditionQueries
-import hu.bme.mit.mdsd.m2m2c.rules.EntityRuleCreate
 
 class ErdToRdbLiveTransformation {
 
@@ -33,7 +32,7 @@ class ErdToRdbLiveTransformation {
 	private ViatraQueryEngine engine
 	private ResourceSet resSet
 
-	private EntityRuleCreate entityRuleCreate
+	private ErdToRdbRuleSet ruleSet
 
 	private TraceRoot traceRoot
 	private EntityRelationDiagram erdiagram
@@ -78,7 +77,7 @@ class ErdToRdbLiveTransformation {
 		} else {
 			traceResource.contents.head as TraceRoot
 		}
-		entityRuleCreate = new EntityRuleCreate(engine, manipulation, traceRoot)
+		ruleSet = new ErdToRdbRuleSet(engine, manipulation, traceRoot)
 
 		createTransformation
 	}
@@ -93,11 +92,11 @@ class ErdToRdbLiveTransformation {
 		// Initialize event-driven transformation
 		
 //		val fixedPriorityResolver = new InvertedDisappearancePriorityConflictResolver
-//		fixedPriorityResolver.setPriority(entityRuleCreate.rule.ruleSpecification, 1)
+//		fixedPriorityResolver.setPriority(ruleSet.entityCreatedRule.ruleSpecification, 1)
 
 		transformation = EventDrivenTransformation.forEngine(engine)
 //		.setConflictResolver(fixedPriorityResolver)
-		.addRule(entityRuleCreate.rule)
+		.addRules(ruleSet.allRules)
 		.setSchedulerFactory(Schedulers.getQueryEngineSchedulerFactory(engine)
 		).build
 
