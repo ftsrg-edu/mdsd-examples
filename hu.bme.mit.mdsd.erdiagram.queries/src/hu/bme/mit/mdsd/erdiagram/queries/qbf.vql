@@ -2,7 +2,7 @@ package hu.bme.mit.mdsd.erdiagram.queries
 
 import epackage "hu.bme.mit.mdsd.erdiagram"
 
-@QueryBasedFeature(keepCache = false)
+@QueryBasedFeature
 pattern endingLabel(ending: RelationEnding, label: java String) {
 	find nameLabel(ending, nameLabel);
 	find typeLabel(ending, typeLabel);
