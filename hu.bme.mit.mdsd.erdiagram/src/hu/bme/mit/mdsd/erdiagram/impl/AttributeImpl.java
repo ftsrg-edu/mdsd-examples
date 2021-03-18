@@ -91,6 +91,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsKey() {
 		return isKey;
 	}
@@ -100,6 +101,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsKey(boolean newIsKey) {
 		boolean oldIsKey = isKey;
 		isKey = newIsKey;
@@ -112,6 +114,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AttributeType getType() {
 		return type;
 	}
@@ -121,6 +124,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(AttributeType newType) {
 		AttributeType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -205,7 +209,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isKey: ");
 		result.append(isKey);
 		result.append(", type: ");

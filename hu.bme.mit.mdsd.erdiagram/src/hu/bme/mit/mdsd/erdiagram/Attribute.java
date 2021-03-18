@@ -24,10 +24,6 @@ public interface Attribute extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Is Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Key</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Key</em>' attribute.
 	 * @see #setIsKey(boolean)
@@ -52,10 +48,6 @@ public interface Attribute extends NamedElement {
 	 * The default value is <code>"INT"</code>.
 	 * The literals are from the enumeration {@link hu.bme.mit.mdsd.erdiagram.AttributeType}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see hu.bme.mit.mdsd.erdiagram.AttributeType

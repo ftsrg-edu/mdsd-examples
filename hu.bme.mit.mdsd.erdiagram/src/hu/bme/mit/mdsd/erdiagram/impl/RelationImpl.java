@@ -73,6 +73,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RelationEnding getLeftEnding() {
 		return leftEnding;
 	}
@@ -97,6 +98,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeftEnding(RelationEnding newLeftEnding) {
 		if (newLeftEnding != leftEnding) {
 			NotificationChain msgs = null;
@@ -116,6 +118,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RelationEnding getRightEnding() {
 		return rightEnding;
 	}
@@ -140,6 +143,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRightEnding(RelationEnding newRightEnding) {
 		if (newRightEnding != rightEnding) {
 			NotificationChain msgs = null;

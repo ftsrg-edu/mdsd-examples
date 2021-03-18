@@ -27,10 +27,6 @@ public interface EntityRelationDiagram extends NamedElement {
 	 * Returns the value of the '<em><b>Entities</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.Entity}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entities</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entities</em>' containment reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntityRelationDiagram_Entities()
@@ -43,10 +39,6 @@ public interface EntityRelationDiagram extends NamedElement {
 	 * Returns the value of the '<em><b>Relations</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.Relation}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Relations</em>' containment reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntityRelationDiagram_Relations()
@@ -59,10 +51,6 @@ public interface EntityRelationDiagram extends NamedElement {
 	 * Returns the value of the '<em><b>Temporal Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Temporal Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Temporal Attributes</em>' containment reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntityRelationDiagram_TemporalAttributes()

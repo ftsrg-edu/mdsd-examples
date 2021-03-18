@@ -90,6 +90,7 @@ public class EntityRelationDiagramImpl extends NamedElementImpl implements Entit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Entity> getEntities() {
 		if (entities == null) {
 			entities = new EObjectContainmentEList<Entity>(Entity.class, this, ErdiagramPackage.ENTITY_RELATION_DIAGRAM__ENTITIES);
@@ -102,6 +103,7 @@ public class EntityRelationDiagramImpl extends NamedElementImpl implements Entit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Relation> getRelations() {
 		if (relations == null) {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, ErdiagramPackage.ENTITY_RELATION_DIAGRAM__RELATIONS);
@@ -114,6 +116,7 @@ public class EntityRelationDiagramImpl extends NamedElementImpl implements Entit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getTemporalAttributes() {
 		if (temporalAttributes == null) {
 			temporalAttributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, ErdiagramPackage.ENTITY_RELATION_DIAGRAM__TEMPORAL_ATTRIBUTES);

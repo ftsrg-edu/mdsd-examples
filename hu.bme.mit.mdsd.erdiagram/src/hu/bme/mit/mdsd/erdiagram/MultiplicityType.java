@@ -41,10 +41,6 @@ public enum MultiplicityType implements Enumerator {
 	/**
 	 * The '<em><b>One</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>One</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ONE
 	 * @model name="One"
@@ -56,10 +52,6 @@ public enum MultiplicityType implements Enumerator {
 	/**
 	 * The '<em><b>Many</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Many</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MANY
 	 * @model name="Many"
@@ -177,6 +169,7 @@ public enum MultiplicityType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -186,6 +179,7 @@ public enum MultiplicityType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -195,6 +189,7 @@ public enum MultiplicityType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

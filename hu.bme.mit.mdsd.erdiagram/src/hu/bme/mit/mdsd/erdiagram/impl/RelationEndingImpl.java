@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#isNullable <em>Nullable</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link hu.bme.mit.mdsd.erdiagram.impl.RelationEndingImpl#getOtherEnding <em>Other Ending</em>}</li>
  * </ul>
  *
  * @generated
@@ -106,6 +105,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNullable() {
 		return nullable;
 	}
@@ -115,6 +115,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNullable(boolean newNullable) {
 		boolean oldNullable = nullable;
 		nullable = newNullable;
@@ -127,6 +128,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MultiplicityType getMultiplicity() {
 		return multiplicity;
 	}
@@ -136,6 +138,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMultiplicity(MultiplicityType newMultiplicity) {
 		MultiplicityType oldMultiplicity = multiplicity;
 		multiplicity = newMultiplicity == null ? MULTIPLICITY_EDEFAULT : newMultiplicity;
@@ -148,6 +151,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -189,6 +193,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(Entity newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
@@ -201,28 +206,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ErdiagramPackage.RELATION_ENDING__TARGET, newTarget, newTarget));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RelationEnding getOtherEnding() {
-		RelationEnding otherEnding = basicGetOtherEnding();
-		return otherEnding != null && otherEnding.eIsProxy() ? (RelationEnding)eResolveProxy((InternalEObject)otherEnding) : otherEnding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RelationEnding basicGetOtherEnding() {
-		// TODO: implement this method to return the 'Other Ending' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -270,9 +253,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case ErdiagramPackage.RELATION_ENDING__OTHER_ENDING:
-				if (resolve) return getOtherEnding();
-				return basicGetOtherEnding();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -333,8 +313,6 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 				return multiplicity != MULTIPLICITY_EDEFAULT;
 			case ErdiagramPackage.RELATION_ENDING__TARGET:
 				return target != null;
-			case ErdiagramPackage.RELATION_ENDING__OTHER_ENDING:
-				return basicGetOtherEnding() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -348,7 +326,7 @@ public class RelationEndingImpl extends NamedElementImpl implements RelationEndi
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nullable: ");
 		result.append(nullable);
 		result.append(", multiplicity: ");

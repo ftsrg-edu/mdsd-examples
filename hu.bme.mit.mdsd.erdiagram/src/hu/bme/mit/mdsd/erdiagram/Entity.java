@@ -27,10 +27,6 @@ public interface Entity extends NamedElement {
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntity_Attributes()
@@ -43,10 +39,6 @@ public interface Entity extends NamedElement {
 	 * Returns the value of the '<em><b>Is A</b></em>' reference list.
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.Entity}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is A</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is A</em>' reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntity_IsA()
@@ -60,10 +52,6 @@ public interface Entity extends NamedElement {
 	 * The list contents are of type {@link hu.bme.mit.mdsd.erdiagram.RelationEnding}.
 	 * It is bidirectional and its opposite is '{@link hu.bme.mit.mdsd.erdiagram.RelationEnding#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Referred By</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Referred By</em>' reference list.
 	 * @see hu.bme.mit.mdsd.erdiagram.ErdiagramPackage#getEntity_ReferredBy()

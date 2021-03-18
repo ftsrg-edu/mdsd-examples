@@ -106,6 +106,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityRelationDiagram createEntityRelationDiagram() {
 		EntityRelationDiagramImpl entityRelationDiagram = new EntityRelationDiagramImpl();
 		return entityRelationDiagram;
@@ -116,6 +117,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
@@ -126,6 +128,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute createAttribute() {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
@@ -136,6 +139,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation createRelation() {
 		RelationImpl relation = new RelationImpl();
 		return relation;
@@ -146,6 +150,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RelationEnding createRelationEnding() {
 		RelationEndingImpl relationEnding = new RelationEndingImpl();
 		return relationEnding;
@@ -196,6 +201,7 @@ public class ErdiagramFactoryImpl extends EFactoryImpl implements ErdiagramFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ErdiagramPackage getErdiagramPackage() {
 		return (ErdiagramPackage)getEPackage();
 	}

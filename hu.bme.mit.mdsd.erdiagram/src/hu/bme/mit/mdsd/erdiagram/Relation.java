@@ -24,10 +24,6 @@ public interface Relation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Left Ending</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Left Ending</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Left Ending</em>' containment reference.
 	 * @see #setLeftEnding(RelationEnding)
@@ -50,10 +46,6 @@ public interface Relation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Right Ending</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Right Ending</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Right Ending</em>' containment reference.
 	 * @see #setRightEnding(RelationEnding)
